@@ -1,8 +1,11 @@
 # creoleto
 
-A little tool to export files written in the Creole markup language
+A little tool to export files written in the
+[Creole](http://www.wikicreole.org/wiki/HowToUseThisWiki) markup language
 to different formats.  
 Currently planned supported outputs are XHTML and LaTex.
+
+**Attention: This is work in progress and not ready to use!**
 
 ## Build
 

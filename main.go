@@ -4,9 +4,12 @@
 package main
 
 import (
+	"flag"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
+	"strings"
 )
 
 func check(err error) {
@@ -16,11 +19,25 @@ func check(err error) {
 }
 
 func main() {
+	format := flag.String(
+		"format", "latex", `Format to export to ("xhtml" or "latex").`)
+	flag.Parse()
+
+	var export func(*document, io.Writer) error
+	switch strings.ToLower(*format) {
+	case "xhtml":
+		export = exportXHTML
+	case "latex":
+		export = exportLaTex
+	default:
+		log.Fatalln("Unknown export format.")
+	}
+
 	data, err := ioutil.ReadAll(os.Stdin)
 	check(err)
 	input := string(data)
 	p := newParser()
-	d, err := p.parse(input)
+	doc, err := p.parse(input)
 	check(err)
-	_ = d
+	check(export(doc, os.Stdout))
 }

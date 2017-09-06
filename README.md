@@ -26,4 +26,4 @@ Put the resulting `creoleto` binary into your `PATH`.
 ## License
 
 This is Free Software covered by the terms of the [MIT license](LICENSE).  
-(c) 2017 by Intevation GmbH
+Copyright (c) 2017 by Intevation GmbH

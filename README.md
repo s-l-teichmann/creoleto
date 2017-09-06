@@ -14,11 +14,14 @@ Tested successfully with Go 1.9.
 
     $ go get github.com/s-l-teichmann/creoleto
 
-Put the resulting `creoleto` binary into your `PATH`
+Put the resulting `creoleto` binary into your `PATH`.
 
 ## Usage
 
+**Not working at the moment!**
+
     $ creoleto < data/wikicreole1.creole > converted.tex
+
 
 ## License
 

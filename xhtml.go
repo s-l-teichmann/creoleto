@@ -7,7 +7,13 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"strings"
 )
+
+var htmlEscape = strings.NewReplacer(
+	"<", "&lt;",
+	">", "&gt;",
+	"&", "&amp;").Replace
 
 type xhtml struct {
 	out bytes.Buffer
@@ -46,10 +52,32 @@ func (x *xhtml) heading(level int) *visitor {
 	return &visitor{x.open(tag), x.close(tag)}
 }
 
+func (x *xhtml) text(n *node) error {
+	x.out.WriteString(htmlEscape(n.value.(string)))
+	return nil
+}
+
+func (x *xhtml) noWikiInline(n *node) error {
+	x.out.WriteString("<tt>")
+	x.out.WriteString(htmlEscape(n.value.(string)))
+	x.out.WriteString("</tt>")
+	return nil
+}
+
+func (x *xhtml) noWiki(n *node) error {
+	x.out.WriteString("<pre>")
+	x.noWikiInline(n)
+	x.out.WriteString("</pre>\n")
+	return nil
+}
+
 func exportXHTML(doc *document, out io.Writer) error {
 	// TODO: Implement me!
 
 	var x xhtml
+
+	x.out.WriteString("<html>\n<body>\n")
+
 	err := doc.traverse(map[nodeType]*visitor{
 		italicsNode:         x.element("i"),
 		boldNode:            x.element("strong"),
@@ -74,8 +102,12 @@ func exportXHTML(doc *document, out io.Writer) error {
 		heading6Node:        x.heading(6),
 		horizontalLineNode:  &visitor{leave: x.tag("hr")},
 		lineBreakNode:       &visitor{leave: x.tag("br")},
+		textNode:            &visitor{leave: x.text},
+		noWikiNode:          &visitor{leave: x.noWiki},
+		noWikiInlineNode:    &visitor{leave: x.noWikiInline},
 	})
 	if err != nil {
+		x.out.WriteString("\n</body>\n</html>\n")
 		_, err = x.out.WriteTo(out)
 	}
 	return err

@@ -43,7 +43,7 @@ type node struct {
 
 	parent   *node
 	children []*node
-	value    string
+	value    interface{}
 }
 
 type document struct {

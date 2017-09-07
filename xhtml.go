@@ -85,6 +85,7 @@ func exportXHTML(doc *document, out io.Writer) error {
 
 	var x xhtml
 
+	x.out.WriteString(xml.Header)
 	x.out.WriteString("<html>\n<body>\n")
 
 	err := doc.traverse(map[nodeType]*visitor{

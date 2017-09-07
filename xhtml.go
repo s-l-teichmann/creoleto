@@ -80,8 +80,22 @@ func (x *xhtml) link(n *node) error {
 	return nil
 }
 
+func (x *xhtml) image(n *node) error {
+	img := n.value.(*image)
+	enc := xml.NewEncoder(&x.out)
+	attr := []xml.Attr{{xml.Name{Local: "src"}, img.src}}
+	if img.alt != "" {
+		attr = append(attr, xml.Attr{xml.Name{Local: "src"}, img.alt})
+	}
+	enc.EncodeToken(xml.StartElement{
+		Name: xml.Name{Local: "img"},
+		Attr: attr,
+	})
+	enc.Flush()
+	return nil
+}
+
 func exportXHTML(doc *document, out io.Writer) error {
-	// TODO: Implement me!
 
 	var x xhtml
 
@@ -116,7 +130,7 @@ func exportXHTML(doc *document, out io.Writer) error {
 		noWikiNode:          &visitor{enter: x.noWiki},
 		noWikiInlineNode:    &visitor{enter: x.noWikiInline},
 		// placeholderNode not supported, yet.
-		// TODO: Implement image node.
+		imageNode:          &visitor{enter: x.image, leave: x.close("img")},
 		linkNode:           &visitor{enter: x.link, leave: x.close("a")},
 		horizontalLineNode: &visitor{enter: x.tag("hr")},
 	})

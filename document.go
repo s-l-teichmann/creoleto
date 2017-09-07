@@ -46,6 +46,11 @@ type node struct {
 	value    interface{}
 }
 
+type image struct {
+	src string
+	alt string
+}
+
 type document struct {
 	root *node
 }

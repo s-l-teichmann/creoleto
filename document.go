@@ -8,6 +8,7 @@ type nodeType int
 const (
 	orderedListNode nodeType = iota
 	unorderedListNode
+	listItemNode
 	textNode
 	boldNode
 	italicsNode
@@ -16,6 +17,8 @@ const (
 	superscriptNode
 	subscriptNode
 	tableNode
+	tableHeaderRowNode
+	tableHeaderCellNode
 	tableRowNode
 	tableCellNode
 	heading1Node

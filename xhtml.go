@@ -13,42 +13,37 @@ type xhtml struct {
 	out bytes.Buffer
 }
 
-func (x *xhtml) italicsEnter(*node) error {
-	x.out.WriteString("<i>")
-	return nil
+func (x *xhtml) tag(name string) func(*node) error {
+	tag := "<" + name + "/>"
+	return func(*node) error {
+		x.out.WriteString(tag)
+		return nil
+	}
 }
 
-func (x *xhtml) italicsLeave(*node) error {
-	x.out.WriteString("</i>")
-	return nil
+func (x *xhtml) open(name string) func(*node) error {
+	tag := "<" + name + ">"
+	return func(*node) error {
+		x.out.WriteString(tag)
+		return nil
+	}
 }
 
-func (x *xhtml) boldEnter(*node) error {
-	x.out.WriteString("<strong>")
-	return nil
+func (x *xhtml) close(name string) func(*node) error {
+	tag := "</" + name + ">"
+	return func(*node) error {
+		x.out.WriteString(tag)
+		return nil
+	}
 }
 
-func (x *xhtml) boldLeave(*node) error {
-	x.out.WriteString("</strong>")
-	return nil
-}
-
-func (x *xhtml) horizontalLine(*node) error {
-	x.out.WriteString("<hr/>")
-	return nil
+func (x *xhtml) element(name string) *visitor {
+	return &visitor{x.open(name), x.close(name)}
 }
 
 func (x *xhtml) heading(level int) *visitor {
-	return &visitor{
-		enter: func(*node) error {
-			fmt.Fprintf(&x.out, "<h%d>", level)
-			return nil
-		},
-		leave: func(*node) error {
-			fmt.Fprintf(&x.out, "</h%d>", level)
-			return nil
-		},
-	}
+	tag := fmt.Sprintf("h%d", level)
+	return &visitor{x.open(tag), x.close(tag)}
 }
 
 func exportXHTML(doc *document, out io.Writer) error {
@@ -56,19 +51,32 @@ func exportXHTML(doc *document, out io.Writer) error {
 
 	var x xhtml
 	err := doc.traverse(map[nodeType]*visitor{
-		italicsNode:        &visitor{x.italicsEnter, x.italicsLeave},
-		boldNode:           &visitor{x.boldEnter, x.boldLeave},
-		horizontalLineNode: &visitor{leave: x.horizontalLine},
-		heading1Node:       x.heading(1),
-		heading2Node:       x.heading(2),
-		heading3Node:       x.heading(3),
-		heading4Node:       x.heading(4),
-		heading5Node:       x.heading(5),
-		heading6Node:       x.heading(6),
+		italicsNode:         x.element("i"),
+		boldNode:            x.element("strong"),
+		underlinedNode:      x.element("em"),
+		strikeNode:          x.element("del"),
+		subscriptNode:       x.element("sub"),
+		superscriptNode:     x.element("sup"),
+		tableNode:           x.element("table"),
+		tableRowNode:        x.element("tr"),
+		tableCellNode:       x.element("td"),
+		tableHeaderRowNode:  x.element("th"),
+		tableHeaderCellNode: x.element("td"),
+		orderedListNode:     x.element("ol"),
+		unorderedListNode:   x.element("ul"),
+		listItemNode:        x.element("li"),
+		paragraphNode:       x.element("p"),
+		heading1Node:        x.heading(1),
+		heading2Node:        x.heading(2),
+		heading3Node:        x.heading(3),
+		heading4Node:        x.heading(4),
+		heading5Node:        x.heading(5),
+		heading6Node:        x.heading(6),
+		horizontalLineNode:  &visitor{leave: x.tag("hr")},
+		lineBreakNode:       &visitor{leave: x.tag("br")},
 	})
 	if err != nil {
-		return err
+		_, err = x.out.WriteTo(out)
 	}
-	_, err = x.out.WriteTo(out)
 	return err
 }

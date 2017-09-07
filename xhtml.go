@@ -95,8 +95,8 @@ func exportXHTML(doc *document, out io.Writer) error {
 
 	x := xhtml{out: bufio.NewWriter(out)}
 
-	x.out.WriteString(xml.Header)
-	x.out.WriteString("<html>\n<body>\n")
+	x.writeString(xml.Header)
+	x.writeString("<html>\n<body>\n")
 
 	err := doc.traverse(map[nodeType]*visitor{
 		orderedListNode:     x.element("ol"),

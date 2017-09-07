@@ -4,38 +4,34 @@
 package main
 
 import (
-	"bytes"
+	"bufio"
 	"encoding/xml"
 	"fmt"
 	"io"
 )
 
 type xhtml struct {
-	out bytes.Buffer
+	out *bufio.Writer
+}
+
+func (x *xhtml) writeString(s string) error {
+	_, err := x.out.WriteString(s)
+	return err
 }
 
 func (x *xhtml) tag(name string) func(*node) error {
 	tag := "<" + name + "/>"
-	return func(*node) error {
-		x.out.WriteString(tag)
-		return nil
-	}
+	return func(*node) error { return x.writeString(tag) }
 }
 
 func (x *xhtml) open(name string) func(*node) error {
 	tag := "<" + name + ">"
-	return func(*node) error {
-		x.out.WriteString(tag)
-		return nil
-	}
+	return func(*node) error { return x.writeString(tag) }
 }
 
 func (x *xhtml) close(name string) func(*node) error {
 	tag := "</" + name + ">"
-	return func(*node) error {
-		x.out.WriteString(tag)
-		return nil
-	}
+	return func(*node) error { return x.writeString(tag) }
 }
 
 func (x *xhtml) element(name string) *visitor {
@@ -48,56 +44,57 @@ func (x *xhtml) heading(level int) *visitor {
 }
 
 func (x *xhtml) text(n *node) error {
-	enc := xml.NewEncoder(&x.out)
+	enc := xml.NewEncoder(x.out)
 	txt := n.value.(string)
-	enc.EncodeToken(xml.CharData(txt))
-	enc.Flush()
-	return nil
+	if err := enc.EncodeToken(xml.CharData(txt)); err != nil {
+		return err
+	}
+	return enc.Flush()
 }
 
 func (x *xhtml) noWikiInline(n *node) error {
-	x.out.WriteString("<tt>")
+	x.writeString("<tt>")
 	x.text(n)
-	x.out.WriteString("</tt>")
-	return nil
+	return x.writeString("</tt>")
 }
 
 func (x *xhtml) noWiki(n *node) error {
-	x.out.WriteString("<pre>")
+	x.writeString("<pre>")
 	x.noWikiInline(n)
-	x.out.WriteString("</pre>\n")
-	return nil
+	return x.writeString("</pre>\n")
 }
 
 func (x *xhtml) link(n *node) error {
 	href := n.value.(string)
-	enc := xml.NewEncoder(&x.out)
-	enc.EncodeToken(xml.StartElement{
+	enc := xml.NewEncoder(x.out)
+	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "a"},
 		Attr: []xml.Attr{{xml.Name{Local: "href"}, href}},
-	})
-	enc.Flush()
-	return nil
+	}); err != nil {
+		return err
+	}
+	return enc.Flush()
 }
 
 func (x *xhtml) image(n *node) error {
 	img := n.value.(*image)
-	enc := xml.NewEncoder(&x.out)
+	enc := xml.NewEncoder(x.out)
 	attr := []xml.Attr{{xml.Name{Local: "src"}, img.src}}
 	if img.alt != "" {
 		attr = append(attr, xml.Attr{xml.Name{Local: "src"}, img.alt})
 	}
-	enc.EncodeToken(xml.StartElement{
+	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "img"},
 		Attr: attr,
-	})
-	enc.Flush()
-	return nil
+	}); err != nil {
+		return err
+	}
+	return enc.Flush()
 }
 
 func exportXHTML(doc *document, out io.Writer) error {
 
-	var x xhtml
+	x := xhtml{out: bufio.NewWriter(out)}
 
 	x.out.WriteString(xml.Header)
 	x.out.WriteString("<html>\n<body>\n")
@@ -135,8 +132,8 @@ func exportXHTML(doc *document, out io.Writer) error {
 		horizontalLineNode: &visitor{enter: x.tag("hr")},
 	})
 	if err != nil {
-		x.out.WriteString("\n</body>\n</html>\n")
-		_, err = x.out.WriteTo(out)
+		return err
 	}
-	return err
+	x.writeString("\n</body>\n</html>\n")
+	return x.out.Flush()
 }

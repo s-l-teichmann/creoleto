@@ -91,33 +91,36 @@ func exportXHTML(doc *document, out io.Writer) error {
 	x.out.WriteString("<html>\n<body>\n")
 
 	err := doc.traverse(map[nodeType]*visitor{
-		italicsNode:         x.element("i"),
+		orderedListNode:     x.element("ol"),
+		unorderedListNode:   x.element("ul"),
+		listItemNode:        x.element("li"),
+		textNode:            &visitor{enter: x.text},
 		boldNode:            x.element("strong"),
+		italicsNode:         x.element("i"),
 		underlinedNode:      x.element("em"),
 		strikeNode:          x.element("del"),
-		subscriptNode:       x.element("sub"),
 		superscriptNode:     x.element("sup"),
+		subscriptNode:       x.element("sub"),
 		tableNode:           x.element("table"),
 		tableRowNode:        x.element("tr"),
 		tableCellNode:       x.element("td"),
 		tableHeaderRowNode:  x.element("th"),
 		tableHeaderCellNode: x.element("td"),
-		orderedListNode:     x.element("ol"),
-		unorderedListNode:   x.element("ul"),
-		listItemNode:        x.element("li"),
-		paragraphNode:       x.element("p"),
 		heading1Node:        x.heading(1),
 		heading2Node:        x.heading(2),
 		heading3Node:        x.heading(3),
 		heading4Node:        x.heading(4),
 		heading5Node:        x.heading(5),
 		heading6Node:        x.heading(6),
-		horizontalLineNode:  &visitor{leave: x.tag("hr")},
-		lineBreakNode:       &visitor{leave: x.tag("br")},
-		textNode:            &visitor{leave: x.text},
-		noWikiNode:          &visitor{leave: x.noWiki},
-		noWikiInlineNode:    &visitor{leave: x.noWikiInline},
-		linkNode:            &visitor{enter: x.link, leave: x.close("a")},
+		paragraphNode:       x.element("p"),
+		lineBreakNode:       &visitor{enter: x.tag("br")},
+		escapeNode:          &visitor{enter: x.text},
+		noWikiNode:          &visitor{enter: x.noWiki},
+		noWikiInlineNode:    &visitor{enter: x.noWikiInline},
+		// placeholderNode not supported, yet.
+		// TODO: Implement image node.
+		linkNode:           &visitor{enter: x.link, leave: x.close("a")},
+		horizontalLineNode: &visitor{enter: x.tag("hr")},
 	})
 	if err != nil {
 		x.out.WriteString("\n</body>\n</html>\n")

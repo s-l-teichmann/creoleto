@@ -8,13 +8,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
-	"strings"
 )
-
-var htmlEscape = strings.NewReplacer(
-	"<", "&lt;",
-	">", "&gt;",
-	"&", "&amp;").Replace
 
 type xhtml struct {
 	out bytes.Buffer
@@ -54,13 +48,16 @@ func (x *xhtml) heading(level int) *visitor {
 }
 
 func (x *xhtml) text(n *node) error {
-	x.out.WriteString(htmlEscape(n.value.(string)))
+	enc := xml.NewEncoder(&x.out)
+	txt := n.value.(string)
+	enc.EncodeToken(xml.CharData(txt))
+	enc.Flush()
 	return nil
 }
 
 func (x *xhtml) noWikiInline(n *node) error {
 	x.out.WriteString("<tt>")
-	x.out.WriteString(htmlEscape(n.value.(string)))
+	x.text(n)
 	x.out.WriteString("</tt>")
 	return nil
 }

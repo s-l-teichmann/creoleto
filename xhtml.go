@@ -39,8 +39,7 @@ func (x *xhtml) element(name string) *visitor {
 }
 
 func (x *xhtml) heading(level int) *visitor {
-	tag := fmt.Sprintf("h%d", level)
-	return &visitor{x.open(tag), x.close(tag)}
+	return x.element(fmt.Sprintf("h%d", level))
 }
 
 func (x *xhtml) text(n *node) error {

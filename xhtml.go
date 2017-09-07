@@ -5,6 +5,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/xml"
 	"fmt"
 	"io"
 	"strings"
@@ -71,6 +72,17 @@ func (x *xhtml) noWiki(n *node) error {
 	return nil
 }
 
+func (x *xhtml) link(n *node) error {
+	href := n.value.(string)
+	enc := xml.NewEncoder(&x.out)
+	enc.EncodeToken(xml.StartElement{
+		Name: xml.Name{Local: "a"},
+		Attr: []xml.Attr{{xml.Name{Local: "href"}, href}},
+	})
+	enc.Flush()
+	return nil
+}
+
 func exportXHTML(doc *document, out io.Writer) error {
 	// TODO: Implement me!
 
@@ -105,6 +117,7 @@ func exportXHTML(doc *document, out io.Writer) error {
 		textNode:            &visitor{leave: x.text},
 		noWikiNode:          &visitor{leave: x.noWiki},
 		noWikiInlineNode:    &visitor{leave: x.noWikiInline},
+		linkNode:            &visitor{enter: x.link, leave: x.close("a")},
 	})
 	if err != nil {
 		x.out.WriteString("\n</body>\n</html>\n")

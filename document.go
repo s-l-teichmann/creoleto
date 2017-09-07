@@ -3,11 +3,12 @@
 // Copyright 2017 by Intevation GmbH
 package main
 
-type kindType int
+type nodeType int
 
 type node struct {
+	nodeType
+
 	parent   *node
-	kind     kindType
 	children []*node
 }
 

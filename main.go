@@ -20,7 +20,7 @@ func check(err error) {
 
 func main() {
 	format := flag.String(
-		"format", "latex", `Format to export to ("xhtml" or "latex").`)
+		"format", "xhtml", `Format to export to ("xhtml" or "latex").`)
 	flag.Parse()
 
 	var export func(*document, io.Writer) error

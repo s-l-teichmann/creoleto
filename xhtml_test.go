@@ -73,14 +73,18 @@ func TestElements(t *testing.T) {
 		},
 			want: "<sup>Hello</sup>",
 		},
-		/*
-			{have: &node{
-				nodeType: noWikiNode,
-				children: []*node{text("Hello")},
-			},
-				want: "<pre>Hello</pre>",
-			},
-		*/
+		{have: &node{
+			nodeType: noWikiNode,
+			children: []*node{text("Hello")},
+		},
+			want: "<pre><tt>Hello</tt></pre>",
+		},
+		{have: &node{
+			nodeType: noWikiInlineNode,
+			children: []*node{text("Hello")},
+		},
+			want: "<tt>Hello</tt>",
+		},
 		{have: &node{nodeType: heading1Node},
 			want: "<h1></h1>",
 		},

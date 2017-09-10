@@ -19,19 +19,20 @@ func (x *xhtml) writeString(s string) error {
 	return err
 }
 
+func (x *xhtml) str(s string) func(*node) error {
+	return func(*node) error { return x.writeString(s) }
+}
+
 func (x *xhtml) tag(name string) func(*node) error {
-	tag := "<" + name + "/>"
-	return func(*node) error { return x.writeString(tag) }
+	return x.str("<" + name + "/>")
 }
 
 func (x *xhtml) open(name string) func(*node) error {
-	tag := "<" + name + ">"
-	return func(*node) error { return x.writeString(tag) }
+	return x.str("<" + name + ">")
 }
 
 func (x *xhtml) close(name string) func(*node) error {
-	tag := "</" + name + ">"
-	return func(*node) error { return x.writeString(tag) }
+	return x.str("</" + name + ">")
 }
 
 func (x *xhtml) element(name string) *visitor {
@@ -49,18 +50,6 @@ func (x *xhtml) text(n *node) error {
 		return err
 	}
 	return enc.Flush()
-}
-
-func (x *xhtml) noWikiInline(n *node) error {
-	x.writeString("<tt>")
-	x.text(n)
-	return x.writeString("</tt>")
-}
-
-func (x *xhtml) noWiki(n *node) error {
-	x.writeString("<pre>")
-	x.noWikiInline(n)
-	return x.writeString("</pre>")
 }
 
 func (x *xhtml) link(n *node) error {
@@ -125,11 +114,11 @@ func exportXHTML(doc *document, out io.Writer, standalone bool) error {
 		paragraphNode:       x.element("p"),
 		lineBreakNode:       &visitor{enter: x.tag("br")},
 		escapeNode:          &visitor{enter: x.text},
-		noWikiNode:          &visitor{enter: x.noWiki},
-		noWikiInlineNode:    &visitor{enter: x.noWikiInline},
+		noWikiNode:          &visitor{x.str("<pre><tt>"), x.str("</tt></pre>")},
+		noWikiInlineNode:    x.element("tt"),
 		// placeholderNode not supported, yet.
-		imageNode:          &visitor{enter: x.image, leave: x.close("img")},
-		linkNode:           &visitor{enter: x.link, leave: x.close("a")},
+		imageNode:          &visitor{x.image, x.close("img")},
+		linkNode:           &visitor{x.link, x.close("a")},
 		horizontalLineNode: &visitor{enter: x.tag("hr")},
 	})
 	if err != nil {

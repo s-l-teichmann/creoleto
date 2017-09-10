@@ -57,7 +57,7 @@ func (x *xhtml) link(n *node) error {
 	enc := xml.NewEncoder(x.out)
 	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "a"},
-		Attr: []xml.Attr{{xml.Name{Local: "href"}, href}},
+		Attr: []xml.Attr{{Name: xml.Name{Local: "href"}, Value: href}},
 	}); err != nil {
 		return err
 	}
@@ -67,9 +67,9 @@ func (x *xhtml) link(n *node) error {
 func (x *xhtml) image(n *node) error {
 	img := n.value.(*image)
 	enc := xml.NewEncoder(x.out)
-	attr := []xml.Attr{{xml.Name{Local: "src"}, img.src}}
+	attr := []xml.Attr{{Name: xml.Name{Local: "src"}, Value: img.src}}
 	if img.alt != "" {
-		attr = append(attr, xml.Attr{xml.Name{Local: "src"}, img.alt})
+		attr = append(attr, xml.Attr{Name: xml.Name{Local: "src"}, Value: img.alt})
 	}
 	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "img"},

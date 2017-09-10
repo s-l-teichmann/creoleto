@@ -5,7 +5,7 @@ package main
 
 import "io"
 
-func exportLaTex(doc *document, out io.Writer) error {
+func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 	// TODO: Implement me!
 	return nil
 }

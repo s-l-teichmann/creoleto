@@ -91,12 +91,14 @@ func (x *xhtml) image(n *node) error {
 	return enc.Flush()
 }
 
-func exportXHTML(doc *document, out io.Writer) error {
+func exportXHTML(doc *document, out io.Writer, standalone bool) error {
 
 	x := xhtml{out: bufio.NewWriter(out)}
 
-	x.writeString(xml.Header)
-	x.writeString("<html>\n<body>\n")
+	if standalone {
+		x.writeString(xml.Header)
+		x.writeString("<html>\n<body>\n")
+	}
 
 	err := doc.traverse(map[nodeType]*visitor{
 		orderedListNode:     x.element("ol"),
@@ -133,6 +135,8 @@ func exportXHTML(doc *document, out io.Writer) error {
 	if err != nil {
 		return err
 	}
-	x.writeString("\n</body>\n</html>\n")
+	if standalone {
+		x.writeString("\n</body>\n</html>\n")
+	}
 	return x.out.Flush()
 }

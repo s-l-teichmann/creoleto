@@ -21,9 +21,11 @@ func check(err error) {
 func main() {
 	format := flag.String(
 		"format", "xhtml", `Format to export to ("xhtml" or "latex").`)
+	standalone := flag.Bool(
+		"standalone", false, `Generate a complete standalone document.`)
 	flag.Parse()
 
-	var export func(*document, io.Writer) error
+	var export func(*document, io.Writer, bool) error
 	switch strings.ToLower(*format) {
 	case "xhtml":
 		export = exportXHTML
@@ -39,5 +41,5 @@ func main() {
 	p := newParser()
 	doc, err := p.parse(input)
 	check(err)
-	check(export(doc, os.Stdout))
+	check(export(doc, os.Stdout, *standalone))
 }

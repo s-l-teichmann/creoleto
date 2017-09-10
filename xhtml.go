@@ -60,7 +60,7 @@ func (x *xhtml) noWikiInline(n *node) error {
 func (x *xhtml) noWiki(n *node) error {
 	x.writeString("<pre>")
 	x.noWikiInline(n)
-	return x.writeString("</pre>\n")
+	return x.writeString("</pre>")
 }
 
 func (x *xhtml) link(n *node) error {

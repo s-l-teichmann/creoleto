@@ -6,6 +6,7 @@ package main
 import (
 	"bufio"
 	"io"
+	"strings"
 )
 
 const (
@@ -72,6 +73,24 @@ const (
 \end{document}
 `
 )
+
+// latexReplacer substitutes special LaTex characters with quoted ones
+// which can be used in templates.
+var latexReplacer = strings.NewReplacer(
+	"\n", `\\`,
+	`\`, `\textbackslash`,
+	`$`, `\$`,
+	`_`, `\_`,
+	`%`, `\%`,
+	`&`, `\&`,
+	`#`, `\#`,
+	`^`, `\url{^}`,
+	`~`, `\url{~}`,
+	`"`, `\url{"}`,
+	`}`, `\}`,
+	`{`, `\{`,
+	`]`, `{]}`,
+	`[`, `{[}`)
 
 type latex struct {
 	out *bufio.Writer

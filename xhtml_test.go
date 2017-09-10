@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/xml"
 	"testing"
 )
 
@@ -19,6 +20,30 @@ func text(txt string) *node {
 	return &node{
 		nodeType: textNode,
 		value:    txt,
+	}
+}
+
+func TestStandalone(t *testing.T) {
+	doc := document{
+		root: &node{
+			nodeType: heading1Node,
+			children: []*node{text("Hello")},
+		},
+	}
+
+	var buf bytes.Buffer
+
+	if err := exportXHTML(&doc, &buf, true); err != nil {
+		t.Fatalf("error: %v\n", err)
+	}
+
+	const want = xml.Header +
+		"<html>\n<body>\n" +
+		"<h1>Hello</h1>\n" +
+		"</body>\n</html>\n"
+
+	if got := buf.String(); got != want {
+		t.Errorf("got '%s' want '%s'", got, want)
 	}
 }
 
@@ -213,11 +238,11 @@ func TestElements(t *testing.T) {
 		linkChildren(c.have, nil)
 		doc.root = c.have
 		if err := exportXHTML(&doc, &buf, false); err != nil {
-			t.Fatalf("failed: %v\n")
+			t.Fatalf("failed: %v", err)
 		}
-		result := buf.String()
-		if result != c.want {
-			t.Errorf("result '%s': want '%s'\n", result, c.want)
+
+		if got := buf.String(); got != c.want {
+			t.Errorf("got '%s': want '%s'\n", got, c.want)
 		}
 	}
 

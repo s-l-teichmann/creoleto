@@ -96,18 +96,43 @@ type latex struct {
 	out *bufio.Writer
 }
 
+func (l *latex) writeString(txt string) error {
+	_, err := l.out.WriteString(txt)
+	return err
+}
+
+func (l *latex) str(txt string) func(*node) error {
+	return func(n *node) error { return l.writeString(txt) }
+}
+
+func (l *latex) command(cmd string) *visitor {
+	return &visitor{l.str(`\` + cmd + `{`), l.str(`}`)}
+}
+
+func (l *latex) text(n *node) error {
+	return l.writeString(n.value.(string))
+}
+
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
 	l := latex{out: bufio.NewWriter(out)}
 
 	if standalone {
-		l.out.WriteString(latexHeader)
+		l.writeString(latexHeader)
 	}
 
 	// TODO: Implement document traversal.
+	err := doc.traverse(map[nodeType]*visitor{
+		textNode:         &visitor{enter: l.text},
+		noWikiInlineNode: l.command("texttt"),
+	})
+
+	if err != nil {
+		return err
+	}
 
 	if standalone {
-		l.out.WriteString(latexFooter)
+		l.writeString(latexFooter)
 	}
 
 	return l.out.Flush()

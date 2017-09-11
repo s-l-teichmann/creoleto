@@ -9,30 +9,6 @@ import (
 	"testing"
 )
 
-// linkChildren repairs the parent/child relations.
-func linkChildren(n, p *node) {
-	if n != nil {
-		n.parent = p
-		for _, c := range n.children {
-			linkChildren(c, n)
-		}
-	}
-}
-
-func text(txt string) *node {
-	return &node{
-		nodeType: textNode,
-		value:    txt,
-	}
-}
-
-func nd(typ nodeType, children ...*node) *node {
-	return &node{
-		nodeType: typ,
-		children: children,
-	}
-}
-
 func TestStandalone(t *testing.T) {
 	doc := document{
 		root: nd(heading1Node, text("Hello")),

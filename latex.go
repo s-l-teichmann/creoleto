@@ -167,7 +167,7 @@ func (l *latex) header(typ string) func(*node) error {
 		_, err := fmt.Fprintf(l.out, "\n\n\\%s{%s}\\label{%s}\n\n",
 			typ,
 			latexReplacer.Replace(title),
-			l.generateLabel(title))
+			latexReplacer.Replace(l.generateLabel(title)))
 		return err
 	}
 }

@@ -114,6 +114,17 @@ func (l *latex) text(n *node) error {
 	return l.writeString(latexReplacer.Replace(n.value.(string)))
 }
 
+func (l *latex) link() *visitor {
+	return &visitor{
+		enter: func(n *node) error {
+			l.writeString(`\href{`)
+			l.writeString(latexReplacer.Replace(n.value.(string)))
+			return l.writeString(`}{`)
+		},
+		leave: l.str(`}`),
+	}
+}
+
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
 	l := latex{out: bufio.NewWriter(out)}
@@ -151,7 +162,7 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: noWikiNode
 		noWikiInlineNode: l.command("texttt"),
 		// TODO: imageNode
-		// TODO: linkNode
+		linkNode: l.link(),
 		horizontalLineNode: &visitor{
 			enter: l.str(
 				"\n" + `\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}` + "\n")},

@@ -35,6 +35,12 @@ func TestLaTexElements(t *testing.T) {
 		have: nd(paragraphNode, text("Hello")),
 		want: "\nHello\n",
 	}, {
+		have: &node{
+			nodeType: linkNode,
+			value:    "http://www.example.org",
+			children: []*node{text("Hello")}},
+		want: `\href{http://www.example.org}{Hello}`,
+	}, {
 		have: nd(boldNode, text("Hello")),
 		want: `\textbf{Hello}`,
 	}}

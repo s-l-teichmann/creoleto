@@ -7,4 +7,13 @@ import "testing"
 
 func TestLaTexElements(t *testing.T) {
 	// TODO: Implement me!
+	cases := []testCase{{
+		have: nd(noWikiInlineNode, text("Hello")),
+		want: `\texttt{Hello}`,
+	}, {
+		have: text(`^`),
+		want: `\url{^}`,
+	}}
+
+	runCases(cases, exportLaTex, t)
 }

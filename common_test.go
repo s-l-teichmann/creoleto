@@ -6,6 +6,7 @@ package main
 
 import (
 	"bytes"
+	"io"
 	"testing"
 )
 
@@ -37,7 +38,11 @@ type testCase struct {
 	want string
 }
 
-func runCases(cases []testCase, t *testing.T) {
+func runCases(
+	cases []testCase,
+	exporter func(*document, io.Writer, bool) error,
+	t *testing.T) {
+
 	var buf bytes.Buffer
 	var doc document
 
@@ -46,7 +51,7 @@ func runCases(cases []testCase, t *testing.T) {
 		buf.Reset()
 		linkChildren(c.have, nil)
 		doc.root = c.have
-		if err := exportXHTML(&doc, &buf, false); err != nil {
+		if err := exporter(&doc, &buf, false); err != nil {
 			t.Fatalf("failed: %v", err)
 		}
 

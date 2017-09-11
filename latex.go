@@ -110,7 +110,7 @@ func (l *latex) command(cmd string) *visitor {
 }
 
 func (l *latex) text(n *node) error {
-	return l.writeString(n.value.(string))
+	return l.writeString(latexReplacer.Replace(n.value.(string)))
 }
 
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {

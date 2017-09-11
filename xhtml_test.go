@@ -140,5 +140,5 @@ func TestElements(t *testing.T) {
 			"</table>",
 	}}
 
-	runCases(cases, t)
+	runCases(cases, exportXHTML, t)
 }

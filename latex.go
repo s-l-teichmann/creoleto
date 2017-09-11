@@ -145,7 +145,7 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: heading4Node
 		// TODO: heading5Node
 		// TODO: heading6Node
-		// TODO: paragraphNode
+		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
 		// TODO: lineBreakNode
 		// TODO: escapeNode
 		// TODO: noWikiNode

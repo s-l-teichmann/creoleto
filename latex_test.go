@@ -32,6 +32,9 @@ func TestLaTexElements(t *testing.T) {
 		have: &node{nodeType: horizontalLineNode},
 		want: "\n" + `\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}` + "\n",
 	}, {
+		have: nd(paragraphNode, text("Hello")),
+		want: "\nHello\n",
+	}, {
 		have: nd(boldNode, text("Hello")),
 		want: `\textbf{Hello}`,
 	}}

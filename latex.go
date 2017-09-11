@@ -124,12 +124,35 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
 	// TODO: Implement document traversal.
 	err := doc.traverse(map[nodeType]*visitor{
-		textNode:         &visitor{enter: l.text},
+		// TODO: orderedListNode
+		// TODO: unorderedListNode
+		// TODO: listItemNode
+		textNode:        &visitor{enter: l.text},
+		boldNode:        l.command("textbf"),
+		italicsNode:     l.command("textit"),
+		underlinedNode:  l.command("underline"),
+		strikeNode:      l.command("cancel"),
+		superscriptNode: l.command("textsuperscript"),
+		subscriptNode:   l.command("textsubscript"),
+		// TODO: tableNode
+		// TODO: tableRowNode
+		// TODO: tableCellNode
+		// TODO: tableHeaderRowNode
+		// TODO: tableHeaderCellNode
+		// TODO: heading1Node
+		// TODO: heading2Node
+		// TODO: heading3Node
+		// TODO: heading4Node
+		// TODO: heading5Node
+		// TODO: heading6Node
+		// TODO: paragraphNode
+		// TODO: lineBreakNode
+		// TODO: escapeNode
+		// TODO: noWikiNode
 		noWikiInlineNode: l.command("texttt"),
-		boldNode:         l.command("textbf"),
-		italicsNode:      l.command("textit"),
-		underlinedNode:   l.command("underline"),
-		strikeNode:       l.command("cancel"),
+		// TODO: imageNode
+		// TODO: linkNode
+		// TODO: horizontalLineNode
 	})
 
 	if err != nil {

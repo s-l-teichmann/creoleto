@@ -20,6 +20,12 @@ func TestLaTexElements(t *testing.T) {
 		have: nd(underlinedNode, text("Hello")),
 		want: `\underline{Hello}`,
 	}, {
+		have: nd(subscriptNode, text("Hello")),
+		want: `\textsubscript{Hello}`,
+	}, {
+		have: nd(superscriptNode, text("Hello")),
+		want: `\textsuperscript{Hello}`,
+	}, {
 		have: nd(strikeNode, text("Hello")),
 		want: `\cancel{Hello}`,
 	}, {

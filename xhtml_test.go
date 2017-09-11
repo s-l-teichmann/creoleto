@@ -26,7 +26,7 @@ func text(txt string) *node {
 	}
 }
 
-func nd(typ nodeType, children []*node) *node {
+func nd(typ nodeType, children ...*node) *node {
 	return &node{
 		nodeType: typ,
 		children: children,
@@ -35,7 +35,7 @@ func nd(typ nodeType, children []*node) *node {
 
 func TestStandalone(t *testing.T) {
 	doc := document{
-		root: nd(heading1Node, []*node{text("Hello")}),
+		root: nd(heading1Node, text("Hello")),
 	}
 
 	var buf bytes.Buffer
@@ -69,28 +69,28 @@ func TestElements(t *testing.T) {
 		have: &node{nodeType: lineBreakNode},
 		want: "<br/>",
 	}, {
-		have: nd(italicsNode, []*node{text("Hello")}),
+		have: nd(italicsNode, text("Hello")),
 		want: "<i>Hello</i>",
 	}, {
-		have: nd(boldNode, []*node{text("Hello")}),
+		have: nd(boldNode, text("Hello")),
 		want: "<strong>Hello</strong>",
 	}, {
-		have: nd(strikeNode, []*node{text("Hello")}),
+		have: nd(strikeNode, text("Hello")),
 		want: "<del>Hello</del>",
 	}, {
-		have: nd(underlinedNode, []*node{text("Hello")}),
+		have: nd(underlinedNode, text("Hello")),
 		want: "<em>Hello</em>",
 	}, {
-		have: nd(subscriptNode, []*node{text("Hello")}),
+		have: nd(subscriptNode, text("Hello")),
 		want: "<sub>Hello</sub>",
 	}, {
-		have: nd(superscriptNode, []*node{text("Hello")}),
+		have: nd(superscriptNode, text("Hello")),
 		want: "<sup>Hello</sup>",
 	}, {
-		have: nd(noWikiNode, []*node{text("Hello")}),
+		have: nd(noWikiNode, text("Hello")),
 		want: "<pre><tt>Hello</tt></pre>",
 	}, {
-		have: nd(noWikiInlineNode, []*node{text("Hello")}),
+		have: nd(noWikiInlineNode, text("Hello")),
 		want: "<tt>Hello</tt>",
 	}, {
 		have: &node{nodeType: heading1Node},
@@ -138,43 +138,23 @@ func TestElements(t *testing.T) {
 		},
 		want: `<img src="http://example.com/image.png" src="An image"></img>`,
 	}, {
-		have: &node{
-			nodeType: unorderedListNode,
-			children: []*node{
-				nd(listItemNode, []*node{text("Hello")}),
-				nd(listItemNode, []*node{text("World")}),
-			},
-		},
+		have: nd(unorderedListNode,
+			nd(listItemNode, text("Hello")),
+			nd(listItemNode, text("World"))),
 		want: `<ul><li>Hello</li><li>World</li></ul>`,
 	}, {
-		have: &node{
-			nodeType: orderedListNode,
-			children: []*node{
-				nd(listItemNode, []*node{text("Hello")}),
-				nd(listItemNode, []*node{text("World")}),
-			},
-		},
+		have: nd(orderedListNode,
+			nd(listItemNode, text("Hello")),
+			nd(listItemNode, text("World"))),
 		want: `<ol><li>Hello</li><li>World</li></ol>`,
 	}, {
-		have: &node{
-			nodeType: tableNode,
-			children: []*node{
-				&node{
-					nodeType: tableHeaderRowNode,
-					children: []*node{
-						nd(tableHeaderCellNode, []*node{text("header1")}),
-						nd(tableHeaderCellNode, []*node{text("header2")}),
-					},
-				},
-				&node{
-					nodeType: tableRowNode,
-					children: []*node{
-						nd(tableCellNode, []*node{text("Hello")}),
-						nd(tableCellNode, []*node{text("World")}),
-					},
-				},
-			},
-		},
+		have: nd(tableNode,
+			nd(tableHeaderRowNode,
+				nd(tableHeaderCellNode, text("header1")),
+				nd(tableHeaderCellNode, text("header2"))),
+			nd(tableRowNode,
+				nd(tableCellNode, text("Hello")),
+				nd(tableCellNode, text("World")))),
 		want: "<table>" +
 			"<tr>" +
 			"<th>header1</th>" +

@@ -46,6 +46,18 @@ func TestLaTexElements(t *testing.T) {
 	}, {
 		have: &node{nodeType: lineBreakNode},
 		want: `\\` + "\n",
+	}, {
+		have: &node{
+			nodeType: imageNode,
+			value: &image{
+				src: "http://www.example.org/sample.png",
+				alt: "A sample image",
+			}},
+		want: `\begin{figure}` + "\n" +
+			`\centering` + "\n" +
+			`\includegraphics{http://www.example.org/sample.png}` + "\n" +
+			`\caption{A sample image}` + "\n" +
+			`\end{figure}` + "\n",
 	}}
 
 	runCases(cases, exportLaTex, t)

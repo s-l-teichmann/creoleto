@@ -125,6 +125,17 @@ func (l *latex) link() *visitor {
 	}
 }
 
+func (l *latex) image(n *node) error {
+	img := n.value.(*image)
+	l.writeString(`\begin{figure}` + "\n")
+	l.writeString(`\centering` + "\n")
+	l.writeString(`\includegraphics{`)
+	l.writeString(latexReplacer.Replace(img.src))
+	l.writeString(`}` + "\n" + `\caption{`)
+	l.writeString(latexReplacer.Replace(img.alt))
+	return l.writeString(`}` + "\n" + `\end{figure}` + "\n")
+}
+
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
 	l := latex{out: bufio.NewWriter(out)}
@@ -161,8 +172,8 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: escapeNode
 		// TODO: noWikiNode
 		noWikiInlineNode: l.command("texttt"),
-		// TODO: imageNode
-		linkNode: l.link(),
+		imageNode:        &visitor{enter: l.image},
+		linkNode:         l.link(),
 		horizontalLineNode: &visitor{
 			enter: l.str(
 				"\n" + `\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}` + "\n")},

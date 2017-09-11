@@ -43,6 +43,9 @@ func TestLaTexElements(t *testing.T) {
 	}, {
 		have: nd(boldNode, text("Hello")),
 		want: `\textbf{Hello}`,
+	}, {
+		have: &node{nodeType: lineBreakNode},
+		want: `\\` + "\n",
 	}}
 
 	runCases(cases, exportLaTex, t)

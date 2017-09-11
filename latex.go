@@ -157,7 +157,7 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: heading5Node
 		// TODO: heading6Node
 		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
-		// TODO: lineBreakNode
+		lineBreakNode: &visitor{enter: l.str(`\\` + "\n")},
 		// TODO: escapeNode
 		// TODO: noWikiNode
 		noWikiInlineNode: l.command("texttt"),

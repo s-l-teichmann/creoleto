@@ -14,6 +14,7 @@ const (
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{cancel}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -125,6 +126,10 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 	err := doc.traverse(map[nodeType]*visitor{
 		textNode:         &visitor{enter: l.text},
 		noWikiInlineNode: l.command("texttt"),
+		boldNode:         l.command("textbf"),
+		italicsNode:      l.command("textit"),
+		underlinedNode:   l.command("underline"),
+		strikeNode:       l.command("cancel"),
 	})
 
 	if err != nil {

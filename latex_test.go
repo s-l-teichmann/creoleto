@@ -13,6 +13,18 @@ func TestLaTexElements(t *testing.T) {
 	}, {
 		have: text(`^`),
 		want: `\url{^}`,
+	}, {
+		have: nd(italicsNode, text("Hello")),
+		want: `\textit{Hello}`,
+	}, {
+		have: nd(underlinedNode, text("Hello")),
+		want: `\underline{Hello}`,
+	}, {
+		have: nd(strikeNode, text("Hello")),
+		want: `\cancel{Hello}`,
+	}, {
+		have: nd(boldNode, text("Hello")),
+		want: `\textbf{Hello}`,
 	}}
 
 	runCases(cases, exportLaTex, t)

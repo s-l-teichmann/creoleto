@@ -4,6 +4,11 @@
 // linkChildren repairs the parent/child relations.
 package main
 
+import (
+	"bytes"
+	"testing"
+)
+
 func linkChildren(n, p *node) {
 	if n != nil {
 		n.parent = p
@@ -24,5 +29,29 @@ func nd(typ nodeType, children ...*node) *node {
 	return &node{
 		nodeType: typ,
 		children: children,
+	}
+}
+
+type testCase struct {
+	have *node
+	want string
+}
+
+func runCases(cases []testCase, t *testing.T) {
+	var buf bytes.Buffer
+	var doc document
+
+	for i := range cases {
+		c := &cases[i]
+		buf.Reset()
+		linkChildren(c.have, nil)
+		doc.root = c.have
+		if err := exportXHTML(&doc, &buf, false); err != nil {
+			t.Fatalf("failed: %v", err)
+		}
+
+		if got := buf.String(); got != c.want {
+			t.Errorf("got '%s': want '%s'\n", got, c.want)
+		}
 	}
 }

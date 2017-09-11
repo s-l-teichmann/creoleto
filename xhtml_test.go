@@ -32,10 +32,7 @@ func TestStandalone(t *testing.T) {
 
 func TestElements(t *testing.T) {
 
-	cases := [...]struct {
-		have *node
-		want string
-	}{{
+	cases := []testCase{{
 		have: text("Hello <&>"),
 		want: "Hello &lt;&amp;&gt;",
 	}, {
@@ -143,20 +140,5 @@ func TestElements(t *testing.T) {
 			"</table>",
 	}}
 
-	var buf bytes.Buffer
-	var doc document
-
-	for i := range cases {
-		c := &cases[i]
-		buf.Reset()
-		linkChildren(c.have, nil)
-		doc.root = c.have
-		if err := exportXHTML(&doc, &buf, false); err != nil {
-			t.Fatalf("failed: %v", err)
-		}
-
-		if got := buf.String(); got != c.want {
-			t.Errorf("got '%s': want '%s'\n", got, c.want)
-		}
-	}
+	runCases(cases, t)
 }

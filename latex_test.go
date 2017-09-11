@@ -88,6 +88,11 @@ func TestLaTexElements(t *testing.T) {
 			nodeType: heading6Node,
 			value:    "Header 6"},
 		want: "\n\n\\subparagraph{Header 6}\\label{header-6}\n\n",
+	}, {
+		have: nd(noWikiNode, text(`\end{verbatim}`)),
+		want: "\n" + `\begin{verbatim}` + "\n" +
+			`\textbackslashend\{verbatim\}` + "\n" +
+			"\\end{verbatim}\n",
 	}}
 
 	runCases(cases, exportLaTex, t)

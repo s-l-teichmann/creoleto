@@ -209,7 +209,9 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
 		lineBreakNode: &visitor{enter: l.str(`\\` + "\n")},
 		// TODO: escapeNode
-		// TODO: noWikiNode
+		noWikiNode: &visitor{
+			l.str("\n" + `\begin{verbatim}` + "\n"),
+			l.str("\n" + `\end{verbatim}` + "\n")},
 		noWikiInlineNode: l.command("texttt"),
 		imageNode:        &visitor{enter: l.image},
 		linkNode:         l.link(),

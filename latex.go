@@ -152,7 +152,9 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		noWikiInlineNode: l.command("texttt"),
 		// TODO: imageNode
 		// TODO: linkNode
-		// TODO: horizontalLineNode
+		horizontalLineNode: &visitor{
+			enter: l.str(
+				"\n" + `\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}` + "\n")},
 	})
 
 	if err != nil {

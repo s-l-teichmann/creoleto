@@ -29,6 +29,9 @@ func TestLaTexElements(t *testing.T) {
 		have: nd(strikeNode, text("Hello")),
 		want: `\cancel{Hello}`,
 	}, {
+		have: &node{nodeType: horizontalLineNode},
+		want: "\n" + `\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}` + "\n",
+	}, {
 		have: nd(boldNode, text("Hello")),
 		want: `\textbf{Hello}`,
 	}}

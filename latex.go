@@ -183,11 +183,17 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		l.writeString(latexHeader)
 	}
 
-	// TODO: Implement document traversal.
 	err := doc.traverse(map[nodeType]*visitor{
-		// TODO: orderedListNode
-		// TODO: unorderedListNode
-		// TODO: listItemNode
+		orderedListNode: &visitor{
+			l.str("\n" + `\begin{enumerate}` + "\n" +
+				`\def\labelenumi{\arabic{enumi}.}` + "\n"),
+			l.str("\n" + `\end{enumerate}` + "\n")},
+		unorderedListNode: &visitor{
+			l.str("\n" + `\begin{itemize}` + "\n"),
+			l.str("\n" + `\end{itemize}` + "\n")},
+		listItemNode: &visitor{
+			l.str("\n" + `\item` + "\n"),
+			l.str("\n")},
 		textNode:        &visitor{enter: l.text},
 		boldNode:        l.command("textbf"),
 		italicsNode:     l.command("textit"),

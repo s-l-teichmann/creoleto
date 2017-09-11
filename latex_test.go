@@ -98,6 +98,27 @@ func TestLaTexElements(t *testing.T) {
 			nodeType: escapeNode,
 			value:    "Some text"},
 		want: "Some text",
+	}, {
+		have: nd(unorderedListNode,
+			nd(listItemNode, text("First")),
+			nd(listItemNode, text("Second"))),
+		want: "\n\\begin{itemize}\n\n" +
+			"\\item\n" +
+			"First\n\n" +
+			"\\item\n" +
+			"Second\n\n" +
+			"\\end{itemize}\n",
+	}, {
+		have: nd(orderedListNode,
+			nd(listItemNode, text("First")),
+			nd(listItemNode, text("Second"))),
+		want: "\n\\begin{enumerate}\n" +
+			`\def\labelenumi{\arabic{enumi}.}` + "\n\n" +
+			"\\item\n" +
+			"First\n\n" +
+			"\\item\n" +
+			"Second\n\n" +
+			"\\end{enumerate}\n",
 	}}
 
 	runCases(cases, exportLaTex, t)

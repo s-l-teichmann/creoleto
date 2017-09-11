@@ -208,7 +208,7 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		heading6Node:  &visitor{enter: l.header("subparagraph")},
 		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
 		lineBreakNode: &visitor{enter: l.str(`\\` + "\n")},
-		// TODO: escapeNode
+		escapeNode:    &visitor{enter: l.text},
 		noWikiNode: &visitor{
 			l.str("\n" + `\begin{verbatim}` + "\n"),
 			l.str("\n" + `\end{verbatim}` + "\n")},

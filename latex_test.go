@@ -93,6 +93,11 @@ func TestLaTexElements(t *testing.T) {
 		want: "\n" + `\begin{verbatim}` + "\n" +
 			`\textbackslashend\{verbatim\}` + "\n" +
 			"\\end{verbatim}\n",
+	}, {
+		have: &node{
+			nodeType: escapeNode,
+			value:    "Some text"},
+		want: "Some text",
 	}}
 
 	runCases(cases, exportLaTex, t)

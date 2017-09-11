@@ -5,8 +5,11 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"io"
+	"strconv"
 	"strings"
+	"unicode"
 )
 
 const (
@@ -94,12 +97,34 @@ var latexReplacer = strings.NewReplacer(
 	`[`, `{[}`)
 
 type latex struct {
-	out *bufio.Writer
+	out    *bufio.Writer
+	labels map[string]struct{}
 }
 
 func (l *latex) writeString(txt string) error {
 	_, err := l.out.WriteString(txt)
 	return err
+}
+
+func (l *latex) generateLabel(name string) string {
+	name = strings.ToLower(strings.TrimSpace(name))
+	name = strings.Map(func(r rune) rune {
+		if unicode.IsSpace(r) {
+			return '-'
+		}
+		return r
+	}, name)
+	if _, found := l.labels[name]; !found {
+		l.labels[name] = struct{}{}
+		return name
+	}
+	for i := 1; ; i++ {
+		n := name + "-" + strconv.Itoa(i)
+		if _, found := l.labels[n]; !found {
+			l.labels[n] = struct{}{}
+			return n
+		}
+	}
 }
 
 func (l *latex) str(txt string) func(*node) error {
@@ -136,9 +161,23 @@ func (l *latex) image(n *node) error {
 	return l.writeString(`}` + "\n" + `\end{figure}` + "\n")
 }
 
+func (l *latex) header(typ string) func(*node) error {
+	return func(n *node) error {
+		title := n.value.(string)
+		_, err := fmt.Fprintf(l.out, "\n\n\\%s{%s}\\label{%s}\n\n",
+			typ,
+			latexReplacer.Replace(title),
+			l.generateLabel(title))
+		return err
+	}
+}
+
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
-	l := latex{out: bufio.NewWriter(out)}
+	l := latex{
+		out:    bufio.NewWriter(out),
+		labels: make(map[string]struct{}),
+	}
 
 	if standalone {
 		l.writeString(latexHeader)
@@ -161,12 +200,12 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: tableCellNode
 		// TODO: tableHeaderRowNode
 		// TODO: tableHeaderCellNode
-		// TODO: heading1Node
-		// TODO: heading2Node
-		// TODO: heading3Node
-		// TODO: heading4Node
-		// TODO: heading5Node
-		// TODO: heading6Node
+		heading1Node:  &visitor{enter: l.header("section")},
+		heading2Node:  &visitor{enter: l.header("subsection")},
+		heading3Node:  &visitor{enter: l.header("subsubsection")},
+		heading4Node:  &visitor{enter: l.header("paragraph")},
+		heading5Node:  &visitor{enter: l.header("subparagraph")},
+		heading6Node:  &visitor{enter: l.header("subparagraph")},
 		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
 		lineBreakNode: &visitor{enter: l.str(`\\` + "\n")},
 		// TODO: escapeNode

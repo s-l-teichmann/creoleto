@@ -119,6 +119,21 @@ func TestLaTexElements(t *testing.T) {
 			"\\item\n" +
 			"Second\n\n" +
 			"\\end{enumerate}\n",
+	}, {
+		have: nd(tableNode,
+			nd(tableHeaderRowNode,
+				nd(tableHeaderCellNode, text("Tables")),
+				nd(tableHeaderCellNode, text("Are")),
+				nd(tableHeaderCellNode, text("Cool"))),
+			nd(tableRowNode,
+				nd(tableCellNode, text("A")),
+				nd(tableCellNode, text("B")),
+				nd(tableCellNode, text("C"))),
+			nd(tableRowNode,
+				nd(tableCellNode, text("D")),
+				nd(tableCellNode, text("E")),
+				nd(tableCellNode, text("F")))),
+		want: "", // TODO: specify output.
 	}}
 
 	runCases(cases, exportLaTex, t)

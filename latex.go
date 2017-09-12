@@ -172,6 +172,18 @@ func (l *latex) header(typ string) func(*node) error {
 	}
 }
 
+func (l *latex) tableHeader() *visitor {
+	return &visitor{
+		enter: func(n *node) error {
+			return l.writeString("\\toprule\n")
+		},
+		leave: func(n *node) error {
+			l.writeString("\n\\midrule\n")
+			return l.writeString("\\endhead\n")
+		},
+	}
+}
+
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
 	l := latex{
@@ -204,7 +216,7 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		// TODO: tableNode
 		// TODO: tableRowNode
 		// TODO: tableCellNode
-		// TODO: tableHeaderRowNode
+		tableHeaderRowNode: l.tableHeader(),
 		// TODO: tableHeaderCellNode
 		heading1Node:  &visitor{enter: l.header("section")},
 		heading2Node:  &visitor{enter: l.header("subsection")},

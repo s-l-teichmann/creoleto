@@ -161,7 +161,7 @@ func (l *latex) image(n *node) error {
 	return l.writeString(`}` + "\n" + `\end{figure}` + "\n")
 }
 
-func (l *latex) header(typ string) func(*node) error {
+func (l *latex) heading(typ string) func(*node) error {
 	return func(n *node) error {
 		title := n.value.(string)
 		_, err := fmt.Fprintf(l.out, "\n\n\\%s{%s}\\label{%s}\n\n",
@@ -240,12 +240,12 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		tableCellNode:       l.tableCell(),
 		tableHeaderRowNode:  l.tableHeader(),
 		tableHeaderCellNode: l.tableCell(),
-		heading1Node:        &visitor{enter: l.header("section")},
-		heading2Node:        &visitor{enter: l.header("subsection")},
-		heading3Node:        &visitor{enter: l.header("subsubsection")},
-		heading4Node:        &visitor{enter: l.header("paragraph")},
-		heading5Node:        &visitor{enter: l.header("subparagraph")},
-		heading6Node:        &visitor{enter: l.header("subparagraph")},
+		heading1Node:        &visitor{enter: l.heading("section")},
+		heading2Node:        &visitor{enter: l.heading("subsection")},
+		heading3Node:        &visitor{enter: l.heading("subsubsection")},
+		heading4Node:        &visitor{enter: l.heading("paragraph")},
+		heading5Node:        &visitor{enter: l.heading("subparagraph")},
+		heading6Node:        &visitor{enter: l.heading("subparagraph")},
 		paragraphNode:       &visitor{l.str("\n"), l.str("\n")},
 		lineBreakNode:       &visitor{enter: l.str(`\\` + "\n")},
 		escapeNode:          &visitor{enter: l.text},

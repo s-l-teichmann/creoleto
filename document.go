@@ -70,8 +70,8 @@ func (n *node) nextOfType(c *node) *node {
 
 func (n *node) numColumns() int {
 	var max int
-	var descent func(*node)
-	descent = func(current *node) {
+	var descend func(*node)
+	descend = func(current *node) {
 		if current == nil {
 			return
 		}
@@ -90,10 +90,10 @@ func (n *node) numColumns() int {
 			return
 		}
 		for _, c := range current.children {
-			descent(c)
+			descend(c)
 		}
 	}
-	descent(n)
+	descend(n)
 	return max
 }
 
@@ -112,8 +112,8 @@ func (d *document) traverse(visitors map[nodeType]*visitor) error {
 		return nil
 	}
 
-	var decent func(*node) error
-	decent = func(n *node) error {
+	var descend func(*node) error
+	descend = func(n *node) error {
 		if n == nil {
 			return nil
 		}
@@ -125,7 +125,7 @@ func (d *document) traverse(visitors map[nodeType]*visitor) error {
 		}
 
 		for _, child := range n.children {
-			if err := decent(child); err != nil {
+			if err := descend(child); err != nil {
 				return err
 			}
 		}
@@ -138,5 +138,5 @@ func (d *document) traverse(visitors map[nodeType]*visitor) error {
 		return nil
 	}
 
-	return decent(d.root)
+	return descend(d.root)
 }

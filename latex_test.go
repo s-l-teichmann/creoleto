@@ -122,18 +122,27 @@ func TestLaTexElements(t *testing.T) {
 	}, {
 		have: nd(tableNode,
 			nd(tableHeaderRowNode,
-				nd(tableHeaderCellNode, text("Tables")),
-				nd(tableHeaderCellNode, text("Are")),
-				nd(tableHeaderCellNode, text("Cool"))),
+				nd(tableHeaderCellNode, text("A")),
+				nd(tableHeaderCellNode, text("B")),
+				nd(tableHeaderCellNode, text("C"))),
 			nd(tableRowNode,
-				nd(tableCellNode, text("A")),
-				nd(tableCellNode, text("B")),
-				nd(tableCellNode, text("C"))),
+				nd(tableCellNode, text("a")),
+				nd(tableCellNode, text("b")),
+				nd(tableCellNode, text("c"))),
 			nd(tableRowNode,
-				nd(tableCellNode, text("D")),
-				nd(tableCellNode, text("E")),
-				nd(tableCellNode, text("F")))),
-		want: "", // TODO: specify output.
+				nd(tableCellNode, text("1")),
+				nd(tableCellNode, text("2")),
+				nd(tableCellNode, text("3")))),
+		want: "\n" +
+			`\begin{longtable}[]{@{}lll@{}}` + "\n" +
+			`\toprule` + "\n" +
+			`A & B & C\tabularnewline` + "\n" +
+			`\midrule` + "\n" +
+			`\endhead` + "\n" +
+			`a & b & c\tabularnewline` + "\n" +
+			`1 & 2 & 3\tabularnewline` + "\n\n" +
+			`\bottomrule` + "\n" +
+			`\end{longtable}` + "\n",
 	}}
 
 	runCases(cases, exportLaTex, t)

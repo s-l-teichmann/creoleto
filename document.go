@@ -51,6 +51,52 @@ type image struct {
 	alt string
 }
 
+func (n *node) nextOfType(c *node) *node {
+	if n == nil {
+		return nil
+	}
+	var found bool
+	for _, x := range n.children {
+		if found {
+			if x.nodeType == c.nodeType {
+				return x
+			}
+		} else {
+			found = x == c
+		}
+	}
+	return nil
+}
+
+func (n *node) numColumns() int {
+	var max int
+	var descent func(*node)
+	descent = func(current *node) {
+		if current == nil {
+			return
+		}
+		if current.nodeType == tableRowNode ||
+			current.nodeType == tableHeaderRowNode {
+			var count int
+			for _, c := range current.children {
+				if c.nodeType == tableCellNode ||
+					c.nodeType == tableHeaderCellNode {
+					count++
+				}
+			}
+			if count > max {
+				max = count
+			}
+			return
+		}
+		for _, c := range current.children {
+			descent(c)
+		}
+	}
+	descent(n)
+	return max
+}
+
 type document struct {
 	root *node
 }

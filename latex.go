@@ -172,14 +172,36 @@ func (l *latex) header(typ string) func(*node) error {
 	}
 }
 
-func (l *latex) tableHeader() *visitor {
+func (l *latex) table() *visitor {
 	return &visitor{
 		enter: func(n *node) error {
-			return l.writeString("\\toprule\n")
+			align := strings.Repeat("l", n.numColumns())
+			return l.writeString(
+				"\n\\begin{longtable}[]{@{}" + align + "@{}}\n" +
+					"\\toprule\n")
 		},
+		leave: l.str("\n\\bottomrule\n\\end{longtable}\n"),
+	}
+}
+
+func (l *latex) tableHeader() *visitor {
+	return &visitor{
 		leave: func(n *node) error {
-			l.writeString("\n\\midrule\n")
+			l.writeString("\\tabularnewline\n")
+			l.writeString("\\midrule\n")
 			return l.writeString("\\endhead\n")
+		},
+	}
+}
+
+func (l *latex) tableCell() *visitor {
+	return &visitor{
+		leave: func(n *node) error {
+			var err error
+			if n.parent.nextOfType(n) != nil {
+				err = l.writeString(" & ")
+			}
+			return err
 		},
 	}
 }
@@ -206,27 +228,27 @@ func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 		listItemNode: &visitor{
 			l.str("\n" + `\item` + "\n"),
 			l.str("\n")},
-		textNode:        &visitor{enter: l.text},
-		boldNode:        l.command("textbf"),
-		italicsNode:     l.command("textit"),
-		underlinedNode:  l.command("underline"),
-		strikeNode:      l.command("cancel"),
-		superscriptNode: l.command("textsuperscript"),
-		subscriptNode:   l.command("textsubscript"),
-		// TODO: tableNode
-		// TODO: tableRowNode
-		// TODO: tableCellNode
-		tableHeaderRowNode: l.tableHeader(),
-		// TODO: tableHeaderCellNode
-		heading1Node:  &visitor{enter: l.header("section")},
-		heading2Node:  &visitor{enter: l.header("subsection")},
-		heading3Node:  &visitor{enter: l.header("subsubsection")},
-		heading4Node:  &visitor{enter: l.header("paragraph")},
-		heading5Node:  &visitor{enter: l.header("subparagraph")},
-		heading6Node:  &visitor{enter: l.header("subparagraph")},
-		paragraphNode: &visitor{l.str("\n"), l.str("\n")},
-		lineBreakNode: &visitor{enter: l.str(`\\` + "\n")},
-		escapeNode:    &visitor{enter: l.text},
+		textNode:            &visitor{enter: l.text},
+		boldNode:            l.command("textbf"),
+		italicsNode:         l.command("textit"),
+		underlinedNode:      l.command("underline"),
+		strikeNode:          l.command("cancel"),
+		superscriptNode:     l.command("textsuperscript"),
+		subscriptNode:       l.command("textsubscript"),
+		tableNode:           l.table(),
+		tableRowNode:        &visitor{leave: l.str("\\tabularnewline\n")},
+		tableCellNode:       l.tableCell(),
+		tableHeaderRowNode:  l.tableHeader(),
+		tableHeaderCellNode: l.tableCell(),
+		heading1Node:        &visitor{enter: l.header("section")},
+		heading2Node:        &visitor{enter: l.header("subsection")},
+		heading3Node:        &visitor{enter: l.header("subsubsection")},
+		heading4Node:        &visitor{enter: l.header("paragraph")},
+		heading5Node:        &visitor{enter: l.header("subparagraph")},
+		heading6Node:        &visitor{enter: l.header("subparagraph")},
+		paragraphNode:       &visitor{l.str("\n"), l.str("\n")},
+		lineBreakNode:       &visitor{enter: l.str(`\\` + "\n")},
+		escapeNode:          &visitor{enter: l.text},
 		noWikiNode: &visitor{
 			l.str("\n" + `\begin{verbatim}` + "\n"),
 			l.str("\n" + `\end{verbatim}` + "\n")},

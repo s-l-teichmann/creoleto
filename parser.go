@@ -9,7 +9,7 @@ import (
 )
 
 type parser struct {
-	*prs.Basecreole10Listener
+	*prs.BaseCreole10Listener
 }
 
 func newParser() *parser {
@@ -19,9 +19,9 @@ func newParser() *parser {
 func (p *parser) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)
-	lexer := prs.Newcreole10Lexer(input)
+	lexer := prs.NewCreole10Lexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)
-	pa := prs.Newcreole10Parser(stream)
+	pa := prs.NewCreole10Parser(stream)
 	pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	pa.BuildParseTrees = true
 

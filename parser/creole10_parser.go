@@ -1,6 +1,6 @@
-// Generated from creole10.g4 by ANTLR 4.7.
+// Generated from Creole10.g4 by ANTLR 4.7.
 
-package parser // creole10
+package parser // Creole10
 
 import (
 	"fmt"
@@ -514,12 +514,12 @@ func init() {
 	}
 }
 
-type creole10Parser struct {
+type Creole10Parser struct {
 	*antlr.BaseParser
 }
 
-func Newcreole10Parser(input antlr.TokenStream) *creole10Parser {
-	this := new(creole10Parser)
+func NewCreole10Parser(input antlr.TokenStream) *Creole10Parser {
+	this := new(Creole10Parser)
 
 	this.BaseParser = antlr.NewBaseParser(input)
 
@@ -527,151 +527,151 @@ func Newcreole10Parser(input antlr.TokenStream) *creole10Parser {
 	this.RuleNames = ruleNames
 	this.LiteralNames = literalNames
 	this.SymbolicNames = symbolicNames
-	this.GrammarFileName = "creole10.g4"
+	this.GrammarFileName = "Creole10.g4"
 
 	return this
 }
 
-// creole10Parser tokens.
+// Creole10Parser tokens.
 const (
-	creole10ParserEOF                = antlr.TokenEOF
-	creole10ParserT__0               = 1
-	creole10ParserT__1               = 2
-	creole10ParserT__2               = 3
-	creole10ParserESCAPE             = 4
-	creole10ParserNOWIKI_BLOCK_CLOSE = 5
-	creole10ParserNEWLINE            = 6
-	creole10ParserBLANKS             = 7
-	creole10ParserCOLON_SLASH        = 8
-	creole10ParserITAL               = 9
-	creole10ParserNOWIKI_OPEN        = 10
-	creole10ParserNOWIKI_CLOSE       = 11
-	creole10ParserLINK_OPEN          = 12
-	creole10ParserLINK_CLOSE         = 13
-	creole10ParserIMAGE_OPEN         = 14
-	creole10ParserIMAGE_CLOSE        = 15
-	creole10ParserFORCED_LINEBREAK   = 16
-	creole10ParserEQUAL              = 17
-	creole10ParserPIPE               = 18
-	creole10ParserPOUND              = 19
-	creole10ParserDASH               = 20
-	creole10ParserSTAR               = 21
-	creole10ParserSLASH              = 22
-	creole10ParserEXTENSION          = 23
-	creole10ParserINSIGNIFICANT_CHAR = 24
+	Creole10ParserEOF                = antlr.TokenEOF
+	Creole10ParserT__0               = 1
+	Creole10ParserT__1               = 2
+	Creole10ParserT__2               = 3
+	Creole10ParserESCAPE             = 4
+	Creole10ParserNOWIKI_BLOCK_CLOSE = 5
+	Creole10ParserNEWLINE            = 6
+	Creole10ParserBLANKS             = 7
+	Creole10ParserCOLON_SLASH        = 8
+	Creole10ParserITAL               = 9
+	Creole10ParserNOWIKI_OPEN        = 10
+	Creole10ParserNOWIKI_CLOSE       = 11
+	Creole10ParserLINK_OPEN          = 12
+	Creole10ParserLINK_CLOSE         = 13
+	Creole10ParserIMAGE_OPEN         = 14
+	Creole10ParserIMAGE_CLOSE        = 15
+	Creole10ParserFORCED_LINEBREAK   = 16
+	Creole10ParserEQUAL              = 17
+	Creole10ParserPIPE               = 18
+	Creole10ParserPOUND              = 19
+	Creole10ParserDASH               = 20
+	Creole10ParserSTAR               = 21
+	Creole10ParserSLASH              = 22
+	Creole10ParserEXTENSION          = 23
+	Creole10ParserINSIGNIFICANT_CHAR = 24
 )
 
-// creole10Parser rules.
+// Creole10Parser rules.
 const (
-	creole10ParserRULE_start                         = 0
-	creole10ParserRULE_wikipage                      = 1
-	creole10ParserRULE_paragraphs                    = 2
-	creole10ParserRULE_paragraph                     = 3
-	creole10ParserRULE_text_paragraph                = 4
-	creole10ParserRULE_text_line                     = 5
-	creole10ParserRULE_text_firstelement             = 6
-	creole10ParserRULE_text_formattedelement         = 7
-	creole10ParserRULE_text_boldcontent              = 8
-	creole10ParserRULE_text_element                  = 9
-	creole10ParserRULE_nachmarkup                    = 10
-	creole10ParserRULE_text_italcontent              = 11
-	creole10ParserRULE_text_boldcontentpart          = 12
-	creole10ParserRULE_text_italcontentpart          = 13
-	creole10ParserRULE_text_bolditalcontent          = 14
-	creole10ParserRULE_text_formattedcontent         = 15
-	creole10ParserRULE_text_lineseparator1           = 16
-	creole10ParserRULE_text_inlineelement            = 17
-	creole10ParserRULE_text_first_inlineelement      = 18
-	creole10ParserRULE_text_first_unformattedelement = 19
-	creole10ParserRULE_text_first_unformatted        = 20
-	creole10ParserRULE_text_unformattedelement       = 21
-	creole10ParserRULE_text_unformatted              = 22
-	creole10ParserRULE_heading                       = 23
-	creole10ParserRULE_heading_content               = 24
-	creole10ParserRULE_list_ord                      = 25
-	creole10ParserRULE_list_ordelem                  = 26
-	creole10ParserRULE_list_unord                    = 27
-	creole10ParserRULE_list_unordelem                = 28
-	creole10ParserRULE_list_elem                     = 29
-	creole10ParserRULE_list_elem_markup              = 30
-	creole10ParserRULE_list_elemcontent              = 31
-	creole10ParserRULE_list_elemcontentpart          = 32
-	creole10ParserRULE_list_formatted_elem           = 33
-	creole10ParserRULE_onestar                       = 34
-	creole10ParserRULE_list_boldcontentpart          = 35
-	creole10ParserRULE_list_italcontentpart          = 36
-	creole10ParserRULE_list_bolditalcontent          = 37
-	creole10ParserRULE_table                         = 38
-	creole10ParserRULE_table_row                     = 39
-	creole10ParserRULE_table_cell                    = 40
-	creole10ParserRULE_table_headercell              = 41
-	creole10ParserRULE_table_normalcell              = 42
-	creole10ParserRULE_table_cellcontent             = 43
-	creole10ParserRULE_table_cellcontentpart         = 44
-	creole10ParserRULE_table_formattedelement        = 45
-	creole10ParserRULE_table_boldcontent             = 46
-	creole10ParserRULE_table_italcontent             = 47
-	creole10ParserRULE_table_boldcontentpart         = 48
-	creole10ParserRULE_table_italcontentpart         = 49
-	creole10ParserRULE_table_bolditalcontent         = 50
-	creole10ParserRULE_table_formattedcontent        = 51
-	creole10ParserRULE_table_inlineelement           = 52
-	creole10ParserRULE_table_unformattedelement      = 53
-	creole10ParserRULE_table_unformatted             = 54
-	creole10ParserRULE_nowiki_block                  = 55
-	creole10ParserRULE_nowikiblock_open_markup       = 56
-	creole10ParserRULE_nowikiblock_close_markup      = 57
-	creole10ParserRULE_nowiki_inline                 = 58
-	creole10ParserRULE_horizontalrule                = 59
-	creole10ParserRULE_link                          = 60
-	creole10ParserRULE_link_address                  = 61
-	creole10ParserRULE_link_interwiki_uri            = 62
-	creole10ParserRULE_link_interwiki_pagename       = 63
-	creole10ParserRULE_link_description              = 64
-	creole10ParserRULE_link_descriptionpart          = 65
-	creole10ParserRULE_link_bold_descriptionpart     = 66
-	creole10ParserRULE_link_ital_descriptionpart     = 67
-	creole10ParserRULE_link_boldital_description     = 68
-	creole10ParserRULE_link_descriptiontext          = 69
-	creole10ParserRULE_link_uri                      = 70
-	creole10ParserRULE_image                         = 71
-	creole10ParserRULE_image_uri                     = 72
-	creole10ParserRULE_image_alternative             = 73
-	creole10ParserRULE_image_alternativepart         = 74
-	creole10ParserRULE_image_bold_alternativepart    = 75
-	creole10ParserRULE_image_ital_alternativepart    = 76
-	creole10ParserRULE_image_boldital_alternative    = 77
-	creole10ParserRULE_image_alternativetext         = 78
-	creole10ParserRULE_extension                     = 79
-	creole10ParserRULE_extension_handler             = 80
-	creole10ParserRULE_extension_statement           = 81
-	creole10ParserRULE_escaped                       = 82
-	creole10ParserRULE_paragraph_separator           = 83
-	creole10ParserRULE_whitespaces                   = 84
-	creole10ParserRULE_blanks                        = 85
-	creole10ParserRULE_text_lineseparator            = 86
-	creole10ParserRULE_newline                       = 87
-	creole10ParserRULE_bold_markup                   = 88
-	creole10ParserRULE_ital_markup                   = 89
-	creole10ParserRULE_heading_markup                = 90
-	creole10ParserRULE_list_ordelem_markup           = 91
-	creole10ParserRULE_list_unordelem_markup         = 92
-	creole10ParserRULE_list_elemseparator            = 93
-	creole10ParserRULE_end_of_list                   = 94
-	creole10ParserRULE_table_cell_markup             = 95
-	creole10ParserRULE_table_headercell_markup       = 96
-	creole10ParserRULE_table_rowseparator            = 97
-	creole10ParserRULE_nowiki_open_markup            = 98
-	creole10ParserRULE_nowiki_close_markup           = 99
-	creole10ParserRULE_horizontalrule_markup         = 100
-	creole10ParserRULE_link_open_markup              = 101
-	creole10ParserRULE_link_close_markup             = 102
-	creole10ParserRULE_link_description_markup       = 103
-	creole10ParserRULE_image_open_markup             = 104
-	creole10ParserRULE_image_close_markup            = 105
-	creole10ParserRULE_image_alternative_markup      = 106
-	creole10ParserRULE_extension_markup              = 107
-	creole10ParserRULE_forced_linebreak              = 108
+	Creole10ParserRULE_start                         = 0
+	Creole10ParserRULE_wikipage                      = 1
+	Creole10ParserRULE_paragraphs                    = 2
+	Creole10ParserRULE_paragraph                     = 3
+	Creole10ParserRULE_text_paragraph                = 4
+	Creole10ParserRULE_text_line                     = 5
+	Creole10ParserRULE_text_firstelement             = 6
+	Creole10ParserRULE_text_formattedelement         = 7
+	Creole10ParserRULE_text_boldcontent              = 8
+	Creole10ParserRULE_text_element                  = 9
+	Creole10ParserRULE_nachmarkup                    = 10
+	Creole10ParserRULE_text_italcontent              = 11
+	Creole10ParserRULE_text_boldcontentpart          = 12
+	Creole10ParserRULE_text_italcontentpart          = 13
+	Creole10ParserRULE_text_bolditalcontent          = 14
+	Creole10ParserRULE_text_formattedcontent         = 15
+	Creole10ParserRULE_text_lineseparator1           = 16
+	Creole10ParserRULE_text_inlineelement            = 17
+	Creole10ParserRULE_text_first_inlineelement      = 18
+	Creole10ParserRULE_text_first_unformattedelement = 19
+	Creole10ParserRULE_text_first_unformatted        = 20
+	Creole10ParserRULE_text_unformattedelement       = 21
+	Creole10ParserRULE_text_unformatted              = 22
+	Creole10ParserRULE_heading                       = 23
+	Creole10ParserRULE_heading_content               = 24
+	Creole10ParserRULE_list_ord                      = 25
+	Creole10ParserRULE_list_ordelem                  = 26
+	Creole10ParserRULE_list_unord                    = 27
+	Creole10ParserRULE_list_unordelem                = 28
+	Creole10ParserRULE_list_elem                     = 29
+	Creole10ParserRULE_list_elem_markup              = 30
+	Creole10ParserRULE_list_elemcontent              = 31
+	Creole10ParserRULE_list_elemcontentpart          = 32
+	Creole10ParserRULE_list_formatted_elem           = 33
+	Creole10ParserRULE_onestar                       = 34
+	Creole10ParserRULE_list_boldcontentpart          = 35
+	Creole10ParserRULE_list_italcontentpart          = 36
+	Creole10ParserRULE_list_bolditalcontent          = 37
+	Creole10ParserRULE_table                         = 38
+	Creole10ParserRULE_table_row                     = 39
+	Creole10ParserRULE_table_cell                    = 40
+	Creole10ParserRULE_table_headercell              = 41
+	Creole10ParserRULE_table_normalcell              = 42
+	Creole10ParserRULE_table_cellcontent             = 43
+	Creole10ParserRULE_table_cellcontentpart         = 44
+	Creole10ParserRULE_table_formattedelement        = 45
+	Creole10ParserRULE_table_boldcontent             = 46
+	Creole10ParserRULE_table_italcontent             = 47
+	Creole10ParserRULE_table_boldcontentpart         = 48
+	Creole10ParserRULE_table_italcontentpart         = 49
+	Creole10ParserRULE_table_bolditalcontent         = 50
+	Creole10ParserRULE_table_formattedcontent        = 51
+	Creole10ParserRULE_table_inlineelement           = 52
+	Creole10ParserRULE_table_unformattedelement      = 53
+	Creole10ParserRULE_table_unformatted             = 54
+	Creole10ParserRULE_nowiki_block                  = 55
+	Creole10ParserRULE_nowikiblock_open_markup       = 56
+	Creole10ParserRULE_nowikiblock_close_markup      = 57
+	Creole10ParserRULE_nowiki_inline                 = 58
+	Creole10ParserRULE_horizontalrule                = 59
+	Creole10ParserRULE_link                          = 60
+	Creole10ParserRULE_link_address                  = 61
+	Creole10ParserRULE_link_interwiki_uri            = 62
+	Creole10ParserRULE_link_interwiki_pagename       = 63
+	Creole10ParserRULE_link_description              = 64
+	Creole10ParserRULE_link_descriptionpart          = 65
+	Creole10ParserRULE_link_bold_descriptionpart     = 66
+	Creole10ParserRULE_link_ital_descriptionpart     = 67
+	Creole10ParserRULE_link_boldital_description     = 68
+	Creole10ParserRULE_link_descriptiontext          = 69
+	Creole10ParserRULE_link_uri                      = 70
+	Creole10ParserRULE_image                         = 71
+	Creole10ParserRULE_image_uri                     = 72
+	Creole10ParserRULE_image_alternative             = 73
+	Creole10ParserRULE_image_alternativepart         = 74
+	Creole10ParserRULE_image_bold_alternativepart    = 75
+	Creole10ParserRULE_image_ital_alternativepart    = 76
+	Creole10ParserRULE_image_boldital_alternative    = 77
+	Creole10ParserRULE_image_alternativetext         = 78
+	Creole10ParserRULE_extension                     = 79
+	Creole10ParserRULE_extension_handler             = 80
+	Creole10ParserRULE_extension_statement           = 81
+	Creole10ParserRULE_escaped                       = 82
+	Creole10ParserRULE_paragraph_separator           = 83
+	Creole10ParserRULE_whitespaces                   = 84
+	Creole10ParserRULE_blanks                        = 85
+	Creole10ParserRULE_text_lineseparator            = 86
+	Creole10ParserRULE_newline                       = 87
+	Creole10ParserRULE_bold_markup                   = 88
+	Creole10ParserRULE_ital_markup                   = 89
+	Creole10ParserRULE_heading_markup                = 90
+	Creole10ParserRULE_list_ordelem_markup           = 91
+	Creole10ParserRULE_list_unordelem_markup         = 92
+	Creole10ParserRULE_list_elemseparator            = 93
+	Creole10ParserRULE_end_of_list                   = 94
+	Creole10ParserRULE_table_cell_markup             = 95
+	Creole10ParserRULE_table_headercell_markup       = 96
+	Creole10ParserRULE_table_rowseparator            = 97
+	Creole10ParserRULE_nowiki_open_markup            = 98
+	Creole10ParserRULE_nowiki_close_markup           = 99
+	Creole10ParserRULE_horizontalrule_markup         = 100
+	Creole10ParserRULE_link_open_markup              = 101
+	Creole10ParserRULE_link_close_markup             = 102
+	Creole10ParserRULE_link_description_markup       = 103
+	Creole10ParserRULE_image_open_markup             = 104
+	Creole10ParserRULE_image_close_markup            = 105
+	Creole10ParserRULE_image_alternative_markup      = 106
+	Creole10ParserRULE_extension_markup              = 107
+	Creole10ParserRULE_forced_linebreak              = 108
 )
 
 // IStartContext is an interface to support dynamic dispatch.
@@ -693,7 +693,7 @@ type StartContext struct {
 func NewEmptyStartContext() *StartContext {
 	var p = new(StartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_start
+	p.RuleIndex = Creole10ParserRULE_start
 	return p
 }
 
@@ -705,7 +705,7 @@ func NewStartContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_start
+	p.RuleIndex = Creole10ParserRULE_start
 
 	return p
 }
@@ -731,20 +731,20 @@ func (s *StartContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *StartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterStart(s)
 	}
 }
 
 func (s *StartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitStart(s)
 	}
 }
 
-func (p *creole10Parser) Start() (localctx IStartContext) {
+func (p *Creole10Parser) Start() (localctx IStartContext) {
 	localctx = NewStartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, creole10ParserRULE_start)
+	p.EnterRule(localctx, 0, Creole10ParserRULE_start)
 
 	defer func() {
 		p.ExitRule()
@@ -790,7 +790,7 @@ type WikipageContext struct {
 func NewEmptyWikipageContext() *WikipageContext {
 	var p = new(WikipageContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_wikipage
+	p.RuleIndex = Creole10ParserRULE_wikipage
 	return p
 }
 
@@ -802,7 +802,7 @@ func NewWikipageContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_wikipage
+	p.RuleIndex = Creole10ParserRULE_wikipage
 
 	return p
 }
@@ -820,7 +820,7 @@ func (s *WikipageContext) Paragraphs() IParagraphsContext {
 }
 
 func (s *WikipageContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *WikipageContext) Whitespaces() IWhitespacesContext {
@@ -842,20 +842,20 @@ func (s *WikipageContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *WikipageContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterWikipage(s)
 	}
 }
 
 func (s *WikipageContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitWikipage(s)
 	}
 }
 
-func (p *creole10Parser) Wikipage() (localctx IWikipageContext) {
+func (p *Creole10Parser) Wikipage() (localctx IWikipageContext) {
 	localctx = NewWikipageContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, creole10ParserRULE_wikipage)
+	p.EnterRule(localctx, 2, Creole10ParserRULE_wikipage)
 
 	defer func() {
 		p.ExitRule()
@@ -890,7 +890,7 @@ func (p *creole10Parser) Wikipage() (localctx IWikipageContext) {
 	}
 	{
 		p.SetState(224)
-		p.Match(creole10ParserEOF)
+		p.Match(Creole10ParserEOF)
 	}
 
 	return localctx
@@ -915,7 +915,7 @@ type ParagraphsContext struct {
 func NewEmptyParagraphsContext() *ParagraphsContext {
 	var p = new(ParagraphsContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_paragraphs
+	p.RuleIndex = Creole10ParserRULE_paragraphs
 	return p
 }
 
@@ -927,7 +927,7 @@ func NewParagraphsContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_paragraphs
+	p.RuleIndex = Creole10ParserRULE_paragraphs
 
 	return p
 }
@@ -966,20 +966,20 @@ func (s *ParagraphsContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *ParagraphsContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterParagraphs(s)
 	}
 }
 
 func (s *ParagraphsContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitParagraphs(s)
 	}
 }
 
-func (p *creole10Parser) Paragraphs() (localctx IParagraphsContext) {
+func (p *Creole10Parser) Paragraphs() (localctx IParagraphsContext) {
 	localctx = NewParagraphsContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, creole10ParserRULE_paragraphs)
+	p.EnterRule(localctx, 4, Creole10ParserRULE_paragraphs)
 
 	defer func() {
 		p.ExitRule()
@@ -1039,7 +1039,7 @@ type ParagraphContext struct {
 func NewEmptyParagraphContext() *ParagraphContext {
 	var p = new(ParagraphContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_paragraph
+	p.RuleIndex = Creole10ParserRULE_paragraph
 	return p
 }
 
@@ -1051,7 +1051,7 @@ func NewParagraphContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_paragraph
+	p.RuleIndex = Creole10ParserRULE_paragraph
 
 	return p
 }
@@ -1157,20 +1157,20 @@ func (s *ParagraphContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *ParagraphContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterParagraph(s)
 	}
 }
 
 func (s *ParagraphContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitParagraph(s)
 	}
 }
 
-func (p *creole10Parser) Paragraph() (localctx IParagraphContext) {
+func (p *Creole10Parser) Paragraph() (localctx IParagraphContext) {
 	localctx = NewParagraphContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, creole10ParserRULE_paragraph)
+	p.EnterRule(localctx, 6, Creole10ParserRULE_paragraph)
 
 	defer func() {
 		p.ExitRule()
@@ -1233,8 +1233,8 @@ func (p *creole10Parser) Paragraph() (localctx IParagraphContext) {
 		case 2:
 			p.SetState(240)
 
-			if !(p.GetInputStream().LA(1) == creole10ParserDASH && p.GetInputStream().LA(2) == creole10ParserDASH && p.GetInputStream().LA(3) == creole10ParserDASH && p.GetInputStream().LA(4) == creole10ParserDASH) {
-				panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1)==creole10ParserDASH && p.GetInputStream().LA(2)==creole10ParserDASH && p.GetInputStream().LA(3)==creole10ParserDASH && p.GetInputStream().LA(4)==creole10ParserDASH", ""))
+			if !(p.GetInputStream().LA(1) == Creole10ParserDASH && p.GetInputStream().LA(2) == Creole10ParserDASH && p.GetInputStream().LA(3) == Creole10ParserDASH && p.GetInputStream().LA(4) == Creole10ParserDASH) {
+				panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1)==Creole10ParserDASH && p.GetInputStream().LA(2)==Creole10ParserDASH && p.GetInputStream().LA(3)==Creole10ParserDASH && p.GetInputStream().LA(4)==Creole10ParserDASH", ""))
 			}
 			{
 				p.SetState(241)
@@ -1301,7 +1301,7 @@ type Text_paragraphContext struct {
 func NewEmptyText_paragraphContext() *Text_paragraphContext {
 	var p = new(Text_paragraphContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_paragraph
+	p.RuleIndex = Creole10ParserRULE_text_paragraph
 	return p
 }
 
@@ -1313,7 +1313,7 @@ func NewText_paragraphContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_paragraph
+	p.RuleIndex = Creole10ParserRULE_text_paragraph
 
 	return p
 }
@@ -1421,20 +1421,20 @@ func (s *Text_paragraphContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *Text_paragraphContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_paragraph(s)
 	}
 }
 
 func (s *Text_paragraphContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_paragraph(s)
 	}
 }
 
-func (p *creole10Parser) Text_paragraph() (localctx IText_paragraphContext) {
+func (p *Creole10Parser) Text_paragraph() (localctx IText_paragraphContext) {
 	localctx = NewText_paragraphContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, creole10ParserRULE_text_paragraph)
+	p.EnterRule(localctx, 8, Creole10ParserRULE_text_paragraph)
 
 	defer func() {
 		p.ExitRule()
@@ -1530,7 +1530,7 @@ type Text_lineContext struct {
 func NewEmptyText_lineContext() *Text_lineContext {
 	var p = new(Text_lineContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_line
+	p.RuleIndex = Creole10ParserRULE_text_line
 	return p
 }
 
@@ -1542,7 +1542,7 @@ func NewText_lineContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_line
+	p.RuleIndex = Creole10ParserRULE_text_line
 
 	return p
 }
@@ -1601,20 +1601,20 @@ func (s *Text_lineContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *Text_lineContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_line(s)
 	}
 }
 
 func (s *Text_lineContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_line(s)
 	}
 }
 
-func (p *creole10Parser) Text_line() (localctx IText_lineContext) {
+func (p *Creole10Parser) Text_line() (localctx IText_lineContext) {
 	localctx = NewText_lineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, creole10ParserRULE_text_line)
+	p.EnterRule(localctx, 10, Creole10ParserRULE_text_line)
 
 	defer func() {
 		p.ExitRule()
@@ -1683,7 +1683,7 @@ type Text_firstelementContext struct {
 func NewEmptyText_firstelementContext() *Text_firstelementContext {
 	var p = new(Text_firstelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_firstelement
+	p.RuleIndex = Creole10ParserRULE_text_firstelement
 	return p
 }
 
@@ -1695,7 +1695,7 @@ func NewText_firstelementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_firstelement
+	p.RuleIndex = Creole10ParserRULE_text_firstelement
 
 	return p
 }
@@ -1731,20 +1731,20 @@ func (s *Text_firstelementContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Text_firstelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_firstelement(s)
 	}
 }
 
 func (s *Text_firstelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_firstelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_firstelement() (localctx IText_firstelementContext) {
+func (p *Creole10Parser) Text_firstelement() (localctx IText_firstelementContext) {
 	localctx = NewText_firstelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, creole10ParserRULE_text_firstelement)
+	p.EnterRule(localctx, 12, Creole10ParserRULE_text_firstelement)
 
 	defer func() {
 		p.ExitRule()
@@ -1769,8 +1769,8 @@ func (p *creole10Parser) Text_firstelement() (localctx IText_firstelementContext
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(276)
 
-		if !(p.GetInputStream().LA(1) != creole10ParserSTAR || (p.GetInputStream().LA(1) == creole10ParserSTAR && p.GetInputStream().LA(2) == creole10ParserSTAR)) {
-			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1) != creole10ParserSTAR || (p.GetInputStream().LA(1) == creole10ParserSTAR && p.GetInputStream().LA(2) == creole10ParserSTAR)", ""))
+		if !(p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)) {
+			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)", ""))
 		}
 		{
 			p.SetState(277)
@@ -1808,7 +1808,7 @@ type Text_formattedelementContext struct {
 func NewEmptyText_formattedelementContext() *Text_formattedelementContext {
 	var p = new(Text_formattedelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_formattedelement
+	p.RuleIndex = Creole10ParserRULE_text_formattedelement
 	return p
 }
 
@@ -1820,7 +1820,7 @@ func NewText_formattedelementContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_formattedelement
+	p.RuleIndex = Creole10ParserRULE_text_formattedelement
 
 	return p
 }
@@ -1861,7 +1861,7 @@ func (s *Text_formattedelementContext) Text_italcontent() IText_italcontentConte
 }
 
 func (s *Text_formattedelementContext) NEWLINE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, 0)
+	return s.GetToken(Creole10ParserNEWLINE, 0)
 }
 
 func (s *Text_formattedelementContext) AllBold_markup() []IBold_markupContext {
@@ -1906,20 +1906,20 @@ func (s *Text_formattedelementContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Text_formattedelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_formattedelement(s)
 	}
 }
 
 func (s *Text_formattedelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_formattedelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_formattedelement() (localctx IText_formattedelementContext) {
+func (p *Creole10Parser) Text_formattedelement() (localctx IText_formattedelementContext) {
 	localctx = NewText_formattedelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, creole10ParserRULE_text_formattedelement)
+	p.EnterRule(localctx, 14, Creole10ParserRULE_text_formattedelement)
 	var _la int
 
 	defer func() {
@@ -1942,7 +1942,7 @@ func (p *creole10Parser) Text_formattedelement() (localctx IText_formattedelemen
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(281)
@@ -1960,10 +1960,10 @@ func (p *creole10Parser) Text_formattedelement() (localctx IText_formattedelemen
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la == creole10ParserNEWLINE {
+			if _la == Creole10ParserNEWLINE {
 				{
 					p.SetState(283)
-					p.Match(creole10ParserNEWLINE)
+					p.Match(Creole10ParserNEWLINE)
 				}
 
 			}
@@ -1974,7 +1974,7 @@ func (p *creole10Parser) Text_formattedelement() (localctx IText_formattedelemen
 
 		}
 
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(289)
@@ -1992,10 +1992,10 @@ func (p *creole10Parser) Text_formattedelement() (localctx IText_formattedelemen
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la == creole10ParserNEWLINE {
+			if _la == Creole10ParserNEWLINE {
 				{
 					p.SetState(291)
-					p.Match(creole10ParserNEWLINE)
+					p.Match(Creole10ParserNEWLINE)
 				}
 
 			}
@@ -2032,7 +2032,7 @@ type Text_boldcontentContext struct {
 func NewEmptyText_boldcontentContext() *Text_boldcontentContext {
 	var p = new(Text_boldcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_boldcontent
+	p.RuleIndex = Creole10ParserRULE_text_boldcontent
 	return p
 }
 
@@ -2044,7 +2044,7 @@ func NewText_boldcontentContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_boldcontent
+	p.RuleIndex = Creole10ParserRULE_text_boldcontent
 
 	return p
 }
@@ -2085,7 +2085,7 @@ func (s *Text_boldcontentContext) Text_boldcontentpart(i int) IText_boldcontentp
 }
 
 func (s *Text_boldcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Text_boldcontentContext) GetRuleContext() antlr.RuleContext {
@@ -2097,20 +2097,20 @@ func (s *Text_boldcontentContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Text_boldcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_boldcontent(s)
 	}
 }
 
 func (s *Text_boldcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_boldcontent(s)
 	}
 }
 
-func (p *creole10Parser) Text_boldcontent() (localctx IText_boldcontentContext) {
+func (p *Creole10Parser) Text_boldcontent() (localctx IText_boldcontentContext) {
 	localctx = NewText_boldcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, creole10ParserRULE_text_boldcontent)
+	p.EnterRule(localctx, 16, Creole10ParserRULE_text_boldcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -2166,7 +2166,7 @@ func (p *creole10Parser) Text_boldcontent() (localctx IText_boldcontentContext) 
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(308)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	}
@@ -2193,7 +2193,7 @@ type Text_elementContext struct {
 func NewEmptyText_elementContext() *Text_elementContext {
 	var p = new(Text_elementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_element
+	p.RuleIndex = Creole10ParserRULE_text_element
 	return p
 }
 
@@ -2205,7 +2205,7 @@ func NewText_elementContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_element
+	p.RuleIndex = Creole10ParserRULE_text_element
 
 	return p
 }
@@ -2251,20 +2251,20 @@ func (s *Text_elementContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Text_elementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_element(s)
 	}
 }
 
 func (s *Text_elementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_element(s)
 	}
 }
 
-func (p *creole10Parser) Text_element() (localctx IText_elementContext) {
+func (p *Creole10Parser) Text_element() (localctx IText_elementContext) {
 	localctx = NewText_elementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, creole10ParserRULE_text_element)
+	p.EnterRule(localctx, 18, Creole10ParserRULE_text_element)
 
 	defer func() {
 		p.ExitRule()
@@ -2338,7 +2338,7 @@ type NachmarkupContext struct {
 func NewEmptyNachmarkupContext() *NachmarkupContext {
 	var p = new(NachmarkupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nachmarkup
+	p.RuleIndex = Creole10ParserRULE_nachmarkup
 	return p
 }
 
@@ -2350,7 +2350,7 @@ func NewNachmarkupContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nachmarkup
+	p.RuleIndex = Creole10ParserRULE_nachmarkup
 
 	return p
 }
@@ -2358,7 +2358,7 @@ func NewNachmarkupContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *NachmarkupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *NachmarkupContext) NEWLINE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, 0)
+	return s.GetToken(Creole10ParserNEWLINE, 0)
 }
 
 func (s *NachmarkupContext) GetRuleContext() antlr.RuleContext {
@@ -2370,20 +2370,20 @@ func (s *NachmarkupContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *NachmarkupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNachmarkup(s)
 	}
 }
 
 func (s *NachmarkupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNachmarkup(s)
 	}
 }
 
-func (p *creole10Parser) Nachmarkup() (localctx INachmarkupContext) {
+func (p *Creole10Parser) Nachmarkup() (localctx INachmarkupContext) {
 	localctx = NewNachmarkupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, creole10ParserRULE_nachmarkup)
+	p.EnterRule(localctx, 20, Creole10ParserRULE_nachmarkup)
 
 	defer func() {
 		p.ExitRule()
@@ -2404,7 +2404,7 @@ func (p *creole10Parser) Nachmarkup() (localctx INachmarkupContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(320)
-		p.Match(creole10ParserNEWLINE)
+		p.Match(Creole10ParserNEWLINE)
 	}
 
 	return localctx
@@ -2429,7 +2429,7 @@ type Text_italcontentContext struct {
 func NewEmptyText_italcontentContext() *Text_italcontentContext {
 	var p = new(Text_italcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_italcontent
+	p.RuleIndex = Creole10ParserRULE_text_italcontent
 	return p
 }
 
@@ -2441,7 +2441,7 @@ func NewText_italcontentContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_italcontent
+	p.RuleIndex = Creole10ParserRULE_text_italcontent
 
 	return p
 }
@@ -2482,7 +2482,7 @@ func (s *Text_italcontentContext) Text_italcontentpart(i int) IText_italcontentp
 }
 
 func (s *Text_italcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Text_italcontentContext) GetRuleContext() antlr.RuleContext {
@@ -2494,20 +2494,20 @@ func (s *Text_italcontentContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Text_italcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_italcontent(s)
 	}
 }
 
 func (s *Text_italcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_italcontent(s)
 	}
 }
 
-func (p *creole10Parser) Text_italcontent() (localctx IText_italcontentContext) {
+func (p *Creole10Parser) Text_italcontent() (localctx IText_italcontentContext) {
 	localctx = NewText_italcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, creole10ParserRULE_text_italcontent)
+	p.EnterRule(localctx, 22, Creole10ParserRULE_text_italcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -2563,7 +2563,7 @@ func (p *creole10Parser) Text_italcontent() (localctx IText_italcontentContext) 
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(331)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	}
@@ -2590,7 +2590,7 @@ type Text_boldcontentpartContext struct {
 func NewEmptyText_boldcontentpartContext() *Text_boldcontentpartContext {
 	var p = new(Text_boldcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_text_boldcontentpart
 	return p
 }
 
@@ -2602,7 +2602,7 @@ func NewText_boldcontentpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_text_boldcontentpart
 
 	return p
 }
@@ -2661,20 +2661,20 @@ func (s *Text_boldcontentpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *Text_boldcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_boldcontentpart(s)
 	}
 }
 
 func (s *Text_boldcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_boldcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) Text_boldcontentpart() (localctx IText_boldcontentpartContext) {
+func (p *Creole10Parser) Text_boldcontentpart() (localctx IText_boldcontentpartContext) {
 	localctx = NewText_boldcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, creole10ParserRULE_text_boldcontentpart)
+	p.EnterRule(localctx, 24, Creole10ParserRULE_text_boldcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -2747,7 +2747,7 @@ type Text_italcontentpartContext struct {
 func NewEmptyText_italcontentpartContext() *Text_italcontentpartContext {
 	var p = new(Text_italcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_text_italcontentpart
 	return p
 }
 
@@ -2759,7 +2759,7 @@ func NewText_italcontentpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_text_italcontentpart
 
 	return p
 }
@@ -2818,20 +2818,20 @@ func (s *Text_italcontentpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *Text_italcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_italcontentpart(s)
 	}
 }
 
 func (s *Text_italcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_italcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) Text_italcontentpart() (localctx IText_italcontentpartContext) {
+func (p *Creole10Parser) Text_italcontentpart() (localctx IText_italcontentpartContext) {
 	localctx = NewText_italcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, creole10ParserRULE_text_italcontentpart)
+	p.EnterRule(localctx, 26, Creole10ParserRULE_text_italcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -2904,7 +2904,7 @@ type Text_bolditalcontentContext struct {
 func NewEmptyText_bolditalcontentContext() *Text_bolditalcontentContext {
 	var p = new(Text_bolditalcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_text_bolditalcontent
 	return p
 }
 
@@ -2916,7 +2916,7 @@ func NewText_bolditalcontentContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_text_bolditalcontent
 
 	return p
 }
@@ -2944,7 +2944,7 @@ func (s *Text_bolditalcontentContext) Text_formattedcontent() IText_formattedcon
 }
 
 func (s *Text_bolditalcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Text_bolditalcontentContext) GetRuleContext() antlr.RuleContext {
@@ -2956,20 +2956,20 @@ func (s *Text_bolditalcontentContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *Text_bolditalcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_bolditalcontent(s)
 	}
 }
 
 func (s *Text_bolditalcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_bolditalcontent(s)
 	}
 }
 
-func (p *creole10Parser) Text_bolditalcontent() (localctx IText_bolditalcontentContext) {
+func (p *Creole10Parser) Text_bolditalcontent() (localctx IText_bolditalcontentContext) {
 	localctx = NewText_bolditalcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, creole10ParserRULE_text_bolditalcontent)
+	p.EnterRule(localctx, 28, Creole10ParserRULE_text_bolditalcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -3017,7 +3017,7 @@ func (p *creole10Parser) Text_bolditalcontent() (localctx IText_bolditalcontentC
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(356)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	}
@@ -3044,7 +3044,7 @@ type Text_formattedcontentContext struct {
 func NewEmptyText_formattedcontentContext() *Text_formattedcontentContext {
 	var p = new(Text_formattedcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_formattedcontent
+	p.RuleIndex = Creole10ParserRULE_text_formattedcontent
 	return p
 }
 
@@ -3056,7 +3056,7 @@ func NewText_formattedcontentContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_formattedcontent
+	p.RuleIndex = Creole10ParserRULE_text_formattedcontent
 
 	return p
 }
@@ -3141,20 +3141,20 @@ func (s *Text_formattedcontentContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Text_formattedcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_formattedcontent(s)
 	}
 }
 
 func (s *Text_formattedcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_formattedcontent(s)
 	}
 }
 
-func (p *creole10Parser) Text_formattedcontent() (localctx IText_formattedcontentContext) {
+func (p *Creole10Parser) Text_formattedcontent() (localctx IText_formattedcontentContext) {
 	localctx = NewText_formattedcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, creole10ParserRULE_text_formattedcontent)
+	p.EnterRule(localctx, 30, Creole10ParserRULE_text_formattedcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -3231,7 +3231,7 @@ type Text_lineseparator1Context struct {
 func NewEmptyText_lineseparator1Context() *Text_lineseparator1Context {
 	var p = new(Text_lineseparator1Context)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_lineseparator1
+	p.RuleIndex = Creole10ParserRULE_text_lineseparator1
 	return p
 }
 
@@ -3243,7 +3243,7 @@ func NewText_lineseparator1Context(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_lineseparator1
+	p.RuleIndex = Creole10ParserRULE_text_lineseparator1
 
 	return p
 }
@@ -3269,20 +3269,20 @@ func (s *Text_lineseparator1Context) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *Text_lineseparator1Context) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_lineseparator1(s)
 	}
 }
 
 func (s *Text_lineseparator1Context) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_lineseparator1(s)
 	}
 }
 
-func (p *creole10Parser) Text_lineseparator1() (localctx IText_lineseparator1Context) {
+func (p *Creole10Parser) Text_lineseparator1() (localctx IText_lineseparator1Context) {
 	localctx = NewText_lineseparator1Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, creole10ParserRULE_text_lineseparator1)
+	p.EnterRule(localctx, 32, Creole10ParserRULE_text_lineseparator1)
 
 	defer func() {
 		p.ExitRule()
@@ -3303,8 +3303,8 @@ func (p *creole10Parser) Text_lineseparator1() (localctx IText_lineseparator1Con
 	p.EnterOuterAlt(localctx, 1)
 	p.SetState(368)
 
-	if !(p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE) {
-		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE", ""))
+	if !(p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE) {
+		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE", ""))
 	}
 	{
 		p.SetState(369)
@@ -3333,7 +3333,7 @@ type Text_inlineelementContext struct {
 func NewEmptyText_inlineelementContext() *Text_inlineelementContext {
 	var p = new(Text_inlineelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_inlineelement
+	p.RuleIndex = Creole10ParserRULE_text_inlineelement
 	return p
 }
 
@@ -3345,7 +3345,7 @@ func NewText_inlineelementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_inlineelement
+	p.RuleIndex = Creole10ParserRULE_text_inlineelement
 
 	return p
 }
@@ -3381,20 +3381,20 @@ func (s *Text_inlineelementContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Text_inlineelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_inlineelement(s)
 	}
 }
 
 func (s *Text_inlineelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_inlineelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_inlineelement() (localctx IText_inlineelementContext) {
+func (p *Creole10Parser) Text_inlineelement() (localctx IText_inlineelementContext) {
 	localctx = NewText_inlineelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, creole10ParserRULE_text_inlineelement)
+	p.EnterRule(localctx, 34, Creole10ParserRULE_text_inlineelement)
 
 	defer func() {
 		p.ExitRule()
@@ -3416,14 +3416,14 @@ func (p *creole10Parser) Text_inlineelement() (localctx IText_inlineelementConte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserLINK_OPEN, creole10ParserIMAGE_OPEN, creole10ParserEXTENSION:
+	case Creole10ParserLINK_OPEN, Creole10ParserIMAGE_OPEN, Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(371)
 			p.Text_first_inlineelement()
 		}
 
-	case creole10ParserNOWIKI_OPEN:
+	case Creole10ParserNOWIKI_OPEN:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(372)
@@ -3456,7 +3456,7 @@ type Text_first_inlineelementContext struct {
 func NewEmptyText_first_inlineelementContext() *Text_first_inlineelementContext {
 	var p = new(Text_first_inlineelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_first_inlineelement
+	p.RuleIndex = Creole10ParserRULE_text_first_inlineelement
 	return p
 }
 
@@ -3468,7 +3468,7 @@ func NewText_first_inlineelementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_first_inlineelement
+	p.RuleIndex = Creole10ParserRULE_text_first_inlineelement
 
 	return p
 }
@@ -3514,20 +3514,20 @@ func (s *Text_first_inlineelementContext) ToStringTree(ruleNames []string, recog
 }
 
 func (s *Text_first_inlineelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_first_inlineelement(s)
 	}
 }
 
 func (s *Text_first_inlineelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_first_inlineelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_first_inlineelement() (localctx IText_first_inlineelementContext) {
+func (p *Creole10Parser) Text_first_inlineelement() (localctx IText_first_inlineelementContext) {
 	localctx = NewText_first_inlineelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, creole10ParserRULE_text_first_inlineelement)
+	p.EnterRule(localctx, 36, Creole10ParserRULE_text_first_inlineelement)
 
 	defer func() {
 		p.ExitRule()
@@ -3549,21 +3549,21 @@ func (p *creole10Parser) Text_first_inlineelement() (localctx IText_first_inline
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserLINK_OPEN:
+	case Creole10ParserLINK_OPEN:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(375)
 			p.Link()
 		}
 
-	case creole10ParserIMAGE_OPEN:
+	case Creole10ParserIMAGE_OPEN:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(376)
 			p.Image()
 		}
 
-	case creole10ParserEXTENSION:
+	case Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(377)
@@ -3596,7 +3596,7 @@ type Text_first_unformattedelementContext struct {
 func NewEmptyText_first_unformattedelementContext() *Text_first_unformattedelementContext {
 	var p = new(Text_first_unformattedelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_first_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_text_first_unformattedelement
 	return p
 }
 
@@ -3608,7 +3608,7 @@ func NewText_first_unformattedelementContext(parser antlr.Parser, parent antlr.P
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_first_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_text_first_unformattedelement
 
 	return p
 }
@@ -3644,20 +3644,20 @@ func (s *Text_first_unformattedelementContext) ToStringTree(ruleNames []string, 
 }
 
 func (s *Text_first_unformattedelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_first_unformattedelement(s)
 	}
 }
 
 func (s *Text_first_unformattedelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_first_unformattedelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_first_unformattedelement() (localctx IText_first_unformattedelementContext) {
+func (p *Creole10Parser) Text_first_unformattedelement() (localctx IText_first_unformattedelementContext) {
 	localctx = NewText_first_unformattedelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, creole10ParserRULE_text_first_unformattedelement)
+	p.EnterRule(localctx, 38, Creole10ParserRULE_text_first_unformattedelement)
 
 	defer func() {
 		p.ExitRule()
@@ -3679,14 +3679,14 @@ func (p *creole10Parser) Text_first_unformattedelement() (localctx IText_first_u
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(380)
 			p.Text_first_unformatted()
 		}
 
-	case creole10ParserLINK_OPEN, creole10ParserIMAGE_OPEN, creole10ParserEXTENSION:
+	case Creole10ParserLINK_OPEN, Creole10ParserIMAGE_OPEN, Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(381)
@@ -3719,7 +3719,7 @@ type Text_first_unformattedContext struct {
 func NewEmptyText_first_unformattedContext() *Text_first_unformattedContext {
 	var p = new(Text_first_unformattedContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_first_unformatted
+	p.RuleIndex = Creole10ParserRULE_text_first_unformatted
 	return p
 }
 
@@ -3731,7 +3731,7 @@ func NewText_first_unformattedContext(parser antlr.Parser, parent antlr.ParserRu
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_first_unformatted
+	p.RuleIndex = Creole10ParserRULE_text_first_unformatted
 
 	return p
 }
@@ -3785,107 +3785,107 @@ func (s *Text_first_unformattedContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Text_first_unformattedContext) AllPOUND() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPOUND)
+	return s.GetTokens(Creole10ParserPOUND)
 }
 
 func (s *Text_first_unformattedContext) POUND(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPOUND, i)
+	return s.GetToken(Creole10ParserPOUND, i)
 }
 
 func (s *Text_first_unformattedContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Text_first_unformattedContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Text_first_unformattedContext) AllEQUAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEQUAL)
+	return s.GetTokens(Creole10ParserEQUAL)
 }
 
 func (s *Text_first_unformattedContext) EQUAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEQUAL, i)
+	return s.GetToken(Creole10ParserEQUAL, i)
 }
 
 func (s *Text_first_unformattedContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPIPE)
+	return s.GetTokens(Creole10ParserPIPE)
 }
 
 func (s *Text_first_unformattedContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, i)
+	return s.GetToken(Creole10ParserPIPE, i)
 }
 
 func (s *Text_first_unformattedContext) AllITAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserITAL)
+	return s.GetTokens(Creole10ParserITAL)
 }
 
 func (s *Text_first_unformattedContext) ITAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, i)
+	return s.GetToken(Creole10ParserITAL, i)
 }
 
 func (s *Text_first_unformattedContext) AllLINK_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_OPEN)
+	return s.GetTokens(Creole10ParserLINK_OPEN)
 }
 
 func (s *Text_first_unformattedContext) LINK_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, i)
+	return s.GetToken(Creole10ParserLINK_OPEN, i)
 }
 
 func (s *Text_first_unformattedContext) AllIMAGE_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_OPEN)
+	return s.GetTokens(Creole10ParserIMAGE_OPEN)
 }
 
 func (s *Text_first_unformattedContext) IMAGE_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, i)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, i)
 }
 
 func (s *Text_first_unformattedContext) AllNOWIKI_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_OPEN)
+	return s.GetTokens(Creole10ParserNOWIKI_OPEN)
 }
 
 func (s *Text_first_unformattedContext) NOWIKI_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, i)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, i)
 }
 
 func (s *Text_first_unformattedContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Text_first_unformattedContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Text_first_unformattedContext) AllFORCED_LINEBREAK() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserFORCED_LINEBREAK)
+	return s.GetTokens(Creole10ParserFORCED_LINEBREAK)
 }
 
 func (s *Text_first_unformattedContext) FORCED_LINEBREAK(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, i)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, i)
 }
 
 func (s *Text_first_unformattedContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Text_first_unformattedContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Text_first_unformattedContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Text_first_unformattedContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Text_first_unformattedContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Text_first_unformattedContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Text_first_unformattedContext) GetRuleContext() antlr.RuleContext {
@@ -3897,20 +3897,20 @@ func (s *Text_first_unformattedContext) ToStringTree(ruleNames []string, recog a
 }
 
 func (s *Text_first_unformattedContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_first_unformatted(s)
 	}
 }
 
 func (s *Text_first_unformattedContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_first_unformatted(s)
 	}
 }
 
-func (p *creole10Parser) Text_first_unformatted() (localctx IText_first_unformattedContext) {
+func (p *Creole10Parser) Text_first_unformatted() (localctx IText_first_unformattedContext) {
 	localctx = NewText_first_unformattedContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, creole10ParserRULE_text_first_unformatted)
+	p.EnterRule(localctx, 40, Creole10ParserRULE_text_first_unformatted)
 	var _la int
 
 	defer func() {
@@ -3942,24 +3942,24 @@ func (p *creole10Parser) Text_first_unformatted() (localctx IText_first_unformat
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+			case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 				p.SetState(384)
 				_la = p.GetTokenStream().LA(1)
 
-				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserITAL - -1))|(1<<(creole10ParserNOWIKI_OPEN - -1))|(1<<(creole10ParserLINK_OPEN - -1))|(1<<(creole10ParserIMAGE_OPEN - -1))|(1<<(creole10ParserFORCED_LINEBREAK - -1))|(1<<(creole10ParserEQUAL - -1))|(1<<(creole10ParserPIPE - -1))|(1<<(creole10ParserPOUND - -1))|(1<<(creole10ParserSTAR - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserITAL - -1))|(1<<(Creole10ParserNOWIKI_OPEN - -1))|(1<<(Creole10ParserLINK_OPEN - -1))|(1<<(Creole10ParserIMAGE_OPEN - -1))|(1<<(Creole10ParserFORCED_LINEBREAK - -1))|(1<<(Creole10ParserEQUAL - -1))|(1<<(Creole10ParserPIPE - -1))|(1<<(Creole10ParserPOUND - -1))|(1<<(Creole10ParserSTAR - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
 					p.Consume()
 				}
 
-			case creole10ParserFORCED_LINEBREAK:
+			case Creole10ParserFORCED_LINEBREAK:
 				{
 					p.SetState(385)
 					p.Forced_linebreak()
 				}
 
-			case creole10ParserESCAPE:
+			case Creole10ParserESCAPE:
 				{
 					p.SetState(386)
 					p.Escaped()
@@ -4000,7 +4000,7 @@ type Text_unformattedelementContext struct {
 func NewEmptyText_unformattedelementContext() *Text_unformattedelementContext {
 	var p = new(Text_unformattedelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_text_unformattedelement
 	return p
 }
 
@@ -4012,7 +4012,7 @@ func NewText_unformattedelementContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_text_unformattedelement
 
 	return p
 }
@@ -4048,20 +4048,20 @@ func (s *Text_unformattedelementContext) ToStringTree(ruleNames []string, recog 
 }
 
 func (s *Text_unformattedelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_unformattedelement(s)
 	}
 }
 
 func (s *Text_unformattedelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_unformattedelement(s)
 	}
 }
 
-func (p *creole10Parser) Text_unformattedelement() (localctx IText_unformattedelementContext) {
+func (p *Creole10Parser) Text_unformattedelement() (localctx IText_unformattedelementContext) {
 	localctx = NewText_unformattedelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, creole10ParserRULE_text_unformattedelement)
+	p.EnterRule(localctx, 42, Creole10ParserRULE_text_unformattedelement)
 
 	defer func() {
 		p.ExitRule()
@@ -4083,14 +4083,14 @@ func (p *creole10Parser) Text_unformattedelement() (localctx IText_unformattedel
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(391)
 			p.Text_unformatted()
 		}
 
-	case creole10ParserNOWIKI_OPEN, creole10ParserLINK_OPEN, creole10ParserIMAGE_OPEN, creole10ParserEXTENSION:
+	case Creole10ParserNOWIKI_OPEN, Creole10ParserLINK_OPEN, Creole10ParserIMAGE_OPEN, Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(392)
@@ -4123,7 +4123,7 @@ type Text_unformattedContext struct {
 func NewEmptyText_unformattedContext() *Text_unformattedContext {
 	var p = new(Text_unformattedContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_unformatted
+	p.RuleIndex = Creole10ParserRULE_text_unformatted
 	return p
 }
 
@@ -4135,7 +4135,7 @@ func NewText_unformattedContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_unformatted
+	p.RuleIndex = Creole10ParserRULE_text_unformatted
 
 	return p
 }
@@ -4189,83 +4189,83 @@ func (s *Text_unformattedContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Text_unformattedContext) AllITAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserITAL)
+	return s.GetTokens(Creole10ParserITAL)
 }
 
 func (s *Text_unformattedContext) ITAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, i)
+	return s.GetToken(Creole10ParserITAL, i)
 }
 
 func (s *Text_unformattedContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Text_unformattedContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Text_unformattedContext) AllLINK_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_OPEN)
+	return s.GetTokens(Creole10ParserLINK_OPEN)
 }
 
 func (s *Text_unformattedContext) LINK_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, i)
+	return s.GetToken(Creole10ParserLINK_OPEN, i)
 }
 
 func (s *Text_unformattedContext) AllIMAGE_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_OPEN)
+	return s.GetTokens(Creole10ParserIMAGE_OPEN)
 }
 
 func (s *Text_unformattedContext) IMAGE_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, i)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, i)
 }
 
 func (s *Text_unformattedContext) AllNOWIKI_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_OPEN)
+	return s.GetTokens(Creole10ParserNOWIKI_OPEN)
 }
 
 func (s *Text_unformattedContext) NOWIKI_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, i)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, i)
 }
 
 func (s *Text_unformattedContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Text_unformattedContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Text_unformattedContext) AllFORCED_LINEBREAK() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserFORCED_LINEBREAK)
+	return s.GetTokens(Creole10ParserFORCED_LINEBREAK)
 }
 
 func (s *Text_unformattedContext) FORCED_LINEBREAK(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, i)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, i)
 }
 
 func (s *Text_unformattedContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Text_unformattedContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Text_unformattedContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Text_unformattedContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Text_unformattedContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Text_unformattedContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Text_unformattedContext) GetRuleContext() antlr.RuleContext {
@@ -4277,20 +4277,20 @@ func (s *Text_unformattedContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Text_unformattedContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_unformatted(s)
 	}
 }
 
 func (s *Text_unformattedContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_unformatted(s)
 	}
 }
 
-func (p *creole10Parser) Text_unformatted() (localctx IText_unformattedContext) {
+func (p *Creole10Parser) Text_unformatted() (localctx IText_unformattedContext) {
 	localctx = NewText_unformattedContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, creole10ParserRULE_text_unformatted)
+	p.EnterRule(localctx, 44, Creole10ParserRULE_text_unformatted)
 	var _la int
 
 	defer func() {
@@ -4322,24 +4322,24 @@ func (p *creole10Parser) Text_unformatted() (localctx IText_unformattedContext) 
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+			case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 				p.SetState(395)
 				_la = p.GetTokenStream().LA(1)
 
-				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserITAL - -1))|(1<<(creole10ParserNOWIKI_OPEN - -1))|(1<<(creole10ParserLINK_OPEN - -1))|(1<<(creole10ParserIMAGE_OPEN - -1))|(1<<(creole10ParserFORCED_LINEBREAK - -1))|(1<<(creole10ParserSTAR - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserITAL - -1))|(1<<(Creole10ParserNOWIKI_OPEN - -1))|(1<<(Creole10ParserLINK_OPEN - -1))|(1<<(Creole10ParserIMAGE_OPEN - -1))|(1<<(Creole10ParserFORCED_LINEBREAK - -1))|(1<<(Creole10ParserSTAR - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
 					p.Consume()
 				}
 
-			case creole10ParserFORCED_LINEBREAK:
+			case Creole10ParserFORCED_LINEBREAK:
 				{
 					p.SetState(396)
 					p.Forced_linebreak()
 				}
 
-			case creole10ParserESCAPE:
+			case Creole10ParserESCAPE:
 				{
 					p.SetState(397)
 					p.Escaped()
@@ -4380,7 +4380,7 @@ type HeadingContext struct {
 func NewEmptyHeadingContext() *HeadingContext {
 	var p = new(HeadingContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_heading
+	p.RuleIndex = Creole10ParserRULE_heading
 	return p
 }
 
@@ -4392,7 +4392,7 @@ func NewHeadingContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_heading
+	p.RuleIndex = Creole10ParserRULE_heading
 
 	return p
 }
@@ -4461,20 +4461,20 @@ func (s *HeadingContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *HeadingContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterHeading(s)
 	}
 }
 
 func (s *HeadingContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitHeading(s)
 	}
 }
 
-func (p *creole10Parser) Heading() (localctx IHeadingContext) {
+func (p *Creole10Parser) Heading() (localctx IHeadingContext) {
 	localctx = NewHeadingContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, creole10ParserRULE_heading)
+	p.EnterRule(localctx, 46, Creole10ParserRULE_heading)
 	var _la int
 
 	defer func() {
@@ -4506,7 +4506,7 @@ func (p *creole10Parser) Heading() (localctx IHeadingContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserEQUAL {
+	if _la == Creole10ParserEQUAL {
 		{
 			p.SetState(404)
 			p.Heading_markup()
@@ -4517,7 +4517,7 @@ func (p *creole10Parser) Heading() (localctx IHeadingContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserBLANKS {
+	if _la == Creole10ParserBLANKS {
 		{
 			p.SetState(407)
 			p.Blanks()
@@ -4551,7 +4551,7 @@ type Heading_contentContext struct {
 func NewEmptyHeading_contentContext() *Heading_contentContext {
 	var p = new(Heading_contentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_heading_content
+	p.RuleIndex = Creole10ParserRULE_heading_content
 	return p
 }
 
@@ -4563,7 +4563,7 @@ func NewHeading_contentContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_heading_content
+	p.RuleIndex = Creole10ParserRULE_heading_content
 
 	return p
 }
@@ -4627,35 +4627,35 @@ func (s *Heading_contentContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Heading_contentContext) AllEQUAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEQUAL)
+	return s.GetTokens(Creole10ParserEQUAL)
 }
 
 func (s *Heading_contentContext) EQUAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEQUAL, i)
+	return s.GetToken(Creole10ParserEQUAL, i)
 }
 
 func (s *Heading_contentContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Heading_contentContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Heading_contentContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Heading_contentContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Heading_contentContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Heading_contentContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Heading_contentContext) GetRuleContext() antlr.RuleContext {
@@ -4667,20 +4667,20 @@ func (s *Heading_contentContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *Heading_contentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterHeading_content(s)
 	}
 }
 
 func (s *Heading_contentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitHeading_content(s)
 	}
 }
 
-func (p *creole10Parser) Heading_content() (localctx IHeading_contentContext) {
+func (p *Creole10Parser) Heading_content() (localctx IHeading_contentContext) {
 	localctx = NewHeading_contentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 48, creole10ParserRULE_heading_content)
+	p.EnterRule(localctx, 48, Creole10ParserRULE_heading_content)
 	var _la int
 
 	defer func() {
@@ -4705,7 +4705,7 @@ func (p *creole10Parser) Heading_content() (localctx IHeading_contentContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserEQUAL:
+	case Creole10ParserEQUAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(412)
@@ -4726,7 +4726,7 @@ func (p *creole10Parser) Heading_content() (localctx IHeading_contentContext) {
 
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserITAL, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSTAR, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserITAL, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSTAR, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		p.SetState(419)
 		p.GetErrorHandler().Sync(p)
@@ -4738,18 +4738,18 @@ func (p *creole10Parser) Heading_content() (localctx IHeading_contentContext) {
 				p.GetErrorHandler().Sync(p)
 
 				switch p.GetTokenStream().LA(1) {
-				case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserITAL, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSTAR, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+				case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserITAL, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSTAR, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 					p.SetState(417)
 					_la = p.GetTokenStream().LA(1)
 
-					if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserEQUAL - -1)))) != 0) {
+					if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserEQUAL - -1)))) != 0) {
 						p.GetErrorHandler().RecoverInline(p)
 					} else {
 						p.GetErrorHandler().ReportMatch(p)
 						p.Consume()
 					}
 
-				case creole10ParserESCAPE:
+				case Creole10ParserESCAPE:
 					{
 						p.SetState(418)
 						p.Escaped()
@@ -4794,7 +4794,7 @@ type List_ordContext struct {
 func NewEmptyList_ordContext() *List_ordContext {
 	var p = new(List_ordContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_ord
+	p.RuleIndex = Creole10ParserRULE_list_ord
 	return p
 }
 
@@ -4806,7 +4806,7 @@ func NewList_ordContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_ord
+	p.RuleIndex = Creole10ParserRULE_list_ord
 
 	return p
 }
@@ -4855,20 +4855,20 @@ func (s *List_ordContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *List_ordContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_ord(s)
 	}
 }
 
 func (s *List_ordContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_ord(s)
 	}
 }
 
-func (p *creole10Parser) List_ord() (localctx IList_ordContext) {
+func (p *Creole10Parser) List_ord() (localctx IList_ordContext) {
 	localctx = NewList_ordContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 50, creole10ParserRULE_list_ord)
+	p.EnterRule(localctx, 50, Creole10ParserRULE_list_ord)
 
 	defer func() {
 		p.ExitRule()
@@ -4941,7 +4941,7 @@ type List_ordelemContext struct {
 func NewEmptyList_ordelemContext() *List_ordelemContext {
 	var p = new(List_ordelemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_ordelem
+	p.RuleIndex = Creole10ParserRULE_list_ordelem
 	return p
 }
 
@@ -4953,7 +4953,7 @@ func NewList_ordelemContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_ordelem
+	p.RuleIndex = Creole10ParserRULE_list_ordelem
 
 	return p
 }
@@ -4989,20 +4989,20 @@ func (s *List_ordelemContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *List_ordelemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_ordelem(s)
 	}
 }
 
 func (s *List_ordelemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_ordelem(s)
 	}
 }
 
-func (p *creole10Parser) List_ordelem() (localctx IList_ordelemContext) {
+func (p *Creole10Parser) List_ordelem() (localctx IList_ordelemContext) {
 	localctx = NewList_ordelemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 52, creole10ParserRULE_list_ordelem)
+	p.EnterRule(localctx, 52, Creole10ParserRULE_list_ordelem)
 
 	defer func() {
 		p.ExitRule()
@@ -5052,7 +5052,7 @@ type List_unordContext struct {
 func NewEmptyList_unordContext() *List_unordContext {
 	var p = new(List_unordContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_unord
+	p.RuleIndex = Creole10ParserRULE_list_unord
 	return p
 }
 
@@ -5064,7 +5064,7 @@ func NewList_unordContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_unord
+	p.RuleIndex = Creole10ParserRULE_list_unord
 
 	return p
 }
@@ -5113,20 +5113,20 @@ func (s *List_unordContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *List_unordContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_unord(s)
 	}
 }
 
 func (s *List_unordContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_unord(s)
 	}
 }
 
-func (p *creole10Parser) List_unord() (localctx IList_unordContext) {
+func (p *Creole10Parser) List_unord() (localctx IList_unordContext) {
 	localctx = NewList_unordContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 54, creole10ParserRULE_list_unord)
+	p.EnterRule(localctx, 54, Creole10ParserRULE_list_unord)
 
 	defer func() {
 		p.ExitRule()
@@ -5199,7 +5199,7 @@ type List_unordelemContext struct {
 func NewEmptyList_unordelemContext() *List_unordelemContext {
 	var p = new(List_unordelemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_unordelem
+	p.RuleIndex = Creole10ParserRULE_list_unordelem
 	return p
 }
 
@@ -5211,7 +5211,7 @@ func NewList_unordelemContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_unordelem
+	p.RuleIndex = Creole10ParserRULE_list_unordelem
 
 	return p
 }
@@ -5247,20 +5247,20 @@ func (s *List_unordelemContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *List_unordelemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_unordelem(s)
 	}
 }
 
 func (s *List_unordelemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_unordelem(s)
 	}
 }
 
-func (p *creole10Parser) List_unordelem() (localctx IList_unordelemContext) {
+func (p *Creole10Parser) List_unordelem() (localctx IList_unordelemContext) {
 	localctx = NewList_unordelemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 56, creole10ParserRULE_list_unordelem)
+	p.EnterRule(localctx, 56, Creole10ParserRULE_list_unordelem)
 
 	defer func() {
 		p.ExitRule()
@@ -5310,7 +5310,7 @@ type List_elemContext struct {
 func NewEmptyList_elemContext() *List_elemContext {
 	var p = new(List_elemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_elem
+	p.RuleIndex = Creole10ParserRULE_list_elem
 	return p
 }
 
@@ -5322,7 +5322,7 @@ func NewList_elemContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_elem
+	p.RuleIndex = Creole10ParserRULE_list_elem
 
 	return p
 }
@@ -5381,20 +5381,20 @@ func (s *List_elemContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *List_elemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_elem(s)
 	}
 }
 
 func (s *List_elemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_elem(s)
 	}
 }
 
-func (p *creole10Parser) List_elem() (localctx IList_elemContext) {
+func (p *Creole10Parser) List_elem() (localctx IList_elemContext) {
 	localctx = NewList_elemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 58, creole10ParserRULE_list_elem)
+	p.EnterRule(localctx, 58, Creole10ParserRULE_list_elem)
 
 	defer func() {
 		p.ExitRule()
@@ -5462,7 +5462,7 @@ type List_elem_markupContext struct {
 func NewEmptyList_elem_markupContext() *List_elem_markupContext {
 	var p = new(List_elem_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_elem_markup
+	p.RuleIndex = Creole10ParserRULE_list_elem_markup
 	return p
 }
 
@@ -5474,7 +5474,7 @@ func NewList_elem_markupContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_elem_markup
+	p.RuleIndex = Creole10ParserRULE_list_elem_markup
 
 	return p
 }
@@ -5510,20 +5510,20 @@ func (s *List_elem_markupContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *List_elem_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_elem_markup(s)
 	}
 }
 
 func (s *List_elem_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_elem_markup(s)
 	}
 }
 
-func (p *creole10Parser) List_elem_markup() (localctx IList_elem_markupContext) {
+func (p *Creole10Parser) List_elem_markup() (localctx IList_elem_markupContext) {
 	localctx = NewList_elem_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 60, creole10ParserRULE_list_elem_markup)
+	p.EnterRule(localctx, 60, Creole10ParserRULE_list_elem_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -5545,14 +5545,14 @@ func (p *creole10Parser) List_elem_markup() (localctx IList_elem_markupContext) 
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserPOUND:
+	case Creole10ParserPOUND:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(456)
 			p.List_ordelem_markup()
 		}
 
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(457)
@@ -5585,7 +5585,7 @@ type List_elemcontentContext struct {
 func NewEmptyList_elemcontentContext() *List_elemcontentContext {
 	var p = new(List_elemcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_elemcontent
+	p.RuleIndex = Creole10ParserRULE_list_elemcontent
 	return p
 }
 
@@ -5597,7 +5597,7 @@ func NewList_elemcontentContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_elemcontent
+	p.RuleIndex = Creole10ParserRULE_list_elemcontent
 
 	return p
 }
@@ -5636,20 +5636,20 @@ func (s *List_elemcontentContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *List_elemcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_elemcontent(s)
 	}
 }
 
 func (s *List_elemcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_elemcontent(s)
 	}
 }
 
-func (p *creole10Parser) List_elemcontent() (localctx IList_elemcontentContext) {
+func (p *Creole10Parser) List_elemcontent() (localctx IList_elemcontentContext) {
 	localctx = NewList_elemcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 62, creole10ParserRULE_list_elemcontent)
+	p.EnterRule(localctx, 62, Creole10ParserRULE_list_elemcontent)
 	var _la int
 
 	defer func() {
@@ -5673,7 +5673,7 @@ func (p *creole10Parser) List_elemcontent() (localctx IList_elemcontentContext) 
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0 {
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0 {
 		{
 			p.SetState(460)
 			p.List_elemcontentpart()
@@ -5706,7 +5706,7 @@ type List_elemcontentpartContext struct {
 func NewEmptyList_elemcontentpartContext() *List_elemcontentpartContext {
 	var p = new(List_elemcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_elemcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_elemcontentpart
 	return p
 }
 
@@ -5718,7 +5718,7 @@ func NewList_elemcontentpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_elemcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_elemcontentpart
 
 	return p
 }
@@ -5764,20 +5764,20 @@ func (s *List_elemcontentpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *List_elemcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_elemcontentpart(s)
 	}
 }
 
 func (s *List_elemcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_elemcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) List_elemcontentpart() (localctx IList_elemcontentpartContext) {
+func (p *Creole10Parser) List_elemcontentpart() (localctx IList_elemcontentpartContext) {
 	localctx = NewList_elemcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 64, creole10ParserRULE_list_elemcontentpart)
+	p.EnterRule(localctx, 64, Creole10ParserRULE_list_elemcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -5799,7 +5799,7 @@ func (p *creole10Parser) List_elemcontentpart() (localctx IList_elemcontentpartC
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(466)
@@ -5810,7 +5810,7 @@ func (p *creole10Parser) List_elemcontentpart() (localctx IList_elemcontentpartC
 			p.Onestar()
 		}
 
-	case creole10ParserITAL, creole10ParserSTAR:
+	case Creole10ParserITAL, Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(469)
@@ -5843,7 +5843,7 @@ type List_formatted_elemContext struct {
 func NewEmptyList_formatted_elemContext() *List_formatted_elemContext {
 	var p = new(List_formatted_elemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_formatted_elem
+	p.RuleIndex = Creole10ParserRULE_list_formatted_elem
 	return p
 }
 
@@ -5855,7 +5855,7 @@ func NewList_formatted_elemContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_formatted_elem
+	p.RuleIndex = Creole10ParserRULE_list_formatted_elem
 
 	return p
 }
@@ -5986,20 +5986,20 @@ func (s *List_formatted_elemContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *List_formatted_elemContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_formatted_elem(s)
 	}
 }
 
 func (s *List_formatted_elemContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_formatted_elem(s)
 	}
 }
 
-func (p *creole10Parser) List_formatted_elem() (localctx IList_formatted_elemContext) {
+func (p *Creole10Parser) List_formatted_elem() (localctx IList_formatted_elemContext) {
 	localctx = NewList_formatted_elemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 66, creole10ParserRULE_list_formatted_elem)
+	p.EnterRule(localctx, 66, Creole10ParserRULE_list_formatted_elem)
 
 	defer func() {
 		p.ExitRule()
@@ -6023,7 +6023,7 @@ func (p *creole10Parser) List_formatted_elem() (localctx IList_formatted_elemCon
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(472)
@@ -6060,7 +6060,7 @@ func (p *creole10Parser) List_formatted_elem() (localctx IList_formatted_elemCon
 
 		}
 
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(484)
@@ -6123,7 +6123,7 @@ type OnestarContext struct {
 func NewEmptyOnestarContext() *OnestarContext {
 	var p = new(OnestarContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_onestar
+	p.RuleIndex = Creole10ParserRULE_onestar
 	return p
 }
 
@@ -6135,7 +6135,7 @@ func NewOnestarContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_onestar
+	p.RuleIndex = Creole10ParserRULE_onestar
 
 	return p
 }
@@ -6143,7 +6143,7 @@ func NewOnestarContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *OnestarContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *OnestarContext) STAR() antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, 0)
+	return s.GetToken(Creole10ParserSTAR, 0)
 }
 
 func (s *OnestarContext) GetRuleContext() antlr.RuleContext {
@@ -6155,20 +6155,20 @@ func (s *OnestarContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *OnestarContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterOnestar(s)
 	}
 }
 
 func (s *OnestarContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitOnestar(s)
 	}
 }
 
-func (p *creole10Parser) Onestar() (localctx IOnestarContext) {
+func (p *Creole10Parser) Onestar() (localctx IOnestarContext) {
 	localctx = NewOnestarContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 68, creole10ParserRULE_onestar)
+	p.EnterRule(localctx, 68, Creole10ParserRULE_onestar)
 
 	defer func() {
 		p.ExitRule()
@@ -6193,8 +6193,8 @@ func (p *creole10Parser) Onestar() (localctx IOnestarContext) {
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(498)
 
-		if !(p.GetInputStream().LA(2) != creole10ParserSTAR) {
-			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2)!=creole10ParserSTAR", ""))
+		if !(p.GetInputStream().LA(2) != Creole10ParserSTAR) {
+			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2)!=Creole10ParserSTAR", ""))
 		}
 		p.SetState(500)
 		p.GetErrorHandler().Sync(p)
@@ -6202,7 +6202,7 @@ func (p *creole10Parser) Onestar() (localctx IOnestarContext) {
 		if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 59, p.GetParserRuleContext()) == 1 {
 			{
 				p.SetState(499)
-				p.Match(creole10ParserSTAR)
+				p.Match(Creole10ParserSTAR)
 			}
 
 		}
@@ -6234,7 +6234,7 @@ type List_boldcontentpartContext struct {
 func NewEmptyList_boldcontentpartContext() *List_boldcontentpartContext {
 	var p = new(List_boldcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_boldcontentpart
 	return p
 }
 
@@ -6246,7 +6246,7 @@ func NewList_boldcontentpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_boldcontentpart
 
 	return p
 }
@@ -6318,20 +6318,20 @@ func (s *List_boldcontentpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *List_boldcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_boldcontentpart(s)
 	}
 }
 
 func (s *List_boldcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_boldcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) List_boldcontentpart() (localctx IList_boldcontentpartContext) {
+func (p *Creole10Parser) List_boldcontentpart() (localctx IList_boldcontentpartContext) {
 	localctx = NewList_boldcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 70, creole10ParserRULE_list_boldcontentpart)
+	p.EnterRule(localctx, 70, Creole10ParserRULE_list_boldcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -6355,7 +6355,7 @@ func (p *creole10Parser) List_boldcontentpart() (localctx IList_boldcontentpartC
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(505)
@@ -6376,7 +6376,7 @@ func (p *creole10Parser) List_boldcontentpart() (localctx IList_boldcontentpartC
 
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		p.SetState(511)
 		p.GetErrorHandler().Sync(p)
@@ -6424,7 +6424,7 @@ type List_italcontentpartContext struct {
 func NewEmptyList_italcontentpartContext() *List_italcontentpartContext {
 	var p = new(List_italcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_italcontentpart
 	return p
 }
 
@@ -6436,7 +6436,7 @@ func NewList_italcontentpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_list_italcontentpart
 
 	return p
 }
@@ -6508,20 +6508,20 @@ func (s *List_italcontentpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *List_italcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_italcontentpart(s)
 	}
 }
 
 func (s *List_italcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_italcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) List_italcontentpart() (localctx IList_italcontentpartContext) {
+func (p *Creole10Parser) List_italcontentpart() (localctx IList_italcontentpartContext) {
 	localctx = NewList_italcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 72, creole10ParserRULE_list_italcontentpart)
+	p.EnterRule(localctx, 72, Creole10ParserRULE_list_italcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -6545,7 +6545,7 @@ func (p *creole10Parser) List_italcontentpart() (localctx IList_italcontentpartC
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(517)
@@ -6566,7 +6566,7 @@ func (p *creole10Parser) List_italcontentpart() (localctx IList_italcontentpartC
 
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		p.SetState(523)
 		p.GetErrorHandler().Sync(p)
@@ -6614,7 +6614,7 @@ type List_bolditalcontentContext struct {
 func NewEmptyList_bolditalcontentContext() *List_bolditalcontentContext {
 	var p = new(List_bolditalcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_list_bolditalcontent
 	return p
 }
 
@@ -6626,7 +6626,7 @@ func NewList_bolditalcontentContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_list_bolditalcontent
 
 	return p
 }
@@ -6665,20 +6665,20 @@ func (s *List_bolditalcontentContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *List_bolditalcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_bolditalcontent(s)
 	}
 }
 
 func (s *List_bolditalcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_bolditalcontent(s)
 	}
 }
 
-func (p *creole10Parser) List_bolditalcontent() (localctx IList_bolditalcontentContext) {
+func (p *Creole10Parser) List_bolditalcontent() (localctx IList_bolditalcontentContext) {
 	localctx = NewList_bolditalcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 74, creole10ParserRULE_list_bolditalcontent)
+	p.EnterRule(localctx, 74, Creole10ParserRULE_list_bolditalcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -6741,7 +6741,7 @@ type TableContext struct {
 func NewEmptyTableContext() *TableContext {
 	var p = new(TableContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table
+	p.RuleIndex = Creole10ParserRULE_table
 	return p
 }
 
@@ -6753,7 +6753,7 @@ func NewTableContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table
+	p.RuleIndex = Creole10ParserRULE_table
 
 	return p
 }
@@ -6792,20 +6792,20 @@ func (s *TableContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *TableContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable(s)
 	}
 }
 
 func (s *TableContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable(s)
 	}
 }
 
-func (p *creole10Parser) Table() (localctx ITableContext) {
+func (p *Creole10Parser) Table() (localctx ITableContext) {
 	localctx = NewTableContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 76, creole10ParserRULE_table)
+	p.EnterRule(localctx, 76, Creole10ParserRULE_table)
 
 	defer func() {
 		p.ExitRule()
@@ -6868,7 +6868,7 @@ type Table_rowContext struct {
 func NewEmptyTable_rowContext() *Table_rowContext {
 	var p = new(Table_rowContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_row
+	p.RuleIndex = Creole10ParserRULE_table_row
 	return p
 }
 
@@ -6880,7 +6880,7 @@ func NewTable_rowContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_row
+	p.RuleIndex = Creole10ParserRULE_table_row
 
 	return p
 }
@@ -6939,20 +6939,20 @@ func (s *Table_rowContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *Table_rowContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_row(s)
 	}
 }
 
 func (s *Table_rowContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_row(s)
 	}
 }
 
-func (p *creole10Parser) Table_row() (localctx ITable_rowContext) {
+func (p *Creole10Parser) Table_row() (localctx ITable_rowContext) {
 	localctx = NewTable_rowContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 78, creole10ParserRULE_table_row)
+	p.EnterRule(localctx, 78, Creole10ParserRULE_table_row)
 	var _la int
 
 	defer func() {
@@ -6997,7 +6997,7 @@ func (p *creole10Parser) Table_row() (localctx ITable_rowContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserPIPE {
+	if _la == Creole10ParserPIPE {
 		{
 			p.SetState(544)
 			p.Table_cell_markup()
@@ -7031,7 +7031,7 @@ type Table_cellContext struct {
 func NewEmptyTable_cellContext() *Table_cellContext {
 	var p = new(Table_cellContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_cell
+	p.RuleIndex = Creole10ParserRULE_table_cell
 	return p
 }
 
@@ -7043,7 +7043,7 @@ func NewTable_cellContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_cell
+	p.RuleIndex = Creole10ParserRULE_table_cell
 
 	return p
 }
@@ -7079,20 +7079,20 @@ func (s *Table_cellContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *Table_cellContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_cell(s)
 	}
 }
 
 func (s *Table_cellContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_cell(s)
 	}
 }
 
-func (p *creole10Parser) Table_cell() (localctx ITable_cellContext) {
+func (p *Creole10Parser) Table_cell() (localctx ITable_cellContext) {
 	localctx = NewTable_cellContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 80, creole10ParserRULE_table_cell)
+	p.EnterRule(localctx, 80, Creole10ParserRULE_table_cell)
 
 	defer func() {
 		p.ExitRule()
@@ -7117,8 +7117,8 @@ func (p *creole10Parser) Table_cell() (localctx ITable_cellContext) {
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(549)
 
-		if !(p.GetInputStream().LA(2) == creole10ParserEQUAL) {
-			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2)==creole10ParserEQUAL", ""))
+		if !(p.GetInputStream().LA(2) == Creole10ParserEQUAL) {
+			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2)==Creole10ParserEQUAL", ""))
 		}
 		{
 			p.SetState(550)
@@ -7156,7 +7156,7 @@ type Table_headercellContext struct {
 func NewEmptyTable_headercellContext() *Table_headercellContext {
 	var p = new(Table_headercellContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_headercell
+	p.RuleIndex = Creole10ParserRULE_table_headercell
 	return p
 }
 
@@ -7168,7 +7168,7 @@ func NewTable_headercellContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_headercell
+	p.RuleIndex = Creole10ParserRULE_table_headercell
 
 	return p
 }
@@ -7204,20 +7204,20 @@ func (s *Table_headercellContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Table_headercellContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_headercell(s)
 	}
 }
 
 func (s *Table_headercellContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_headercell(s)
 	}
 }
 
-func (p *creole10Parser) Table_headercell() (localctx ITable_headercellContext) {
+func (p *Creole10Parser) Table_headercell() (localctx ITable_headercellContext) {
 	localctx = NewTable_headercellContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 82, creole10ParserRULE_table_headercell)
+	p.EnterRule(localctx, 82, Creole10ParserRULE_table_headercell)
 
 	defer func() {
 		p.ExitRule()
@@ -7267,7 +7267,7 @@ type Table_normalcellContext struct {
 func NewEmptyTable_normalcellContext() *Table_normalcellContext {
 	var p = new(Table_normalcellContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_normalcell
+	p.RuleIndex = Creole10ParserRULE_table_normalcell
 	return p
 }
 
@@ -7279,7 +7279,7 @@ func NewTable_normalcellContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_normalcell
+	p.RuleIndex = Creole10ParserRULE_table_normalcell
 
 	return p
 }
@@ -7315,20 +7315,20 @@ func (s *Table_normalcellContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Table_normalcellContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_normalcell(s)
 	}
 }
 
 func (s *Table_normalcellContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_normalcell(s)
 	}
 }
 
-func (p *creole10Parser) Table_normalcell() (localctx ITable_normalcellContext) {
+func (p *Creole10Parser) Table_normalcell() (localctx ITable_normalcellContext) {
 	localctx = NewTable_normalcellContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 84, creole10ParserRULE_table_normalcell)
+	p.EnterRule(localctx, 84, Creole10ParserRULE_table_normalcell)
 
 	defer func() {
 		p.ExitRule()
@@ -7378,7 +7378,7 @@ type Table_cellcontentContext struct {
 func NewEmptyTable_cellcontentContext() *Table_cellcontentContext {
 	var p = new(Table_cellcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_cellcontent
+	p.RuleIndex = Creole10ParserRULE_table_cellcontent
 	return p
 }
 
@@ -7390,7 +7390,7 @@ func NewTable_cellcontentContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_cellcontent
+	p.RuleIndex = Creole10ParserRULE_table_cellcontent
 
 	return p
 }
@@ -7421,7 +7421,7 @@ func (s *Table_cellcontentContext) Table_cellcontentpart(i int) ITable_cellconte
 }
 
 func (s *Table_cellcontentContext) STAR() antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, 0)
+	return s.GetToken(Creole10ParserSTAR, 0)
 }
 
 func (s *Table_cellcontentContext) GetRuleContext() antlr.RuleContext {
@@ -7433,20 +7433,20 @@ func (s *Table_cellcontentContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Table_cellcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_cellcontent(s)
 	}
 }
 
 func (s *Table_cellcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_cellcontent(s)
 	}
 }
 
-func (p *creole10Parser) Table_cellcontent() (localctx ITable_cellcontentContext) {
+func (p *Creole10Parser) Table_cellcontent() (localctx ITable_cellcontentContext) {
 	localctx = NewTable_cellcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 86, creole10ParserRULE_table_cellcontent)
+	p.EnterRule(localctx, 86, Creole10ParserRULE_table_cellcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -7492,7 +7492,7 @@ func (p *creole10Parser) Table_cellcontent() (localctx ITable_cellcontentContext
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 73, p.GetParserRuleContext()) == 1 {
 		{
 			p.SetState(565)
-			p.Match(creole10ParserSTAR)
+			p.Match(Creole10ParserSTAR)
 		}
 
 	}
@@ -7519,7 +7519,7 @@ type Table_cellcontentpartContext struct {
 func NewEmptyTable_cellcontentpartContext() *Table_cellcontentpartContext {
 	var p = new(Table_cellcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_cellcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_cellcontentpart
 	return p
 }
 
@@ -7531,7 +7531,7 @@ func NewTable_cellcontentpartContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_cellcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_cellcontentpart
 
 	return p
 }
@@ -7577,20 +7577,20 @@ func (s *Table_cellcontentpartContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Table_cellcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_cellcontentpart(s)
 	}
 }
 
 func (s *Table_cellcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_cellcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) Table_cellcontentpart() (localctx ITable_cellcontentpartContext) {
+func (p *Creole10Parser) Table_cellcontentpart() (localctx ITable_cellcontentpartContext) {
 	localctx = NewTable_cellcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 88, creole10ParserRULE_table_cellcontentpart)
+	p.EnterRule(localctx, 88, Creole10ParserRULE_table_cellcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -7653,7 +7653,7 @@ type Table_formattedelementContext struct {
 func NewEmptyTable_formattedelementContext() *Table_formattedelementContext {
 	var p = new(Table_formattedelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_formattedelement
+	p.RuleIndex = Creole10ParserRULE_table_formattedelement
 	return p
 }
 
@@ -7665,7 +7665,7 @@ func NewTable_formattedelementContext(parser antlr.Parser, parent antlr.ParserRu
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_formattedelement
+	p.RuleIndex = Creole10ParserRULE_table_formattedelement
 
 	return p
 }
@@ -7747,20 +7747,20 @@ func (s *Table_formattedelementContext) ToStringTree(ruleNames []string, recog a
 }
 
 func (s *Table_formattedelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_formattedelement(s)
 	}
 }
 
 func (s *Table_formattedelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_formattedelement(s)
 	}
 }
 
-func (p *creole10Parser) Table_formattedelement() (localctx ITable_formattedelementContext) {
+func (p *Creole10Parser) Table_formattedelement() (localctx ITable_formattedelementContext) {
 	localctx = NewTable_formattedelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 90, creole10ParserRULE_table_formattedelement)
+	p.EnterRule(localctx, 90, Creole10ParserRULE_table_formattedelement)
 
 	defer func() {
 		p.ExitRule()
@@ -7782,7 +7782,7 @@ func (p *creole10Parser) Table_formattedelement() (localctx ITable_formattedelem
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(574)
@@ -7809,7 +7809,7 @@ func (p *creole10Parser) Table_formattedelement() (localctx ITable_formattedelem
 
 		}
 
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(581)
@@ -7862,7 +7862,7 @@ type Table_boldcontentContext struct {
 func NewEmptyTable_boldcontentContext() *Table_boldcontentContext {
 	var p = new(Table_boldcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_boldcontent
+	p.RuleIndex = Creole10ParserRULE_table_boldcontent
 	return p
 }
 
@@ -7874,7 +7874,7 @@ func NewTable_boldcontentContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_boldcontent
+	p.RuleIndex = Creole10ParserRULE_table_boldcontent
 
 	return p
 }
@@ -7928,7 +7928,7 @@ func (s *Table_boldcontentContext) Table_boldcontentpart(i int) ITable_boldconte
 }
 
 func (s *Table_boldcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Table_boldcontentContext) GetRuleContext() antlr.RuleContext {
@@ -7940,20 +7940,20 @@ func (s *Table_boldcontentContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Table_boldcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_boldcontent(s)
 	}
 }
 
 func (s *Table_boldcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_boldcontent(s)
 	}
 }
 
-func (p *creole10Parser) Table_boldcontent() (localctx ITable_boldcontentContext) {
+func (p *Creole10Parser) Table_boldcontent() (localctx ITable_boldcontentContext) {
 	localctx = NewTable_boldcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 92, creole10ParserRULE_table_boldcontent)
+	p.EnterRule(localctx, 92, Creole10ParserRULE_table_boldcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -8006,7 +8006,7 @@ func (p *creole10Parser) Table_boldcontent() (localctx ITable_boldcontentContext
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(597)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	}
@@ -8033,7 +8033,7 @@ type Table_italcontentContext struct {
 func NewEmptyTable_italcontentContext() *Table_italcontentContext {
 	var p = new(Table_italcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_italcontent
+	p.RuleIndex = Creole10ParserRULE_table_italcontent
 	return p
 }
 
@@ -8045,7 +8045,7 @@ func NewTable_italcontentContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_italcontent
+	p.RuleIndex = Creole10ParserRULE_table_italcontent
 
 	return p
 }
@@ -8076,7 +8076,7 @@ func (s *Table_italcontentContext) Table_italcontentpart(i int) ITable_italconte
 }
 
 func (s *Table_italcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Table_italcontentContext) GetRuleContext() antlr.RuleContext {
@@ -8088,20 +8088,20 @@ func (s *Table_italcontentContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Table_italcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_italcontent(s)
 	}
 }
 
 func (s *Table_italcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_italcontent(s)
 	}
 }
 
-func (p *creole10Parser) Table_italcontent() (localctx ITable_italcontentContext) {
+func (p *Creole10Parser) Table_italcontent() (localctx ITable_italcontentContext) {
 	localctx = NewTable_italcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 94, creole10ParserRULE_table_italcontent)
+	p.EnterRule(localctx, 94, Creole10ParserRULE_table_italcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -8125,7 +8125,7 @@ func (p *creole10Parser) Table_italcontent() (localctx ITable_italcontentContext
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPOUND, creole10ParserDASH, creole10ParserSTAR, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSTAR, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(601)
 		p.GetErrorHandler().Sync(p)
@@ -8147,11 +8147,11 @@ func (p *creole10Parser) Table_italcontent() (localctx ITable_italcontentContext
 			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 82, p.GetParserRuleContext())
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(605)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -8180,7 +8180,7 @@ type Table_boldcontentpartContext struct {
 func NewEmptyTable_boldcontentpartContext() *Table_boldcontentpartContext {
 	var p = new(Table_boldcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_boldcontentpart
 	return p
 }
 
@@ -8192,7 +8192,7 @@ func NewTable_boldcontentpartContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_boldcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_boldcontentpart
 
 	return p
 }
@@ -8251,20 +8251,20 @@ func (s *Table_boldcontentpartContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Table_boldcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_boldcontentpart(s)
 	}
 }
 
 func (s *Table_boldcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_boldcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) Table_boldcontentpart() (localctx ITable_boldcontentpartContext) {
+func (p *Creole10Parser) Table_boldcontentpart() (localctx ITable_boldcontentpartContext) {
 	localctx = NewTable_boldcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 96, creole10ParserRULE_table_boldcontentpart)
+	p.EnterRule(localctx, 96, Creole10ParserRULE_table_boldcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -8286,14 +8286,14 @@ func (p *creole10Parser) Table_boldcontentpart() (localctx ITable_boldcontentpar
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(608)
 			p.Table_formattedcontent()
 		}
 
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(609)
@@ -8340,7 +8340,7 @@ type Table_italcontentpartContext struct {
 func NewEmptyTable_italcontentpartContext() *Table_italcontentpartContext {
 	var p = new(Table_italcontentpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_italcontentpart
 	return p
 }
 
@@ -8352,7 +8352,7 @@ func NewTable_italcontentpartContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_italcontentpart
+	p.RuleIndex = Creole10ParserRULE_table_italcontentpart
 
 	return p
 }
@@ -8411,20 +8411,20 @@ func (s *Table_italcontentpartContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Table_italcontentpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_italcontentpart(s)
 	}
 }
 
 func (s *Table_italcontentpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_italcontentpart(s)
 	}
 }
 
-func (p *creole10Parser) Table_italcontentpart() (localctx ITable_italcontentpartContext) {
+func (p *Creole10Parser) Table_italcontentpart() (localctx ITable_italcontentpartContext) {
 	localctx = NewTable_italcontentpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 98, creole10ParserRULE_table_italcontentpart)
+	p.EnterRule(localctx, 98, Creole10ParserRULE_table_italcontentpart)
 
 	defer func() {
 		p.ExitRule()
@@ -8446,7 +8446,7 @@ func (p *creole10Parser) Table_italcontentpart() (localctx ITable_italcontentpar
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(616)
@@ -8467,7 +8467,7 @@ func (p *creole10Parser) Table_italcontentpart() (localctx ITable_italcontentpar
 
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserEXTENSION, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserEXTENSION, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(621)
@@ -8500,7 +8500,7 @@ type Table_bolditalcontentContext struct {
 func NewEmptyTable_bolditalcontentContext() *Table_bolditalcontentContext {
 	var p = new(Table_bolditalcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_table_bolditalcontent
 	return p
 }
 
@@ -8512,7 +8512,7 @@ func NewTable_bolditalcontentContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_bolditalcontent
+	p.RuleIndex = Creole10ParserRULE_table_bolditalcontent
 
 	return p
 }
@@ -8530,7 +8530,7 @@ func (s *Table_bolditalcontentContext) Table_formattedcontent() ITable_formatted
 }
 
 func (s *Table_bolditalcontentContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Table_bolditalcontentContext) GetRuleContext() antlr.RuleContext {
@@ -8542,20 +8542,20 @@ func (s *Table_bolditalcontentContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Table_bolditalcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_bolditalcontent(s)
 	}
 }
 
 func (s *Table_bolditalcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_bolditalcontent(s)
 	}
 }
 
-func (p *creole10Parser) Table_bolditalcontent() (localctx ITable_bolditalcontentContext) {
+func (p *Creole10Parser) Table_bolditalcontent() (localctx ITable_bolditalcontentContext) {
 	localctx = NewTable_bolditalcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 100, creole10ParserRULE_table_bolditalcontent)
+	p.EnterRule(localctx, 100, Creole10ParserRULE_table_bolditalcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -8593,7 +8593,7 @@ func (p *creole10Parser) Table_bolditalcontent() (localctx ITable_bolditalconten
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(627)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	}
@@ -8620,7 +8620,7 @@ type Table_formattedcontentContext struct {
 func NewEmptyTable_formattedcontentContext() *Table_formattedcontentContext {
 	var p = new(Table_formattedcontentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_formattedcontent
+	p.RuleIndex = Creole10ParserRULE_table_formattedcontent
 	return p
 }
 
@@ -8632,7 +8632,7 @@ func NewTable_formattedcontentContext(parser antlr.Parser, parent antlr.ParserRu
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_formattedcontent
+	p.RuleIndex = Creole10ParserRULE_table_formattedcontent
 
 	return p
 }
@@ -8671,20 +8671,20 @@ func (s *Table_formattedcontentContext) ToStringTree(ruleNames []string, recog a
 }
 
 func (s *Table_formattedcontentContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_formattedcontent(s)
 	}
 }
 
 func (s *Table_formattedcontentContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_formattedcontent(s)
 	}
 }
 
-func (p *creole10Parser) Table_formattedcontent() (localctx ITable_formattedcontentContext) {
+func (p *Creole10Parser) Table_formattedcontent() (localctx ITable_formattedcontentContext) {
 	localctx = NewTable_formattedcontentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 102, creole10ParserRULE_table_formattedcontent)
+	p.EnterRule(localctx, 102, Creole10ParserRULE_table_formattedcontent)
 
 	defer func() {
 		p.ExitRule()
@@ -8747,7 +8747,7 @@ type Table_inlineelementContext struct {
 func NewEmptyTable_inlineelementContext() *Table_inlineelementContext {
 	var p = new(Table_inlineelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_inlineelement
+	p.RuleIndex = Creole10ParserRULE_table_inlineelement
 	return p
 }
 
@@ -8759,7 +8759,7 @@ func NewTable_inlineelementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_inlineelement
+	p.RuleIndex = Creole10ParserRULE_table_inlineelement
 
 	return p
 }
@@ -8815,20 +8815,20 @@ func (s *Table_inlineelementContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *Table_inlineelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_inlineelement(s)
 	}
 }
 
 func (s *Table_inlineelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_inlineelement(s)
 	}
 }
 
-func (p *creole10Parser) Table_inlineelement() (localctx ITable_inlineelementContext) {
+func (p *Creole10Parser) Table_inlineelement() (localctx ITable_inlineelementContext) {
 	localctx = NewTable_inlineelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 104, creole10ParserRULE_table_inlineelement)
+	p.EnterRule(localctx, 104, Creole10ParserRULE_table_inlineelement)
 
 	defer func() {
 		p.ExitRule()
@@ -8850,28 +8850,28 @@ func (p *creole10Parser) Table_inlineelement() (localctx ITable_inlineelementCon
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserLINK_OPEN:
+	case Creole10ParserLINK_OPEN:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(635)
 			p.Link()
 		}
 
-	case creole10ParserIMAGE_OPEN:
+	case Creole10ParserIMAGE_OPEN:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(636)
 			p.Image()
 		}
 
-	case creole10ParserEXTENSION:
+	case Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(637)
 			p.Extension()
 		}
 
-	case creole10ParserNOWIKI_OPEN:
+	case Creole10ParserNOWIKI_OPEN:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(638)
@@ -8904,7 +8904,7 @@ type Table_unformattedelementContext struct {
 func NewEmptyTable_unformattedelementContext() *Table_unformattedelementContext {
 	var p = new(Table_unformattedelementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_table_unformattedelement
 	return p
 }
 
@@ -8916,7 +8916,7 @@ func NewTable_unformattedelementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_unformattedelement
+	p.RuleIndex = Creole10ParserRULE_table_unformattedelement
 
 	return p
 }
@@ -8952,20 +8952,20 @@ func (s *Table_unformattedelementContext) ToStringTree(ruleNames []string, recog
 }
 
 func (s *Table_unformattedelementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_unformattedelement(s)
 	}
 }
 
 func (s *Table_unformattedelementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_unformattedelement(s)
 	}
 }
 
-func (p *creole10Parser) Table_unformattedelement() (localctx ITable_unformattedelementContext) {
+func (p *Creole10Parser) Table_unformattedelement() (localctx ITable_unformattedelementContext) {
 	localctx = NewTable_unformattedelementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 106, creole10ParserRULE_table_unformattedelement)
+	p.EnterRule(localctx, 106, Creole10ParserRULE_table_unformattedelement)
 
 	defer func() {
 		p.ExitRule()
@@ -8987,14 +8987,14 @@ func (p *creole10Parser) Table_unformattedelement() (localctx ITable_unformatted
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(641)
 			p.Table_unformatted()
 		}
 
-	case creole10ParserNOWIKI_OPEN, creole10ParserLINK_OPEN, creole10ParserIMAGE_OPEN, creole10ParserEXTENSION:
+	case Creole10ParserNOWIKI_OPEN, Creole10ParserLINK_OPEN, Creole10ParserIMAGE_OPEN, Creole10ParserEXTENSION:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(642)
@@ -9027,7 +9027,7 @@ type Table_unformattedContext struct {
 func NewEmptyTable_unformattedContext() *Table_unformattedContext {
 	var p = new(Table_unformattedContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_unformatted
+	p.RuleIndex = Creole10ParserRULE_table_unformatted
 	return p
 }
 
@@ -9039,7 +9039,7 @@ func NewTable_unformattedContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_unformatted
+	p.RuleIndex = Creole10ParserRULE_table_unformatted
 
 	return p
 }
@@ -9093,91 +9093,91 @@ func (s *Table_unformattedContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Table_unformattedContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPIPE)
+	return s.GetTokens(Creole10ParserPIPE)
 }
 
 func (s *Table_unformattedContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, i)
+	return s.GetToken(Creole10ParserPIPE, i)
 }
 
 func (s *Table_unformattedContext) AllITAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserITAL)
+	return s.GetTokens(Creole10ParserITAL)
 }
 
 func (s *Table_unformattedContext) ITAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, i)
+	return s.GetToken(Creole10ParserITAL, i)
 }
 
 func (s *Table_unformattedContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Table_unformattedContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Table_unformattedContext) AllLINK_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_OPEN)
+	return s.GetTokens(Creole10ParserLINK_OPEN)
 }
 
 func (s *Table_unformattedContext) LINK_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, i)
+	return s.GetToken(Creole10ParserLINK_OPEN, i)
 }
 
 func (s *Table_unformattedContext) AllIMAGE_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_OPEN)
+	return s.GetTokens(Creole10ParserIMAGE_OPEN)
 }
 
 func (s *Table_unformattedContext) IMAGE_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, i)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, i)
 }
 
 func (s *Table_unformattedContext) AllNOWIKI_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_OPEN)
+	return s.GetTokens(Creole10ParserNOWIKI_OPEN)
 }
 
 func (s *Table_unformattedContext) NOWIKI_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, i)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, i)
 }
 
 func (s *Table_unformattedContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Table_unformattedContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Table_unformattedContext) AllFORCED_LINEBREAK() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserFORCED_LINEBREAK)
+	return s.GetTokens(Creole10ParserFORCED_LINEBREAK)
 }
 
 func (s *Table_unformattedContext) FORCED_LINEBREAK(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, i)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, i)
 }
 
 func (s *Table_unformattedContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Table_unformattedContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Table_unformattedContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Table_unformattedContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Table_unformattedContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Table_unformattedContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Table_unformattedContext) GetRuleContext() antlr.RuleContext {
@@ -9189,20 +9189,20 @@ func (s *Table_unformattedContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Table_unformattedContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_unformatted(s)
 	}
 }
 
 func (s *Table_unformattedContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_unformatted(s)
 	}
 }
 
-func (p *creole10Parser) Table_unformatted() (localctx ITable_unformattedContext) {
+func (p *Creole10Parser) Table_unformatted() (localctx ITable_unformattedContext) {
 	localctx = NewTable_unformattedContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 108, creole10ParserRULE_table_unformatted)
+	p.EnterRule(localctx, 108, Creole10ParserRULE_table_unformatted)
 	var _la int
 
 	defer func() {
@@ -9234,24 +9234,24 @@ func (p *creole10Parser) Table_unformatted() (localctx ITable_unformattedContext
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserEQUAL, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+			case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserEQUAL, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 				p.SetState(645)
 				_la = p.GetTokenStream().LA(1)
 
-				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserITAL - -1))|(1<<(creole10ParserNOWIKI_OPEN - -1))|(1<<(creole10ParserLINK_OPEN - -1))|(1<<(creole10ParserIMAGE_OPEN - -1))|(1<<(creole10ParserFORCED_LINEBREAK - -1))|(1<<(creole10ParserPIPE - -1))|(1<<(creole10ParserSTAR - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserITAL - -1))|(1<<(Creole10ParserNOWIKI_OPEN - -1))|(1<<(Creole10ParserLINK_OPEN - -1))|(1<<(Creole10ParserIMAGE_OPEN - -1))|(1<<(Creole10ParserFORCED_LINEBREAK - -1))|(1<<(Creole10ParserPIPE - -1))|(1<<(Creole10ParserSTAR - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
 					p.Consume()
 				}
 
-			case creole10ParserFORCED_LINEBREAK:
+			case Creole10ParserFORCED_LINEBREAK:
 				{
 					p.SetState(646)
 					p.Forced_linebreak()
 				}
 
-			case creole10ParserESCAPE:
+			case Creole10ParserESCAPE:
 				{
 					p.SetState(647)
 					p.Escaped()
@@ -9292,7 +9292,7 @@ type Nowiki_blockContext struct {
 func NewEmptyNowiki_blockContext() *Nowiki_blockContext {
 	var p = new(Nowiki_blockContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowiki_block
+	p.RuleIndex = Creole10ParserRULE_nowiki_block
 	return p
 }
 
@@ -9304,7 +9304,7 @@ func NewNowiki_blockContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowiki_block
+	p.RuleIndex = Creole10ParserRULE_nowiki_block
 
 	return p
 }
@@ -9342,19 +9342,19 @@ func (s *Nowiki_blockContext) Paragraph_separator() IParagraph_separatorContext 
 }
 
 func (s *Nowiki_blockContext) AllNOWIKI_BLOCK_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_BLOCK_CLOSE)
+	return s.GetTokens(Creole10ParserNOWIKI_BLOCK_CLOSE)
 }
 
 func (s *Nowiki_blockContext) NOWIKI_BLOCK_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_BLOCK_CLOSE, i)
+	return s.GetToken(Creole10ParserNOWIKI_BLOCK_CLOSE, i)
 }
 
 func (s *Nowiki_blockContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Nowiki_blockContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Nowiki_blockContext) GetRuleContext() antlr.RuleContext {
@@ -9366,20 +9366,20 @@ func (s *Nowiki_blockContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Nowiki_blockContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowiki_block(s)
 	}
 }
 
 func (s *Nowiki_blockContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowiki_block(s)
 	}
 }
 
-func (p *creole10Parser) Nowiki_block() (localctx INowiki_blockContext) {
+func (p *Creole10Parser) Nowiki_block() (localctx INowiki_blockContext) {
 	localctx = NewNowiki_blockContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 110, creole10ParserRULE_nowiki_block)
+	p.EnterRule(localctx, 110, Creole10ParserRULE_nowiki_block)
 	var _la int
 
 	defer func() {
@@ -9407,11 +9407,11 @@ func (p *creole10Parser) Nowiki_block() (localctx INowiki_blockContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNEWLINE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0 {
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNEWLINE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0 {
 		p.SetState(653)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la <= 0 || _la == creole10ParserEOF || _la == creole10ParserNOWIKI_BLOCK_CLOSE {
+		if _la <= 0 || _la == Creole10ParserEOF || _la == Creole10ParserNOWIKI_BLOCK_CLOSE {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -9453,7 +9453,7 @@ type Nowikiblock_open_markupContext struct {
 func NewEmptyNowikiblock_open_markupContext() *Nowikiblock_open_markupContext {
 	var p = new(Nowikiblock_open_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowikiblock_open_markup
+	p.RuleIndex = Creole10ParserRULE_nowikiblock_open_markup
 	return p
 }
 
@@ -9465,7 +9465,7 @@ func NewNowikiblock_open_markupContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowikiblock_open_markup
+	p.RuleIndex = Creole10ParserRULE_nowikiblock_open_markup
 
 	return p
 }
@@ -9501,20 +9501,20 @@ func (s *Nowikiblock_open_markupContext) ToStringTree(ruleNames []string, recog 
 }
 
 func (s *Nowikiblock_open_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowikiblock_open_markup(s)
 	}
 }
 
 func (s *Nowikiblock_open_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowikiblock_open_markup(s)
 	}
 }
 
-func (p *creole10Parser) Nowikiblock_open_markup() (localctx INowikiblock_open_markupContext) {
+func (p *Creole10Parser) Nowikiblock_open_markup() (localctx INowikiblock_open_markupContext) {
 	localctx = NewNowikiblock_open_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 112, creole10ParserRULE_nowikiblock_open_markup)
+	p.EnterRule(localctx, 112, Creole10ParserRULE_nowikiblock_open_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -9564,7 +9564,7 @@ type Nowikiblock_close_markupContext struct {
 func NewEmptyNowikiblock_close_markupContext() *Nowikiblock_close_markupContext {
 	var p = new(Nowikiblock_close_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowikiblock_close_markup
+	p.RuleIndex = Creole10ParserRULE_nowikiblock_close_markup
 	return p
 }
 
@@ -9576,7 +9576,7 @@ func NewNowikiblock_close_markupContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowikiblock_close_markup
+	p.RuleIndex = Creole10ParserRULE_nowikiblock_close_markup
 
 	return p
 }
@@ -9584,7 +9584,7 @@ func NewNowikiblock_close_markupContext(parser antlr.Parser, parent antlr.Parser
 func (s *Nowikiblock_close_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Nowikiblock_close_markupContext) NOWIKI_BLOCK_CLOSE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_BLOCK_CLOSE, 0)
+	return s.GetToken(Creole10ParserNOWIKI_BLOCK_CLOSE, 0)
 }
 
 func (s *Nowikiblock_close_markupContext) GetRuleContext() antlr.RuleContext {
@@ -9596,20 +9596,20 @@ func (s *Nowikiblock_close_markupContext) ToStringTree(ruleNames []string, recog
 }
 
 func (s *Nowikiblock_close_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowikiblock_close_markup(s)
 	}
 }
 
 func (s *Nowikiblock_close_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowikiblock_close_markup(s)
 	}
 }
 
-func (p *creole10Parser) Nowikiblock_close_markup() (localctx INowikiblock_close_markupContext) {
+func (p *Creole10Parser) Nowikiblock_close_markup() (localctx INowikiblock_close_markupContext) {
 	localctx = NewNowikiblock_close_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 114, creole10ParserRULE_nowikiblock_close_markup)
+	p.EnterRule(localctx, 114, Creole10ParserRULE_nowikiblock_close_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -9630,7 +9630,7 @@ func (p *creole10Parser) Nowikiblock_close_markup() (localctx INowikiblock_close
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(665)
-		p.Match(creole10ParserNOWIKI_BLOCK_CLOSE)
+		p.Match(Creole10ParserNOWIKI_BLOCK_CLOSE)
 	}
 
 	return localctx
@@ -9655,7 +9655,7 @@ type Nowiki_inlineContext struct {
 func NewEmptyNowiki_inlineContext() *Nowiki_inlineContext {
 	var p = new(Nowiki_inlineContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowiki_inline
+	p.RuleIndex = Creole10ParserRULE_nowiki_inline
 	return p
 }
 
@@ -9667,7 +9667,7 @@ func NewNowiki_inlineContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowiki_inline
+	p.RuleIndex = Creole10ParserRULE_nowiki_inline
 
 	return p
 }
@@ -9695,27 +9695,27 @@ func (s *Nowiki_inlineContext) Nowiki_close_markup() INowiki_close_markupContext
 }
 
 func (s *Nowiki_inlineContext) AllNOWIKI_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_CLOSE)
+	return s.GetTokens(Creole10ParserNOWIKI_CLOSE)
 }
 
 func (s *Nowiki_inlineContext) NOWIKI_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_CLOSE, i)
+	return s.GetToken(Creole10ParserNOWIKI_CLOSE, i)
 }
 
 func (s *Nowiki_inlineContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Nowiki_inlineContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Nowiki_inlineContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Nowiki_inlineContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Nowiki_inlineContext) GetRuleContext() antlr.RuleContext {
@@ -9727,20 +9727,20 @@ func (s *Nowiki_inlineContext) ToStringTree(ruleNames []string, recog antlr.Reco
 }
 
 func (s *Nowiki_inlineContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowiki_inline(s)
 	}
 }
 
 func (s *Nowiki_inlineContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowiki_inline(s)
 	}
 }
 
-func (p *creole10Parser) Nowiki_inline() (localctx INowiki_inlineContext) {
+func (p *Creole10Parser) Nowiki_inline() (localctx INowiki_inlineContext) {
 	localctx = NewNowiki_inlineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 116, creole10ParserRULE_nowiki_inline)
+	p.EnterRule(localctx, 116, Creole10ParserRULE_nowiki_inline)
 	var _la int
 
 	defer func() {
@@ -9768,11 +9768,11 @@ func (p *creole10Parser) Nowiki_inline() (localctx INowiki_inlineContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0 {
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0 {
 		p.SetState(668)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserNOWIKI_CLOSE - -1)))) != 0) {
+		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserNOWIKI_CLOSE - -1)))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -9810,7 +9810,7 @@ type HorizontalruleContext struct {
 func NewEmptyHorizontalruleContext() *HorizontalruleContext {
 	var p = new(HorizontalruleContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_horizontalrule
+	p.RuleIndex = Creole10ParserRULE_horizontalrule
 	return p
 }
 
@@ -9822,7 +9822,7 @@ func NewHorizontalruleContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_horizontalrule
+	p.RuleIndex = Creole10ParserRULE_horizontalrule
 
 	return p
 }
@@ -9868,20 +9868,20 @@ func (s *HorizontalruleContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *HorizontalruleContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterHorizontalrule(s)
 	}
 }
 
 func (s *HorizontalruleContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitHorizontalrule(s)
 	}
 }
 
-func (p *creole10Parser) Horizontalrule() (localctx IHorizontalruleContext) {
+func (p *Creole10Parser) Horizontalrule() (localctx IHorizontalruleContext) {
 	localctx = NewHorizontalruleContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 118, creole10ParserRULE_horizontalrule)
+	p.EnterRule(localctx, 118, Creole10ParserRULE_horizontalrule)
 	var _la int
 
 	defer func() {
@@ -9909,7 +9909,7 @@ func (p *creole10Parser) Horizontalrule() (localctx IHorizontalruleContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserBLANKS {
+	if _la == Creole10ParserBLANKS {
 		{
 			p.SetState(677)
 			p.Blanks()
@@ -9943,7 +9943,7 @@ type LinkContext struct {
 func NewEmptyLinkContext() *LinkContext {
 	var p = new(LinkContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link
+	p.RuleIndex = Creole10ParserRULE_link
 	return p
 }
 
@@ -9955,7 +9955,7 @@ func NewLinkContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link
+	p.RuleIndex = Creole10ParserRULE_link
 
 	return p
 }
@@ -10021,20 +10021,20 @@ func (s *LinkContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *LinkContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink(s)
 	}
 }
 
 func (s *LinkContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink(s)
 	}
 }
 
-func (p *creole10Parser) Link() (localctx ILinkContext) {
+func (p *Creole10Parser) Link() (localctx ILinkContext) {
 	localctx = NewLinkContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 120, creole10ParserRULE_link)
+	p.EnterRule(localctx, 120, Creole10ParserRULE_link)
 	var _la int
 
 	defer func() {
@@ -10066,7 +10066,7 @@ func (p *creole10Parser) Link() (localctx ILinkContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserPIPE {
+	if _la == Creole10ParserPIPE {
 		{
 			p.SetState(684)
 			p.Link_description_markup()
@@ -10104,7 +10104,7 @@ type Link_addressContext struct {
 func NewEmptyLink_addressContext() *Link_addressContext {
 	var p = new(Link_addressContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_address
+	p.RuleIndex = Creole10ParserRULE_link_address
 	return p
 }
 
@@ -10116,7 +10116,7 @@ func NewLink_addressContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_address
+	p.RuleIndex = Creole10ParserRULE_link_address
 
 	return p
 }
@@ -10162,20 +10162,20 @@ func (s *Link_addressContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Link_addressContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_address(s)
 	}
 }
 
 func (s *Link_addressContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_address(s)
 	}
 }
 
-func (p *creole10Parser) Link_address() (localctx ILink_addressContext) {
+func (p *Creole10Parser) Link_address() (localctx ILink_addressContext) {
 	localctx = NewLink_addressContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 122, creole10ParserRULE_link_address)
+	p.EnterRule(localctx, 122, Creole10ParserRULE_link_address)
 
 	defer func() {
 		p.ExitRule()
@@ -10204,7 +10204,7 @@ func (p *creole10Parser) Link_address() (localctx ILink_addressContext) {
 		}
 		{
 			p.SetState(692)
-			p.Match(creole10ParserT__0)
+			p.Match(Creole10ParserT__0)
 		}
 		{
 			p.SetState(693)
@@ -10242,7 +10242,7 @@ type Link_interwiki_uriContext struct {
 func NewEmptyLink_interwiki_uriContext() *Link_interwiki_uriContext {
 	var p = new(Link_interwiki_uriContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_interwiki_uri
+	p.RuleIndex = Creole10ParserRULE_link_interwiki_uri
 	return p
 }
 
@@ -10254,7 +10254,7 @@ func NewLink_interwiki_uriContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_interwiki_uri
+	p.RuleIndex = Creole10ParserRULE_link_interwiki_uri
 
 	return p
 }
@@ -10269,20 +10269,20 @@ func (s *Link_interwiki_uriContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Link_interwiki_uriContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_interwiki_uri(s)
 	}
 }
 
 func (s *Link_interwiki_uriContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_interwiki_uri(s)
 	}
 }
 
-func (p *creole10Parser) Link_interwiki_uri() (localctx ILink_interwiki_uriContext) {
+func (p *Creole10Parser) Link_interwiki_uri() (localctx ILink_interwiki_uriContext) {
 	localctx = NewLink_interwiki_uriContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 124, creole10ParserRULE_link_interwiki_uri)
+	p.EnterRule(localctx, 124, Creole10ParserRULE_link_interwiki_uri)
 
 	defer func() {
 		p.ExitRule()
@@ -10303,11 +10303,11 @@ func (p *creole10Parser) Link_interwiki_uri() (localctx ILink_interwiki_uriConte
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(698)
-		p.Match(creole10ParserT__1)
+		p.Match(Creole10ParserT__1)
 	}
 	{
 		p.SetState(699)
-		p.Match(creole10ParserT__2)
+		p.Match(Creole10ParserT__2)
 	}
 
 	return localctx
@@ -10332,7 +10332,7 @@ type Link_interwiki_pagenameContext struct {
 func NewEmptyLink_interwiki_pagenameContext() *Link_interwiki_pagenameContext {
 	var p = new(Link_interwiki_pagenameContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_interwiki_pagename
+	p.RuleIndex = Creole10ParserRULE_link_interwiki_pagename
 	return p
 }
 
@@ -10344,7 +10344,7 @@ func NewLink_interwiki_pagenameContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_interwiki_pagename
+	p.RuleIndex = Creole10ParserRULE_link_interwiki_pagename
 
 	return p
 }
@@ -10352,35 +10352,35 @@ func NewLink_interwiki_pagenameContext(parser antlr.Parser, parent antlr.ParserR
 func (s *Link_interwiki_pagenameContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Link_interwiki_pagenameContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPIPE)
+	return s.GetTokens(Creole10ParserPIPE)
 }
 
 func (s *Link_interwiki_pagenameContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, i)
+	return s.GetToken(Creole10ParserPIPE, i)
 }
 
 func (s *Link_interwiki_pagenameContext) AllLINK_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_CLOSE)
+	return s.GetTokens(Creole10ParserLINK_CLOSE)
 }
 
 func (s *Link_interwiki_pagenameContext) LINK_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_CLOSE, i)
+	return s.GetToken(Creole10ParserLINK_CLOSE, i)
 }
 
 func (s *Link_interwiki_pagenameContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Link_interwiki_pagenameContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Link_interwiki_pagenameContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Link_interwiki_pagenameContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Link_interwiki_pagenameContext) GetRuleContext() antlr.RuleContext {
@@ -10392,20 +10392,20 @@ func (s *Link_interwiki_pagenameContext) ToStringTree(ruleNames []string, recog 
 }
 
 func (s *Link_interwiki_pagenameContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_interwiki_pagename(s)
 	}
 }
 
 func (s *Link_interwiki_pagenameContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_interwiki_pagename(s)
 	}
 }
 
-func (p *creole10Parser) Link_interwiki_pagename() (localctx ILink_interwiki_pagenameContext) {
+func (p *Creole10Parser) Link_interwiki_pagename() (localctx ILink_interwiki_pagenameContext) {
 	localctx = NewLink_interwiki_pagenameContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 126, creole10ParserRULE_link_interwiki_pagename)
+	p.EnterRule(localctx, 126, Creole10ParserRULE_link_interwiki_pagename)
 	var _la int
 
 	defer func() {
@@ -10429,11 +10429,11 @@ func (p *creole10Parser) Link_interwiki_pagename() (localctx ILink_interwiki_pag
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0) {
 		p.SetState(701)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserLINK_CLOSE - -1))|(1<<(creole10ParserPIPE - -1)))) != 0) {
+		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserLINK_CLOSE - -1))|(1<<(Creole10ParserPIPE - -1)))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -10467,7 +10467,7 @@ type Link_descriptionContext struct {
 func NewEmptyLink_descriptionContext() *Link_descriptionContext {
 	var p = new(Link_descriptionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_description
+	p.RuleIndex = Creole10ParserRULE_link_description
 	return p
 }
 
@@ -10479,7 +10479,7 @@ func NewLink_descriptionContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_description
+	p.RuleIndex = Creole10ParserRULE_link_description
 
 	return p
 }
@@ -10564,20 +10564,20 @@ func (s *Link_descriptionContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Link_descriptionContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_description(s)
 	}
 }
 
 func (s *Link_descriptionContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_description(s)
 	}
 }
 
-func (p *creole10Parser) Link_description() (localctx ILink_descriptionContext) {
+func (p *Creole10Parser) Link_description() (localctx ILink_descriptionContext) {
 	localctx = NewLink_descriptionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 128, creole10ParserRULE_link_description)
+	p.EnterRule(localctx, 128, Creole10ParserRULE_link_description)
 
 	defer func() {
 		p.ExitRule()
@@ -10656,7 +10656,7 @@ type Link_descriptionpartContext struct {
 func NewEmptyLink_descriptionpartContext() *Link_descriptionpartContext {
 	var p = new(Link_descriptionpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_descriptionpart
 	return p
 }
 
@@ -10668,7 +10668,7 @@ func NewLink_descriptionpartContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_descriptionpart
 
 	return p
 }
@@ -10822,20 +10822,20 @@ func (s *Link_descriptionpartContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *Link_descriptionpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_descriptionpart(s)
 	}
 }
 
 func (s *Link_descriptionpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_descriptionpart(s)
 	}
 }
 
-func (p *creole10Parser) Link_descriptionpart() (localctx ILink_descriptionpartContext) {
+func (p *Creole10Parser) Link_descriptionpart() (localctx ILink_descriptionpartContext) {
 	localctx = NewLink_descriptionpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 130, creole10ParserRULE_link_descriptionpart)
+	p.EnterRule(localctx, 130, Creole10ParserRULE_link_descriptionpart)
 
 	defer func() {
 		p.ExitRule()
@@ -10980,7 +10980,7 @@ type Link_bold_descriptionpartContext struct {
 func NewEmptyLink_bold_descriptionpartContext() *Link_bold_descriptionpartContext {
 	var p = new(Link_bold_descriptionpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_bold_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_bold_descriptionpart
 	return p
 }
 
@@ -10992,7 +10992,7 @@ func NewLink_bold_descriptionpartContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_bold_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_bold_descriptionpart
 
 	return p
 }
@@ -11051,20 +11051,20 @@ func (s *Link_bold_descriptionpartContext) ToStringTree(ruleNames []string, reco
 }
 
 func (s *Link_bold_descriptionpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_bold_descriptionpart(s)
 	}
 }
 
 func (s *Link_bold_descriptionpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_bold_descriptionpart(s)
 	}
 }
 
-func (p *creole10Parser) Link_bold_descriptionpart() (localctx ILink_bold_descriptionpartContext) {
+func (p *Creole10Parser) Link_bold_descriptionpart() (localctx ILink_bold_descriptionpartContext) {
 	localctx = NewLink_bold_descriptionpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 132, creole10ParserRULE_link_bold_descriptionpart)
+	p.EnterRule(localctx, 132, Creole10ParserRULE_link_bold_descriptionpart)
 
 	defer func() {
 		p.ExitRule()
@@ -11086,7 +11086,7 @@ func (p *creole10Parser) Link_bold_descriptionpart() (localctx ILink_bold_descri
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(745)
@@ -11101,7 +11101,7 @@ func (p *creole10Parser) Link_bold_descriptionpart() (localctx ILink_bold_descri
 			p.Ital_markup()
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(749)
@@ -11134,7 +11134,7 @@ type Link_ital_descriptionpartContext struct {
 func NewEmptyLink_ital_descriptionpartContext() *Link_ital_descriptionpartContext {
 	var p = new(Link_ital_descriptionpartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_ital_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_ital_descriptionpart
 	return p
 }
 
@@ -11146,7 +11146,7 @@ func NewLink_ital_descriptionpartContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_ital_descriptionpart
+	p.RuleIndex = Creole10ParserRULE_link_ital_descriptionpart
 
 	return p
 }
@@ -11205,20 +11205,20 @@ func (s *Link_ital_descriptionpartContext) ToStringTree(ruleNames []string, reco
 }
 
 func (s *Link_ital_descriptionpartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_ital_descriptionpart(s)
 	}
 }
 
 func (s *Link_ital_descriptionpartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_ital_descriptionpart(s)
 	}
 }
 
-func (p *creole10Parser) Link_ital_descriptionpart() (localctx ILink_ital_descriptionpartContext) {
+func (p *Creole10Parser) Link_ital_descriptionpart() (localctx ILink_ital_descriptionpartContext) {
 	localctx = NewLink_ital_descriptionpartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 134, creole10ParserRULE_link_ital_descriptionpart)
+	p.EnterRule(localctx, 134, Creole10ParserRULE_link_ital_descriptionpart)
 
 	defer func() {
 		p.ExitRule()
@@ -11240,7 +11240,7 @@ func (p *creole10Parser) Link_ital_descriptionpart() (localctx ILink_ital_descri
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(752)
@@ -11255,7 +11255,7 @@ func (p *creole10Parser) Link_ital_descriptionpart() (localctx ILink_ital_descri
 			p.Bold_markup()
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(756)
@@ -11288,7 +11288,7 @@ type Link_boldital_descriptionContext struct {
 func NewEmptyLink_boldital_descriptionContext() *Link_boldital_descriptionContext {
 	var p = new(Link_boldital_descriptionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_boldital_description
+	p.RuleIndex = Creole10ParserRULE_link_boldital_description
 	return p
 }
 
@@ -11300,7 +11300,7 @@ func NewLink_boldital_descriptionContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_boldital_description
+	p.RuleIndex = Creole10ParserRULE_link_boldital_description
 
 	return p
 }
@@ -11362,20 +11362,20 @@ func (s *Link_boldital_descriptionContext) ToStringTree(ruleNames []string, reco
 }
 
 func (s *Link_boldital_descriptionContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_boldital_description(s)
 	}
 }
 
 func (s *Link_boldital_descriptionContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_boldital_description(s)
 	}
 }
 
-func (p *creole10Parser) Link_boldital_description() (localctx ILink_boldital_descriptionContext) {
+func (p *Creole10Parser) Link_boldital_description() (localctx ILink_boldital_descriptionContext) {
 	localctx = NewLink_boldital_descriptionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 136, creole10ParserRULE_link_boldital_description)
+	p.EnterRule(localctx, 136, Creole10ParserRULE_link_boldital_description)
 
 	defer func() {
 		p.ExitRule()
@@ -11446,7 +11446,7 @@ type Link_descriptiontextContext struct {
 func NewEmptyLink_descriptiontextContext() *Link_descriptiontextContext {
 	var p = new(Link_descriptiontextContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_descriptiontext
+	p.RuleIndex = Creole10ParserRULE_link_descriptiontext
 	return p
 }
 
@@ -11458,7 +11458,7 @@ func NewLink_descriptiontextContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_descriptiontext
+	p.RuleIndex = Creole10ParserRULE_link_descriptiontext
 
 	return p
 }
@@ -11512,91 +11512,91 @@ func (s *Link_descriptiontextContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Link_descriptiontextContext) AllLINK_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_CLOSE)
+	return s.GetTokens(Creole10ParserLINK_CLOSE)
 }
 
 func (s *Link_descriptiontextContext) LINK_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_CLOSE, i)
+	return s.GetToken(Creole10ParserLINK_CLOSE, i)
 }
 
 func (s *Link_descriptiontextContext) AllITAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserITAL)
+	return s.GetTokens(Creole10ParserITAL)
 }
 
 func (s *Link_descriptiontextContext) ITAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, i)
+	return s.GetToken(Creole10ParserITAL, i)
 }
 
 func (s *Link_descriptiontextContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Link_descriptiontextContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Link_descriptiontextContext) AllLINK_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_OPEN)
+	return s.GetTokens(Creole10ParserLINK_OPEN)
 }
 
 func (s *Link_descriptiontextContext) LINK_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, i)
+	return s.GetToken(Creole10ParserLINK_OPEN, i)
 }
 
 func (s *Link_descriptiontextContext) AllIMAGE_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_OPEN)
+	return s.GetTokens(Creole10ParserIMAGE_OPEN)
 }
 
 func (s *Link_descriptiontextContext) IMAGE_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, i)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, i)
 }
 
 func (s *Link_descriptiontextContext) AllNOWIKI_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_OPEN)
+	return s.GetTokens(Creole10ParserNOWIKI_OPEN)
 }
 
 func (s *Link_descriptiontextContext) NOWIKI_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, i)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, i)
 }
 
 func (s *Link_descriptiontextContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Link_descriptiontextContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Link_descriptiontextContext) AllFORCED_LINEBREAK() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserFORCED_LINEBREAK)
+	return s.GetTokens(Creole10ParserFORCED_LINEBREAK)
 }
 
 func (s *Link_descriptiontextContext) FORCED_LINEBREAK(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, i)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, i)
 }
 
 func (s *Link_descriptiontextContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Link_descriptiontextContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Link_descriptiontextContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Link_descriptiontextContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Link_descriptiontextContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Link_descriptiontextContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Link_descriptiontextContext) GetRuleContext() antlr.RuleContext {
@@ -11608,20 +11608,20 @@ func (s *Link_descriptiontextContext) ToStringTree(ruleNames []string, recog ant
 }
 
 func (s *Link_descriptiontextContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_descriptiontext(s)
 	}
 }
 
 func (s *Link_descriptiontextContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_descriptiontext(s)
 	}
 }
 
-func (p *creole10Parser) Link_descriptiontext() (localctx ILink_descriptiontextContext) {
+func (p *Creole10Parser) Link_descriptiontext() (localctx ILink_descriptiontextContext) {
 	localctx = NewLink_descriptiontextContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 138, creole10ParserRULE_link_descriptiontext)
+	p.EnterRule(localctx, 138, Creole10ParserRULE_link_descriptiontext)
 	var _la int
 
 	defer func() {
@@ -11653,24 +11653,24 @@ func (p *creole10Parser) Link_descriptiontext() (localctx ILink_descriptiontextC
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserIMAGE_CLOSE, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+			case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserIMAGE_CLOSE, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 				p.SetState(768)
 				_la = p.GetTokenStream().LA(1)
 
-				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserITAL - -1))|(1<<(creole10ParserNOWIKI_OPEN - -1))|(1<<(creole10ParserLINK_OPEN - -1))|(1<<(creole10ParserLINK_CLOSE - -1))|(1<<(creole10ParserIMAGE_OPEN - -1))|(1<<(creole10ParserFORCED_LINEBREAK - -1))|(1<<(creole10ParserSTAR - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserITAL - -1))|(1<<(Creole10ParserNOWIKI_OPEN - -1))|(1<<(Creole10ParserLINK_OPEN - -1))|(1<<(Creole10ParserLINK_CLOSE - -1))|(1<<(Creole10ParserIMAGE_OPEN - -1))|(1<<(Creole10ParserFORCED_LINEBREAK - -1))|(1<<(Creole10ParserSTAR - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
 					p.Consume()
 				}
 
-			case creole10ParserFORCED_LINEBREAK:
+			case Creole10ParserFORCED_LINEBREAK:
 				{
 					p.SetState(769)
 					p.Forced_linebreak()
 				}
 
-			case creole10ParserESCAPE:
+			case Creole10ParserESCAPE:
 				{
 					p.SetState(770)
 					p.Escaped()
@@ -11711,7 +11711,7 @@ type Link_uriContext struct {
 func NewEmptyLink_uriContext() *Link_uriContext {
 	var p = new(Link_uriContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_uri
+	p.RuleIndex = Creole10ParserRULE_link_uri
 	return p
 }
 
@@ -11723,7 +11723,7 @@ func NewLink_uriContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_uri
+	p.RuleIndex = Creole10ParserRULE_link_uri
 
 	return p
 }
@@ -11731,35 +11731,35 @@ func NewLink_uriContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *Link_uriContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Link_uriContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPIPE)
+	return s.GetTokens(Creole10ParserPIPE)
 }
 
 func (s *Link_uriContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, i)
+	return s.GetToken(Creole10ParserPIPE, i)
 }
 
 func (s *Link_uriContext) AllLINK_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_CLOSE)
+	return s.GetTokens(Creole10ParserLINK_CLOSE)
 }
 
 func (s *Link_uriContext) LINK_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_CLOSE, i)
+	return s.GetToken(Creole10ParserLINK_CLOSE, i)
 }
 
 func (s *Link_uriContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Link_uriContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Link_uriContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Link_uriContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Link_uriContext) GetRuleContext() antlr.RuleContext {
@@ -11771,20 +11771,20 @@ func (s *Link_uriContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *Link_uriContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_uri(s)
 	}
 }
 
 func (s *Link_uriContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_uri(s)
 	}
 }
 
-func (p *creole10Parser) Link_uri() (localctx ILink_uriContext) {
+func (p *Creole10Parser) Link_uri() (localctx ILink_uriContext) {
 	localctx = NewLink_uriContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 140, creole10ParserRULE_link_uri)
+	p.EnterRule(localctx, 140, Creole10ParserRULE_link_uri)
 	var _la int
 
 	defer func() {
@@ -11808,11 +11808,11 @@ func (p *creole10Parser) Link_uri() (localctx ILink_uriContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0) {
 		p.SetState(775)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserLINK_CLOSE - -1))|(1<<(creole10ParserPIPE - -1)))) != 0) {
+		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserLINK_CLOSE - -1))|(1<<(Creole10ParserPIPE - -1)))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -11846,7 +11846,7 @@ type ImageContext struct {
 func NewEmptyImageContext() *ImageContext {
 	var p = new(ImageContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image
+	p.RuleIndex = Creole10ParserRULE_image
 	return p
 }
 
@@ -11858,7 +11858,7 @@ func NewImageContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image
+	p.RuleIndex = Creole10ParserRULE_image
 
 	return p
 }
@@ -11914,20 +11914,20 @@ func (s *ImageContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *ImageContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage(s)
 	}
 }
 
 func (s *ImageContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage(s)
 	}
 }
 
-func (p *creole10Parser) Image() (localctx IImageContext) {
+func (p *Creole10Parser) Image() (localctx IImageContext) {
 	localctx = NewImageContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 142, creole10ParserRULE_image)
+	p.EnterRule(localctx, 142, Creole10ParserRULE_image)
 	var _la int
 
 	defer func() {
@@ -11959,7 +11959,7 @@ func (p *creole10Parser) Image() (localctx IImageContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == creole10ParserPIPE {
+	if _la == Creole10ParserPIPE {
 		{
 			p.SetState(782)
 			p.Image_alternative()
@@ -11993,7 +11993,7 @@ type Image_uriContext struct {
 func NewEmptyImage_uriContext() *Image_uriContext {
 	var p = new(Image_uriContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_uri
+	p.RuleIndex = Creole10ParserRULE_image_uri
 	return p
 }
 
@@ -12005,7 +12005,7 @@ func NewImage_uriContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_uri
+	p.RuleIndex = Creole10ParserRULE_image_uri
 
 	return p
 }
@@ -12013,35 +12013,35 @@ func NewImage_uriContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *Image_uriContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Image_uriContext) AllPIPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserPIPE)
+	return s.GetTokens(Creole10ParserPIPE)
 }
 
 func (s *Image_uriContext) PIPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, i)
+	return s.GetToken(Creole10ParserPIPE, i)
 }
 
 func (s *Image_uriContext) AllIMAGE_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_CLOSE)
+	return s.GetTokens(Creole10ParserIMAGE_CLOSE)
 }
 
 func (s *Image_uriContext) IMAGE_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_CLOSE, i)
+	return s.GetToken(Creole10ParserIMAGE_CLOSE, i)
 }
 
 func (s *Image_uriContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Image_uriContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Image_uriContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Image_uriContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Image_uriContext) GetRuleContext() antlr.RuleContext {
@@ -12053,20 +12053,20 @@ func (s *Image_uriContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *Image_uriContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_uri(s)
 	}
 }
 
 func (s *Image_uriContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_uri(s)
 	}
 }
 
-func (p *creole10Parser) Image_uri() (localctx IImage_uriContext) {
+func (p *Creole10Parser) Image_uri() (localctx IImage_uriContext) {
 	localctx = NewImage_uriContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 144, creole10ParserRULE_image_uri)
+	p.EnterRule(localctx, 144, Creole10ParserRULE_image_uri)
 	var _la int
 
 	defer func() {
@@ -12090,11 +12090,11 @@ func (p *creole10Parser) Image_uri() (localctx IImage_uriContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserEXTENSION)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserEXTENSION)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0) {
 		p.SetState(787)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserIMAGE_CLOSE - -1))|(1<<(creole10ParserPIPE - -1)))) != 0) {
+		if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserIMAGE_CLOSE - -1))|(1<<(Creole10ParserPIPE - -1)))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -12128,7 +12128,7 @@ type Image_alternativeContext struct {
 func NewEmptyImage_alternativeContext() *Image_alternativeContext {
 	var p = new(Image_alternativeContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_alternative
+	p.RuleIndex = Creole10ParserRULE_image_alternative
 	return p
 }
 
@@ -12140,7 +12140,7 @@ func NewImage_alternativeContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_alternative
+	p.RuleIndex = Creole10ParserRULE_image_alternative
 
 	return p
 }
@@ -12189,20 +12189,20 @@ func (s *Image_alternativeContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Image_alternativeContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_alternative(s)
 	}
 }
 
 func (s *Image_alternativeContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_alternative(s)
 	}
 }
 
-func (p *creole10Parser) Image_alternative() (localctx IImage_alternativeContext) {
+func (p *Creole10Parser) Image_alternative() (localctx IImage_alternativeContext) {
 	localctx = NewImage_alternativeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 146, creole10ParserRULE_image_alternative)
+	p.EnterRule(localctx, 146, Creole10ParserRULE_image_alternative)
 	var _la int
 
 	defer func() {
@@ -12230,7 +12230,7 @@ func (p *creole10Parser) Image_alternative() (localctx IImage_alternativeContext
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0) {
 		{
 			p.SetState(793)
 			p.Image_alternativepart()
@@ -12263,7 +12263,7 @@ type Image_alternativepartContext struct {
 func NewEmptyImage_alternativepartContext() *Image_alternativepartContext {
 	var p = new(Image_alternativepartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_alternativepart
 	return p
 }
 
@@ -12275,7 +12275,7 @@ func NewImage_alternativepartContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_alternativepart
 
 	return p
 }
@@ -12416,20 +12416,20 @@ func (s *Image_alternativepartContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Image_alternativepartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_alternativepart(s)
 	}
 }
 
 func (s *Image_alternativepartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_alternativepart(s)
 	}
 }
 
-func (p *creole10Parser) Image_alternativepart() (localctx IImage_alternativepartContext) {
+func (p *Creole10Parser) Image_alternativepart() (localctx IImage_alternativepartContext) {
 	localctx = NewImage_alternativepartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 148, creole10ParserRULE_image_alternativepart)
+	p.EnterRule(localctx, 148, Creole10ParserRULE_image_alternativepart)
 
 	defer func() {
 		p.ExitRule()
@@ -12453,7 +12453,7 @@ func (p *creole10Parser) Image_alternativepart() (localctx IImage_alternativepar
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(798)
@@ -12487,7 +12487,7 @@ func (p *creole10Parser) Image_alternativepart() (localctx IImage_alternativepar
 			p.Bold_markup()
 		}
 
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(808)
@@ -12521,7 +12521,7 @@ func (p *creole10Parser) Image_alternativepart() (localctx IImage_alternativepar
 			p.Ital_markup()
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(818)
@@ -12554,7 +12554,7 @@ type Image_bold_alternativepartContext struct {
 func NewEmptyImage_bold_alternativepartContext() *Image_bold_alternativepartContext {
 	var p = new(Image_bold_alternativepartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_bold_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_bold_alternativepart
 	return p
 }
 
@@ -12566,7 +12566,7 @@ func NewImage_bold_alternativepartContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_bold_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_bold_alternativepart
 
 	return p
 }
@@ -12625,20 +12625,20 @@ func (s *Image_bold_alternativepartContext) ToStringTree(ruleNames []string, rec
 }
 
 func (s *Image_bold_alternativepartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_bold_alternativepart(s)
 	}
 }
 
 func (s *Image_bold_alternativepartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_bold_alternativepart(s)
 	}
 }
 
-func (p *creole10Parser) Image_bold_alternativepart() (localctx IImage_bold_alternativepartContext) {
+func (p *Creole10Parser) Image_bold_alternativepart() (localctx IImage_bold_alternativepartContext) {
 	localctx = NewImage_bold_alternativepartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 150, creole10ParserRULE_image_bold_alternativepart)
+	p.EnterRule(localctx, 150, Creole10ParserRULE_image_bold_alternativepart)
 
 	defer func() {
 		p.ExitRule()
@@ -12660,7 +12660,7 @@ func (p *creole10Parser) Image_bold_alternativepart() (localctx IImage_bold_alte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserITAL:
+	case Creole10ParserITAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(821)
@@ -12675,7 +12675,7 @@ func (p *creole10Parser) Image_bold_alternativepart() (localctx IImage_bold_alte
 			p.Ital_markup()
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(825)
@@ -12708,7 +12708,7 @@ type Image_ital_alternativepartContext struct {
 func NewEmptyImage_ital_alternativepartContext() *Image_ital_alternativepartContext {
 	var p = new(Image_ital_alternativepartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_ital_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_ital_alternativepart
 	return p
 }
 
@@ -12720,7 +12720,7 @@ func NewImage_ital_alternativepartContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_ital_alternativepart
+	p.RuleIndex = Creole10ParserRULE_image_ital_alternativepart
 
 	return p
 }
@@ -12779,20 +12779,20 @@ func (s *Image_ital_alternativepartContext) ToStringTree(ruleNames []string, rec
 }
 
 func (s *Image_ital_alternativepartContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_ital_alternativepart(s)
 	}
 }
 
 func (s *Image_ital_alternativepartContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_ital_alternativepart(s)
 	}
 }
 
-func (p *creole10Parser) Image_ital_alternativepart() (localctx IImage_ital_alternativepartContext) {
+func (p *Creole10Parser) Image_ital_alternativepart() (localctx IImage_ital_alternativepartContext) {
 	localctx = NewImage_ital_alternativepartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 152, creole10ParserRULE_image_ital_alternativepart)
+	p.EnterRule(localctx, 152, Creole10ParserRULE_image_ital_alternativepart)
 
 	defer func() {
 		p.ExitRule()
@@ -12814,7 +12814,7 @@ func (p *creole10Parser) Image_ital_alternativepart() (localctx IImage_ital_alte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserSTAR:
+	case Creole10ParserSTAR:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(828)
@@ -12829,7 +12829,7 @@ func (p *creole10Parser) Image_ital_alternativepart() (localctx IImage_ital_alte
 			p.Bold_markup()
 		}
 
-	case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+	case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(832)
@@ -12862,7 +12862,7 @@ type Image_boldital_alternativeContext struct {
 func NewEmptyImage_boldital_alternativeContext() *Image_boldital_alternativeContext {
 	var p = new(Image_boldital_alternativeContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_boldital_alternative
+	p.RuleIndex = Creole10ParserRULE_image_boldital_alternative
 	return p
 }
 
@@ -12874,7 +12874,7 @@ func NewImage_boldital_alternativeContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_boldital_alternative
+	p.RuleIndex = Creole10ParserRULE_image_boldital_alternative
 
 	return p
 }
@@ -12936,20 +12936,20 @@ func (s *Image_boldital_alternativeContext) ToStringTree(ruleNames []string, rec
 }
 
 func (s *Image_boldital_alternativeContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_boldital_alternative(s)
 	}
 }
 
 func (s *Image_boldital_alternativeContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_boldital_alternative(s)
 	}
 }
 
-func (p *creole10Parser) Image_boldital_alternative() (localctx IImage_boldital_alternativeContext) {
+func (p *Creole10Parser) Image_boldital_alternative() (localctx IImage_boldital_alternativeContext) {
 	localctx = NewImage_boldital_alternativeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 154, creole10ParserRULE_image_boldital_alternative)
+	p.EnterRule(localctx, 154, Creole10ParserRULE_image_boldital_alternative)
 
 	defer func() {
 		p.ExitRule()
@@ -13020,7 +13020,7 @@ type Image_alternativetextContext struct {
 func NewEmptyImage_alternativetextContext() *Image_alternativetextContext {
 	var p = new(Image_alternativetextContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_alternativetext
+	p.RuleIndex = Creole10ParserRULE_image_alternativetext
 	return p
 }
 
@@ -13032,7 +13032,7 @@ func NewImage_alternativetextContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_alternativetext
+	p.RuleIndex = Creole10ParserRULE_image_alternativetext
 
 	return p
 }
@@ -13063,83 +13063,83 @@ func (s *Image_alternativetextContext) Forced_linebreak(i int) IForced_linebreak
 }
 
 func (s *Image_alternativetextContext) AllIMAGE_CLOSE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_CLOSE)
+	return s.GetTokens(Creole10ParserIMAGE_CLOSE)
 }
 
 func (s *Image_alternativetextContext) IMAGE_CLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_CLOSE, i)
+	return s.GetToken(Creole10ParserIMAGE_CLOSE, i)
 }
 
 func (s *Image_alternativetextContext) AllITAL() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserITAL)
+	return s.GetTokens(Creole10ParserITAL)
 }
 
 func (s *Image_alternativetextContext) ITAL(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, i)
+	return s.GetToken(Creole10ParserITAL, i)
 }
 
 func (s *Image_alternativetextContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Image_alternativetextContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Image_alternativetextContext) AllLINK_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserLINK_OPEN)
+	return s.GetTokens(Creole10ParserLINK_OPEN)
 }
 
 func (s *Image_alternativetextContext) LINK_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, i)
+	return s.GetToken(Creole10ParserLINK_OPEN, i)
 }
 
 func (s *Image_alternativetextContext) AllIMAGE_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserIMAGE_OPEN)
+	return s.GetTokens(Creole10ParserIMAGE_OPEN)
 }
 
 func (s *Image_alternativetextContext) IMAGE_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, i)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, i)
 }
 
 func (s *Image_alternativetextContext) AllNOWIKI_OPEN() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNOWIKI_OPEN)
+	return s.GetTokens(Creole10ParserNOWIKI_OPEN)
 }
 
 func (s *Image_alternativetextContext) NOWIKI_OPEN(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, i)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, i)
 }
 
 func (s *Image_alternativetextContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Image_alternativetextContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Image_alternativetextContext) AllFORCED_LINEBREAK() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserFORCED_LINEBREAK)
+	return s.GetTokens(Creole10ParserFORCED_LINEBREAK)
 }
 
 func (s *Image_alternativetextContext) FORCED_LINEBREAK(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, i)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, i)
 }
 
 func (s *Image_alternativetextContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Image_alternativetextContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Image_alternativetextContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Image_alternativetextContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Image_alternativetextContext) GetRuleContext() antlr.RuleContext {
@@ -13151,20 +13151,20 @@ func (s *Image_alternativetextContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Image_alternativetextContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_alternativetext(s)
 	}
 }
 
 func (s *Image_alternativetextContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_alternativetext(s)
 	}
 }
 
-func (p *creole10Parser) Image_alternativetext() (localctx IImage_alternativetextContext) {
+func (p *Creole10Parser) Image_alternativetext() (localctx IImage_alternativetextContext) {
 	localctx = NewImage_alternativetextContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 156, creole10ParserRULE_image_alternativetext)
+	p.EnterRule(localctx, 156, Creole10ParserRULE_image_alternativetext)
 	var _la int
 
 	defer func() {
@@ -13196,18 +13196,18 @@ func (p *creole10Parser) Image_alternativetext() (localctx IImage_alternativetex
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserESCAPE, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_CLOSE, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+			case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserESCAPE, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_CLOSE, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 				p.SetState(844)
 				_la = p.GetTokenStream().LA(1)
 
-				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserITAL - -1))|(1<<(creole10ParserNOWIKI_OPEN - -1))|(1<<(creole10ParserLINK_OPEN - -1))|(1<<(creole10ParserIMAGE_OPEN - -1))|(1<<(creole10ParserIMAGE_CLOSE - -1))|(1<<(creole10ParserFORCED_LINEBREAK - -1))|(1<<(creole10ParserSTAR - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+				if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserITAL - -1))|(1<<(Creole10ParserNOWIKI_OPEN - -1))|(1<<(Creole10ParserLINK_OPEN - -1))|(1<<(Creole10ParserIMAGE_OPEN - -1))|(1<<(Creole10ParserIMAGE_CLOSE - -1))|(1<<(Creole10ParserFORCED_LINEBREAK - -1))|(1<<(Creole10ParserSTAR - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 					p.GetErrorHandler().RecoverInline(p)
 				} else {
 					p.GetErrorHandler().ReportMatch(p)
 					p.Consume()
 				}
 
-			case creole10ParserFORCED_LINEBREAK:
+			case Creole10ParserFORCED_LINEBREAK:
 				{
 					p.SetState(845)
 					p.Forced_linebreak()
@@ -13248,7 +13248,7 @@ type ExtensionContext struct {
 func NewEmptyExtensionContext() *ExtensionContext {
 	var p = new(ExtensionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_extension
+	p.RuleIndex = Creole10ParserRULE_extension
 	return p
 }
 
@@ -13260,7 +13260,7 @@ func NewExtensionContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_extension
+	p.RuleIndex = Creole10ParserRULE_extension
 
 	return p
 }
@@ -13329,20 +13329,20 @@ func (s *ExtensionContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *ExtensionContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterExtension(s)
 	}
 }
 
 func (s *ExtensionContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitExtension(s)
 	}
 }
 
-func (p *creole10Parser) Extension() (localctx IExtensionContext) {
+func (p *Creole10Parser) Extension() (localctx IExtensionContext) {
 	localctx = NewExtensionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 158, creole10ParserRULE_extension)
+	p.EnterRule(localctx, 158, Creole10ParserRULE_extension)
 
 	defer func() {
 		p.ExitRule()
@@ -13404,7 +13404,7 @@ type Extension_handlerContext struct {
 func NewEmptyExtension_handlerContext() *Extension_handlerContext {
 	var p = new(Extension_handlerContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_extension_handler
+	p.RuleIndex = Creole10ParserRULE_extension_handler
 	return p
 }
 
@@ -13416,7 +13416,7 @@ func NewExtension_handlerContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_extension_handler
+	p.RuleIndex = Creole10ParserRULE_extension_handler
 
 	return p
 }
@@ -13447,43 +13447,43 @@ func (s *Extension_handlerContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Extension_handlerContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Extension_handlerContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Extension_handlerContext) AllBLANKS() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserBLANKS)
+	return s.GetTokens(Creole10ParserBLANKS)
 }
 
 func (s *Extension_handlerContext) BLANKS(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserBLANKS, i)
+	return s.GetToken(Creole10ParserBLANKS, i)
 }
 
 func (s *Extension_handlerContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Extension_handlerContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Extension_handlerContext) AllNEWLINE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserNEWLINE)
+	return s.GetTokens(Creole10ParserNEWLINE)
 }
 
 func (s *Extension_handlerContext) NEWLINE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, i)
+	return s.GetToken(Creole10ParserNEWLINE, i)
 }
 
 func (s *Extension_handlerContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Extension_handlerContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Extension_handlerContext) GetRuleContext() antlr.RuleContext {
@@ -13495,20 +13495,20 @@ func (s *Extension_handlerContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Extension_handlerContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterExtension_handler(s)
 	}
 }
 
 func (s *Extension_handlerContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitExtension_handler(s)
 	}
 }
 
-func (p *creole10Parser) Extension_handler() (localctx IExtension_handlerContext) {
+func (p *Creole10Parser) Extension_handler() (localctx IExtension_handlerContext) {
 	localctx = NewExtension_handlerContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 160, creole10ParserRULE_extension_handler)
+	p.EnterRule(localctx, 160, Creole10ParserRULE_extension_handler)
 	var _la int
 
 	defer func() {
@@ -13532,23 +13532,23 @@ func (p *creole10Parser) Extension_handler() (localctx IExtension_handlerContext
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0) {
+	for ok := true; ok; ok = (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0) {
 		p.SetState(858)
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserCOLON_SLASH, creole10ParserITAL, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSTAR, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+		case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserCOLON_SLASH, Creole10ParserITAL, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSTAR, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 			p.SetState(856)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserNEWLINE - -1))|(1<<(creole10ParserBLANKS - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+			if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserNEWLINE - -1))|(1<<(Creole10ParserBLANKS - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
 				p.Consume()
 			}
 
-		case creole10ParserESCAPE:
+		case Creole10ParserESCAPE:
 			{
 				p.SetState(857)
 				p.Escaped()
@@ -13585,7 +13585,7 @@ type Extension_statementContext struct {
 func NewEmptyExtension_statementContext() *Extension_statementContext {
 	var p = new(Extension_statementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_extension_statement
+	p.RuleIndex = Creole10ParserRULE_extension_statement
 	return p
 }
 
@@ -13597,7 +13597,7 @@ func NewExtension_statementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_extension_statement
+	p.RuleIndex = Creole10ParserRULE_extension_statement
 
 	return p
 }
@@ -13628,27 +13628,27 @@ func (s *Extension_statementContext) Escaped(i int) IEscapedContext {
 }
 
 func (s *Extension_statementContext) AllEXTENSION() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEXTENSION)
+	return s.GetTokens(Creole10ParserEXTENSION)
 }
 
 func (s *Extension_statementContext) EXTENSION(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, i)
+	return s.GetToken(Creole10ParserEXTENSION, i)
 }
 
 func (s *Extension_statementContext) AllESCAPE() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserESCAPE)
+	return s.GetTokens(Creole10ParserESCAPE)
 }
 
 func (s *Extension_statementContext) ESCAPE(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, i)
+	return s.GetToken(Creole10ParserESCAPE, i)
 }
 
 func (s *Extension_statementContext) AllEOF() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserEOF)
+	return s.GetTokens(Creole10ParserEOF)
 }
 
 func (s *Extension_statementContext) EOF(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, i)
+	return s.GetToken(Creole10ParserEOF, i)
 }
 
 func (s *Extension_statementContext) GetRuleContext() antlr.RuleContext {
@@ -13660,20 +13660,20 @@ func (s *Extension_statementContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *Extension_statementContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterExtension_statement(s)
 	}
 }
 
 func (s *Extension_statementContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitExtension_statement(s)
 	}
 }
 
-func (p *creole10Parser) Extension_statement() (localctx IExtension_statementContext) {
+func (p *Creole10Parser) Extension_statement() (localctx IExtension_statementContext) {
 	localctx = NewExtension_statementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 162, creole10ParserRULE_extension_statement)
+	p.EnterRule(localctx, 162, Creole10ParserRULE_extension_statement)
 	var _la int
 
 	defer func() {
@@ -13697,23 +13697,23 @@ func (p *creole10Parser) Extension_statement() (localctx IExtension_statementCon
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<creole10ParserT__0)|(1<<creole10ParserT__1)|(1<<creole10ParserT__2)|(1<<creole10ParserESCAPE)|(1<<creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<creole10ParserNEWLINE)|(1<<creole10ParserBLANKS)|(1<<creole10ParserCOLON_SLASH)|(1<<creole10ParserITAL)|(1<<creole10ParserNOWIKI_OPEN)|(1<<creole10ParserNOWIKI_CLOSE)|(1<<creole10ParserLINK_OPEN)|(1<<creole10ParserLINK_CLOSE)|(1<<creole10ParserIMAGE_OPEN)|(1<<creole10ParserIMAGE_CLOSE)|(1<<creole10ParserFORCED_LINEBREAK)|(1<<creole10ParserEQUAL)|(1<<creole10ParserPIPE)|(1<<creole10ParserPOUND)|(1<<creole10ParserDASH)|(1<<creole10ParserSTAR)|(1<<creole10ParserSLASH)|(1<<creole10ParserINSIGNIFICANT_CHAR))) != 0 {
+	for ((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<Creole10ParserT__0)|(1<<Creole10ParserT__1)|(1<<Creole10ParserT__2)|(1<<Creole10ParserESCAPE)|(1<<Creole10ParserNOWIKI_BLOCK_CLOSE)|(1<<Creole10ParserNEWLINE)|(1<<Creole10ParserBLANKS)|(1<<Creole10ParserCOLON_SLASH)|(1<<Creole10ParserITAL)|(1<<Creole10ParserNOWIKI_OPEN)|(1<<Creole10ParserNOWIKI_CLOSE)|(1<<Creole10ParserLINK_OPEN)|(1<<Creole10ParserLINK_CLOSE)|(1<<Creole10ParserIMAGE_OPEN)|(1<<Creole10ParserIMAGE_CLOSE)|(1<<Creole10ParserFORCED_LINEBREAK)|(1<<Creole10ParserEQUAL)|(1<<Creole10ParserPIPE)|(1<<Creole10ParserPOUND)|(1<<Creole10ParserDASH)|(1<<Creole10ParserSTAR)|(1<<Creole10ParserSLASH)|(1<<Creole10ParserINSIGNIFICANT_CHAR))) != 0 {
 		p.SetState(864)
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case creole10ParserT__0, creole10ParserT__1, creole10ParserT__2, creole10ParserNOWIKI_BLOCK_CLOSE, creole10ParserNEWLINE, creole10ParserBLANKS, creole10ParserCOLON_SLASH, creole10ParserITAL, creole10ParserNOWIKI_OPEN, creole10ParserNOWIKI_CLOSE, creole10ParserLINK_OPEN, creole10ParserLINK_CLOSE, creole10ParserIMAGE_OPEN, creole10ParserIMAGE_CLOSE, creole10ParserFORCED_LINEBREAK, creole10ParserEQUAL, creole10ParserPIPE, creole10ParserPOUND, creole10ParserDASH, creole10ParserSTAR, creole10ParserSLASH, creole10ParserINSIGNIFICANT_CHAR:
+		case Creole10ParserT__0, Creole10ParserT__1, Creole10ParserT__2, Creole10ParserNOWIKI_BLOCK_CLOSE, Creole10ParserNEWLINE, Creole10ParserBLANKS, Creole10ParserCOLON_SLASH, Creole10ParserITAL, Creole10ParserNOWIKI_OPEN, Creole10ParserNOWIKI_CLOSE, Creole10ParserLINK_OPEN, Creole10ParserLINK_CLOSE, Creole10ParserIMAGE_OPEN, Creole10ParserIMAGE_CLOSE, Creole10ParserFORCED_LINEBREAK, Creole10ParserEQUAL, Creole10ParserPIPE, Creole10ParserPOUND, Creole10ParserDASH, Creole10ParserSTAR, Creole10ParserSLASH, Creole10ParserINSIGNIFICANT_CHAR:
 			p.SetState(862)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(creole10ParserEOF - -1))|(1<<(creole10ParserESCAPE - -1))|(1<<(creole10ParserEXTENSION - -1)))) != 0) {
+			if _la <= 0 || (((_la - -1)&-(0x1f+1)) == 0 && ((1<<uint((_la - -1)))&((1<<(Creole10ParserEOF - -1))|(1<<(Creole10ParserESCAPE - -1))|(1<<(Creole10ParserEXTENSION - -1)))) != 0) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
 				p.Consume()
 			}
 
-		case creole10ParserESCAPE:
+		case Creole10ParserESCAPE:
 			{
 				p.SetState(863)
 				p.Escaped()
@@ -13750,7 +13750,7 @@ type EscapedContext struct {
 func NewEmptyEscapedContext() *EscapedContext {
 	var p = new(EscapedContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_escaped
+	p.RuleIndex = Creole10ParserRULE_escaped
 	return p
 }
 
@@ -13762,7 +13762,7 @@ func NewEscapedContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_escaped
+	p.RuleIndex = Creole10ParserRULE_escaped
 
 	return p
 }
@@ -13770,15 +13770,15 @@ func NewEscapedContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *EscapedContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *EscapedContext) ESCAPE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserESCAPE, 0)
+	return s.GetToken(Creole10ParserESCAPE, 0)
 }
 
 func (s *EscapedContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *EscapedContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *EscapedContext) GetRuleContext() antlr.RuleContext {
@@ -13790,20 +13790,20 @@ func (s *EscapedContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *EscapedContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterEscaped(s)
 	}
 }
 
 func (s *EscapedContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitEscaped(s)
 	}
 }
 
-func (p *creole10Parser) Escaped() (localctx IEscapedContext) {
+func (p *Creole10Parser) Escaped() (localctx IEscapedContext) {
 	localctx = NewEscapedContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 164, creole10ParserRULE_escaped)
+	p.EnterRule(localctx, 164, Creole10ParserRULE_escaped)
 
 	defer func() {
 		p.ExitRule()
@@ -13828,22 +13828,22 @@ func (p *creole10Parser) Escaped() (localctx IEscapedContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(869)
-			p.Match(creole10ParserESCAPE)
+			p.Match(Creole10ParserESCAPE)
 		}
 		{
 			p.SetState(870)
-			p.Match(creole10ParserSTAR)
+			p.Match(Creole10ParserSTAR)
 		}
 		{
 			p.SetState(871)
-			p.Match(creole10ParserSTAR)
+			p.Match(Creole10ParserSTAR)
 		}
 
 	case 2:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(872)
-			p.Match(creole10ParserESCAPE)
+			p.Match(Creole10ParserESCAPE)
 		}
 		p.SetState(873)
 		p.MatchWildcard()
@@ -13872,7 +13872,7 @@ type Paragraph_separatorContext struct {
 func NewEmptyParagraph_separatorContext() *Paragraph_separatorContext {
 	var p = new(Paragraph_separatorContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_paragraph_separator
+	p.RuleIndex = Creole10ParserRULE_paragraph_separator
 	return p
 }
 
@@ -13884,7 +13884,7 @@ func NewParagraph_separatorContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_paragraph_separator
+	p.RuleIndex = Creole10ParserRULE_paragraph_separator
 
 	return p
 }
@@ -13915,7 +13915,7 @@ func (s *Paragraph_separatorContext) Newline(i int) INewlineContext {
 }
 
 func (s *Paragraph_separatorContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Paragraph_separatorContext) GetRuleContext() antlr.RuleContext {
@@ -13927,20 +13927,20 @@ func (s *Paragraph_separatorContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *Paragraph_separatorContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterParagraph_separator(s)
 	}
 }
 
 func (s *Paragraph_separatorContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitParagraph_separator(s)
 	}
 }
 
-func (p *creole10Parser) Paragraph_separator() (localctx IParagraph_separatorContext) {
+func (p *Creole10Parser) Paragraph_separator() (localctx IParagraph_separatorContext) {
 	localctx = NewParagraph_separatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 166, creole10ParserRULE_paragraph_separator)
+	p.EnterRule(localctx, 166, Creole10ParserRULE_paragraph_separator)
 
 	defer func() {
 		p.ExitRule()
@@ -13964,7 +13964,7 @@ func (p *creole10Parser) Paragraph_separator() (localctx IParagraph_separatorCon
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserNEWLINE:
+	case Creole10ParserNEWLINE:
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(877)
 		p.GetErrorHandler().Sync(p)
@@ -13986,11 +13986,11 @@ func (p *creole10Parser) Paragraph_separator() (localctx IParagraph_separatorCon
 			_alt = p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 129, p.GetParserRuleContext())
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(881)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -14019,7 +14019,7 @@ type WhitespacesContext struct {
 func NewEmptyWhitespacesContext() *WhitespacesContext {
 	var p = new(WhitespacesContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_whitespaces
+	p.RuleIndex = Creole10ParserRULE_whitespaces
 	return p
 }
 
@@ -14031,7 +14031,7 @@ func NewWhitespacesContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_whitespaces
+	p.RuleIndex = Creole10ParserRULE_whitespaces
 
 	return p
 }
@@ -14093,20 +14093,20 @@ func (s *WhitespacesContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *WhitespacesContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterWhitespaces(s)
 	}
 }
 
 func (s *WhitespacesContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitWhitespaces(s)
 	}
 }
 
-func (p *creole10Parser) Whitespaces() (localctx IWhitespacesContext) {
+func (p *Creole10Parser) Whitespaces() (localctx IWhitespacesContext) {
 	localctx = NewWhitespacesContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 168, creole10ParserRULE_whitespaces)
+	p.EnterRule(localctx, 168, Creole10ParserRULE_whitespaces)
 
 	defer func() {
 		p.ExitRule()
@@ -14137,13 +14137,13 @@ func (p *creole10Parser) Whitespaces() (localctx IWhitespacesContext) {
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case creole10ParserBLANKS:
+			case Creole10ParserBLANKS:
 				{
 					p.SetState(884)
 					p.Blanks()
 				}
 
-			case creole10ParserNEWLINE:
+			case Creole10ParserNEWLINE:
 				{
 					p.SetState(885)
 					p.Newline()
@@ -14184,7 +14184,7 @@ type BlanksContext struct {
 func NewEmptyBlanksContext() *BlanksContext {
 	var p = new(BlanksContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_blanks
+	p.RuleIndex = Creole10ParserRULE_blanks
 	return p
 }
 
@@ -14196,7 +14196,7 @@ func NewBlanksContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_blanks
+	p.RuleIndex = Creole10ParserRULE_blanks
 
 	return p
 }
@@ -14204,7 +14204,7 @@ func NewBlanksContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 func (s *BlanksContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BlanksContext) BLANKS() antlr.TerminalNode {
-	return s.GetToken(creole10ParserBLANKS, 0)
+	return s.GetToken(Creole10ParserBLANKS, 0)
 }
 
 func (s *BlanksContext) GetRuleContext() antlr.RuleContext {
@@ -14216,20 +14216,20 @@ func (s *BlanksContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 }
 
 func (s *BlanksContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterBlanks(s)
 	}
 }
 
 func (s *BlanksContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitBlanks(s)
 	}
 }
 
-func (p *creole10Parser) Blanks() (localctx IBlanksContext) {
+func (p *Creole10Parser) Blanks() (localctx IBlanksContext) {
 	localctx = NewBlanksContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 170, creole10ParserRULE_blanks)
+	p.EnterRule(localctx, 170, Creole10ParserRULE_blanks)
 
 	defer func() {
 		p.ExitRule()
@@ -14250,7 +14250,7 @@ func (p *creole10Parser) Blanks() (localctx IBlanksContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(890)
-		p.Match(creole10ParserBLANKS)
+		p.Match(Creole10ParserBLANKS)
 	}
 
 	return localctx
@@ -14275,7 +14275,7 @@ type Text_lineseparatorContext struct {
 func NewEmptyText_lineseparatorContext() *Text_lineseparatorContext {
 	var p = new(Text_lineseparatorContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_text_lineseparator
+	p.RuleIndex = Creole10ParserRULE_text_lineseparator
 	return p
 }
 
@@ -14287,7 +14287,7 @@ func NewText_lineseparatorContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_text_lineseparator
+	p.RuleIndex = Creole10ParserRULE_text_lineseparator
 
 	return p
 }
@@ -14315,7 +14315,7 @@ func (s *Text_lineseparatorContext) Blanks() IBlanksContext {
 }
 
 func (s *Text_lineseparatorContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Text_lineseparatorContext) GetRuleContext() antlr.RuleContext {
@@ -14327,20 +14327,20 @@ func (s *Text_lineseparatorContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Text_lineseparatorContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterText_lineseparator(s)
 	}
 }
 
 func (s *Text_lineseparatorContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitText_lineseparator(s)
 	}
 }
 
-func (p *creole10Parser) Text_lineseparator() (localctx IText_lineseparatorContext) {
+func (p *Creole10Parser) Text_lineseparator() (localctx IText_lineseparatorContext) {
 	localctx = NewText_lineseparatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 172, creole10ParserRULE_text_lineseparator)
+	p.EnterRule(localctx, 172, Creole10ParserRULE_text_lineseparator)
 
 	defer func() {
 		p.ExitRule()
@@ -14362,7 +14362,7 @@ func (p *creole10Parser) Text_lineseparator() (localctx IText_lineseparatorConte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserNEWLINE:
+	case Creole10ParserNEWLINE:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(892)
@@ -14379,11 +14379,11 @@ func (p *creole10Parser) Text_lineseparator() (localctx IText_lineseparatorConte
 
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(896)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -14412,7 +14412,7 @@ type NewlineContext struct {
 func NewEmptyNewlineContext() *NewlineContext {
 	var p = new(NewlineContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_newline
+	p.RuleIndex = Creole10ParserRULE_newline
 	return p
 }
 
@@ -14424,7 +14424,7 @@ func NewNewlineContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_newline
+	p.RuleIndex = Creole10ParserRULE_newline
 
 	return p
 }
@@ -14432,7 +14432,7 @@ func NewNewlineContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *NewlineContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *NewlineContext) NEWLINE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNEWLINE, 0)
+	return s.GetToken(Creole10ParserNEWLINE, 0)
 }
 
 func (s *NewlineContext) GetRuleContext() antlr.RuleContext {
@@ -14444,20 +14444,20 @@ func (s *NewlineContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *NewlineContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNewline(s)
 	}
 }
 
 func (s *NewlineContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNewline(s)
 	}
 }
 
-func (p *creole10Parser) Newline() (localctx INewlineContext) {
+func (p *Creole10Parser) Newline() (localctx INewlineContext) {
 	localctx = NewNewlineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 174, creole10ParserRULE_newline)
+	p.EnterRule(localctx, 174, Creole10ParserRULE_newline)
 
 	defer func() {
 		p.ExitRule()
@@ -14478,7 +14478,7 @@ func (p *creole10Parser) Newline() (localctx INewlineContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(899)
-		p.Match(creole10ParserNEWLINE)
+		p.Match(Creole10ParserNEWLINE)
 	}
 
 	return localctx
@@ -14503,7 +14503,7 @@ type Bold_markupContext struct {
 func NewEmptyBold_markupContext() *Bold_markupContext {
 	var p = new(Bold_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_bold_markup
+	p.RuleIndex = Creole10ParserRULE_bold_markup
 	return p
 }
 
@@ -14515,7 +14515,7 @@ func NewBold_markupContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_bold_markup
+	p.RuleIndex = Creole10ParserRULE_bold_markup
 
 	return p
 }
@@ -14523,11 +14523,11 @@ func NewBold_markupContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Bold_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Bold_markupContext) AllSTAR() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserSTAR)
+	return s.GetTokens(Creole10ParserSTAR)
 }
 
 func (s *Bold_markupContext) STAR(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, i)
+	return s.GetToken(Creole10ParserSTAR, i)
 }
 
 func (s *Bold_markupContext) GetRuleContext() antlr.RuleContext {
@@ -14539,20 +14539,20 @@ func (s *Bold_markupContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *Bold_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterBold_markup(s)
 	}
 }
 
 func (s *Bold_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitBold_markup(s)
 	}
 }
 
-func (p *creole10Parser) Bold_markup() (localctx IBold_markupContext) {
+func (p *Creole10Parser) Bold_markup() (localctx IBold_markupContext) {
 	localctx = NewBold_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 176, creole10ParserRULE_bold_markup)
+	p.EnterRule(localctx, 176, Creole10ParserRULE_bold_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -14573,11 +14573,11 @@ func (p *creole10Parser) Bold_markup() (localctx IBold_markupContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(901)
-		p.Match(creole10ParserSTAR)
+		p.Match(Creole10ParserSTAR)
 	}
 	{
 		p.SetState(902)
-		p.Match(creole10ParserSTAR)
+		p.Match(Creole10ParserSTAR)
 	}
 
 	return localctx
@@ -14602,7 +14602,7 @@ type Ital_markupContext struct {
 func NewEmptyItal_markupContext() *Ital_markupContext {
 	var p = new(Ital_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_ital_markup
+	p.RuleIndex = Creole10ParserRULE_ital_markup
 	return p
 }
 
@@ -14614,7 +14614,7 @@ func NewItal_markupContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_ital_markup
+	p.RuleIndex = Creole10ParserRULE_ital_markup
 
 	return p
 }
@@ -14622,7 +14622,7 @@ func NewItal_markupContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Ital_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Ital_markupContext) ITAL() antlr.TerminalNode {
-	return s.GetToken(creole10ParserITAL, 0)
+	return s.GetToken(Creole10ParserITAL, 0)
 }
 
 func (s *Ital_markupContext) GetRuleContext() antlr.RuleContext {
@@ -14634,20 +14634,20 @@ func (s *Ital_markupContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *Ital_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterItal_markup(s)
 	}
 }
 
 func (s *Ital_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitItal_markup(s)
 	}
 }
 
-func (p *creole10Parser) Ital_markup() (localctx IItal_markupContext) {
+func (p *Creole10Parser) Ital_markup() (localctx IItal_markupContext) {
 	localctx = NewItal_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 178, creole10ParserRULE_ital_markup)
+	p.EnterRule(localctx, 178, Creole10ParserRULE_ital_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -14668,7 +14668,7 @@ func (p *creole10Parser) Ital_markup() (localctx IItal_markupContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(904)
-		p.Match(creole10ParserITAL)
+		p.Match(Creole10ParserITAL)
 	}
 
 	return localctx
@@ -14693,7 +14693,7 @@ type Heading_markupContext struct {
 func NewEmptyHeading_markupContext() *Heading_markupContext {
 	var p = new(Heading_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_heading_markup
+	p.RuleIndex = Creole10ParserRULE_heading_markup
 	return p
 }
 
@@ -14705,7 +14705,7 @@ func NewHeading_markupContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_heading_markup
+	p.RuleIndex = Creole10ParserRULE_heading_markup
 
 	return p
 }
@@ -14713,7 +14713,7 @@ func NewHeading_markupContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *Heading_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Heading_markupContext) EQUAL() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEQUAL, 0)
+	return s.GetToken(Creole10ParserEQUAL, 0)
 }
 
 func (s *Heading_markupContext) GetRuleContext() antlr.RuleContext {
@@ -14725,20 +14725,20 @@ func (s *Heading_markupContext) ToStringTree(ruleNames []string, recog antlr.Rec
 }
 
 func (s *Heading_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterHeading_markup(s)
 	}
 }
 
 func (s *Heading_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitHeading_markup(s)
 	}
 }
 
-func (p *creole10Parser) Heading_markup() (localctx IHeading_markupContext) {
+func (p *Creole10Parser) Heading_markup() (localctx IHeading_markupContext) {
 	localctx = NewHeading_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 180, creole10ParserRULE_heading_markup)
+	p.EnterRule(localctx, 180, Creole10ParserRULE_heading_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -14759,7 +14759,7 @@ func (p *creole10Parser) Heading_markup() (localctx IHeading_markupContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(906)
-		p.Match(creole10ParserEQUAL)
+		p.Match(Creole10ParserEQUAL)
 	}
 
 	return localctx
@@ -14784,7 +14784,7 @@ type List_ordelem_markupContext struct {
 func NewEmptyList_ordelem_markupContext() *List_ordelem_markupContext {
 	var p = new(List_ordelem_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_ordelem_markup
+	p.RuleIndex = Creole10ParserRULE_list_ordelem_markup
 	return p
 }
 
@@ -14796,7 +14796,7 @@ func NewList_ordelem_markupContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_ordelem_markup
+	p.RuleIndex = Creole10ParserRULE_list_ordelem_markup
 
 	return p
 }
@@ -14804,7 +14804,7 @@ func NewList_ordelem_markupContext(parser antlr.Parser, parent antlr.ParserRuleC
 func (s *List_ordelem_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *List_ordelem_markupContext) POUND() antlr.TerminalNode {
-	return s.GetToken(creole10ParserPOUND, 0)
+	return s.GetToken(Creole10ParserPOUND, 0)
 }
 
 func (s *List_ordelem_markupContext) GetRuleContext() antlr.RuleContext {
@@ -14816,20 +14816,20 @@ func (s *List_ordelem_markupContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *List_ordelem_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_ordelem_markup(s)
 	}
 }
 
 func (s *List_ordelem_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_ordelem_markup(s)
 	}
 }
 
-func (p *creole10Parser) List_ordelem_markup() (localctx IList_ordelem_markupContext) {
+func (p *Creole10Parser) List_ordelem_markup() (localctx IList_ordelem_markupContext) {
 	localctx = NewList_ordelem_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 182, creole10ParserRULE_list_ordelem_markup)
+	p.EnterRule(localctx, 182, Creole10ParserRULE_list_ordelem_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -14850,7 +14850,7 @@ func (p *creole10Parser) List_ordelem_markup() (localctx IList_ordelem_markupCon
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(908)
-		p.Match(creole10ParserPOUND)
+		p.Match(Creole10ParserPOUND)
 	}
 
 	return localctx
@@ -14875,7 +14875,7 @@ type List_unordelem_markupContext struct {
 func NewEmptyList_unordelem_markupContext() *List_unordelem_markupContext {
 	var p = new(List_unordelem_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_unordelem_markup
+	p.RuleIndex = Creole10ParserRULE_list_unordelem_markup
 	return p
 }
 
@@ -14887,7 +14887,7 @@ func NewList_unordelem_markupContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_unordelem_markup
+	p.RuleIndex = Creole10ParserRULE_list_unordelem_markup
 
 	return p
 }
@@ -14895,7 +14895,7 @@ func NewList_unordelem_markupContext(parser antlr.Parser, parent antlr.ParserRul
 func (s *List_unordelem_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *List_unordelem_markupContext) STAR() antlr.TerminalNode {
-	return s.GetToken(creole10ParserSTAR, 0)
+	return s.GetToken(Creole10ParserSTAR, 0)
 }
 
 func (s *List_unordelem_markupContext) GetRuleContext() antlr.RuleContext {
@@ -14907,20 +14907,20 @@ func (s *List_unordelem_markupContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *List_unordelem_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_unordelem_markup(s)
 	}
 }
 
 func (s *List_unordelem_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_unordelem_markup(s)
 	}
 }
 
-func (p *creole10Parser) List_unordelem_markup() (localctx IList_unordelem_markupContext) {
+func (p *Creole10Parser) List_unordelem_markup() (localctx IList_unordelem_markupContext) {
 	localctx = NewList_unordelem_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 184, creole10ParserRULE_list_unordelem_markup)
+	p.EnterRule(localctx, 184, Creole10ParserRULE_list_unordelem_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -14941,7 +14941,7 @@ func (p *creole10Parser) List_unordelem_markup() (localctx IList_unordelem_marku
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(910)
-		p.Match(creole10ParserSTAR)
+		p.Match(Creole10ParserSTAR)
 	}
 
 	return localctx
@@ -14966,7 +14966,7 @@ type List_elemseparatorContext struct {
 func NewEmptyList_elemseparatorContext() *List_elemseparatorContext {
 	var p = new(List_elemseparatorContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_list_elemseparator
+	p.RuleIndex = Creole10ParserRULE_list_elemseparator
 	return p
 }
 
@@ -14978,7 +14978,7 @@ func NewList_elemseparatorContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_list_elemseparator
+	p.RuleIndex = Creole10ParserRULE_list_elemseparator
 
 	return p
 }
@@ -15006,7 +15006,7 @@ func (s *List_elemseparatorContext) Blanks() IBlanksContext {
 }
 
 func (s *List_elemseparatorContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *List_elemseparatorContext) GetRuleContext() antlr.RuleContext {
@@ -15018,20 +15018,20 @@ func (s *List_elemseparatorContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *List_elemseparatorContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterList_elemseparator(s)
 	}
 }
 
 func (s *List_elemseparatorContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitList_elemseparator(s)
 	}
 }
 
-func (p *creole10Parser) List_elemseparator() (localctx IList_elemseparatorContext) {
+func (p *Creole10Parser) List_elemseparator() (localctx IList_elemseparatorContext) {
 	localctx = NewList_elemseparatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 186, creole10ParserRULE_list_elemseparator)
+	p.EnterRule(localctx, 186, Creole10ParserRULE_list_elemseparator)
 
 	defer func() {
 		p.ExitRule()
@@ -15053,7 +15053,7 @@ func (p *creole10Parser) List_elemseparator() (localctx IList_elemseparatorConte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserNEWLINE:
+	case Creole10ParserNEWLINE:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(912)
@@ -15070,11 +15070,11 @@ func (p *creole10Parser) List_elemseparator() (localctx IList_elemseparatorConte
 
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(916)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -15103,7 +15103,7 @@ type End_of_listContext struct {
 func NewEmptyEnd_of_listContext() *End_of_listContext {
 	var p = new(End_of_listContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_end_of_list
+	p.RuleIndex = Creole10ParserRULE_end_of_list
 	return p
 }
 
@@ -15115,7 +15115,7 @@ func NewEnd_of_listContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_end_of_list
+	p.RuleIndex = Creole10ParserRULE_end_of_list
 
 	return p
 }
@@ -15133,7 +15133,7 @@ func (s *End_of_listContext) Newline() INewlineContext {
 }
 
 func (s *End_of_listContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *End_of_listContext) GetRuleContext() antlr.RuleContext {
@@ -15145,20 +15145,20 @@ func (s *End_of_listContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *End_of_listContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterEnd_of_list(s)
 	}
 }
 
 func (s *End_of_listContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitEnd_of_list(s)
 	}
 }
 
-func (p *creole10Parser) End_of_list() (localctx IEnd_of_listContext) {
+func (p *Creole10Parser) End_of_list() (localctx IEnd_of_listContext) {
 	localctx = NewEnd_of_listContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 188, creole10ParserRULE_end_of_list)
+	p.EnterRule(localctx, 188, Creole10ParserRULE_end_of_list)
 
 	defer func() {
 		p.ExitRule()
@@ -15180,18 +15180,18 @@ func (p *creole10Parser) End_of_list() (localctx IEnd_of_listContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserNEWLINE:
+	case Creole10ParserNEWLINE:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(919)
 			p.Newline()
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(920)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -15220,7 +15220,7 @@ type Table_cell_markupContext struct {
 func NewEmptyTable_cell_markupContext() *Table_cell_markupContext {
 	var p = new(Table_cell_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_cell_markup
+	p.RuleIndex = Creole10ParserRULE_table_cell_markup
 	return p
 }
 
@@ -15232,7 +15232,7 @@ func NewTable_cell_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_cell_markup
+	p.RuleIndex = Creole10ParserRULE_table_cell_markup
 
 	return p
 }
@@ -15240,7 +15240,7 @@ func NewTable_cell_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *Table_cell_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Table_cell_markupContext) PIPE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, 0)
+	return s.GetToken(Creole10ParserPIPE, 0)
 }
 
 func (s *Table_cell_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15252,20 +15252,20 @@ func (s *Table_cell_markupContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Table_cell_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_cell_markup(s)
 	}
 }
 
 func (s *Table_cell_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_cell_markup(s)
 	}
 }
 
-func (p *creole10Parser) Table_cell_markup() (localctx ITable_cell_markupContext) {
+func (p *Creole10Parser) Table_cell_markup() (localctx ITable_cell_markupContext) {
 	localctx = NewTable_cell_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 190, creole10ParserRULE_table_cell_markup)
+	p.EnterRule(localctx, 190, Creole10ParserRULE_table_cell_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15286,7 +15286,7 @@ func (p *creole10Parser) Table_cell_markup() (localctx ITable_cell_markupContext
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(923)
-		p.Match(creole10ParserPIPE)
+		p.Match(Creole10ParserPIPE)
 	}
 
 	return localctx
@@ -15311,7 +15311,7 @@ type Table_headercell_markupContext struct {
 func NewEmptyTable_headercell_markupContext() *Table_headercell_markupContext {
 	var p = new(Table_headercell_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_headercell_markup
+	p.RuleIndex = Creole10ParserRULE_table_headercell_markup
 	return p
 }
 
@@ -15323,7 +15323,7 @@ func NewTable_headercell_markupContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_headercell_markup
+	p.RuleIndex = Creole10ParserRULE_table_headercell_markup
 
 	return p
 }
@@ -15331,11 +15331,11 @@ func NewTable_headercell_markupContext(parser antlr.Parser, parent antlr.ParserR
 func (s *Table_headercell_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Table_headercell_markupContext) PIPE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, 0)
+	return s.GetToken(Creole10ParserPIPE, 0)
 }
 
 func (s *Table_headercell_markupContext) EQUAL() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEQUAL, 0)
+	return s.GetToken(Creole10ParserEQUAL, 0)
 }
 
 func (s *Table_headercell_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15347,20 +15347,20 @@ func (s *Table_headercell_markupContext) ToStringTree(ruleNames []string, recog 
 }
 
 func (s *Table_headercell_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_headercell_markup(s)
 	}
 }
 
 func (s *Table_headercell_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_headercell_markup(s)
 	}
 }
 
-func (p *creole10Parser) Table_headercell_markup() (localctx ITable_headercell_markupContext) {
+func (p *Creole10Parser) Table_headercell_markup() (localctx ITable_headercell_markupContext) {
 	localctx = NewTable_headercell_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 192, creole10ParserRULE_table_headercell_markup)
+	p.EnterRule(localctx, 192, Creole10ParserRULE_table_headercell_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15381,11 +15381,11 @@ func (p *creole10Parser) Table_headercell_markup() (localctx ITable_headercell_m
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(925)
-		p.Match(creole10ParserPIPE)
+		p.Match(Creole10ParserPIPE)
 	}
 	{
 		p.SetState(926)
-		p.Match(creole10ParserEQUAL)
+		p.Match(Creole10ParserEQUAL)
 	}
 
 	return localctx
@@ -15410,7 +15410,7 @@ type Table_rowseparatorContext struct {
 func NewEmptyTable_rowseparatorContext() *Table_rowseparatorContext {
 	var p = new(Table_rowseparatorContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_table_rowseparator
+	p.RuleIndex = Creole10ParserRULE_table_rowseparator
 	return p
 }
 
@@ -15422,7 +15422,7 @@ func NewTable_rowseparatorContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_table_rowseparator
+	p.RuleIndex = Creole10ParserRULE_table_rowseparator
 
 	return p
 }
@@ -15440,7 +15440,7 @@ func (s *Table_rowseparatorContext) Newline() INewlineContext {
 }
 
 func (s *Table_rowseparatorContext) EOF() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEOF, 0)
+	return s.GetToken(Creole10ParserEOF, 0)
 }
 
 func (s *Table_rowseparatorContext) GetRuleContext() antlr.RuleContext {
@@ -15452,20 +15452,20 @@ func (s *Table_rowseparatorContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Table_rowseparatorContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterTable_rowseparator(s)
 	}
 }
 
 func (s *Table_rowseparatorContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitTable_rowseparator(s)
 	}
 }
 
-func (p *creole10Parser) Table_rowseparator() (localctx ITable_rowseparatorContext) {
+func (p *Creole10Parser) Table_rowseparator() (localctx ITable_rowseparatorContext) {
 	localctx = NewTable_rowseparatorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 194, creole10ParserRULE_table_rowseparator)
+	p.EnterRule(localctx, 194, Creole10ParserRULE_table_rowseparator)
 
 	defer func() {
 		p.ExitRule()
@@ -15487,18 +15487,18 @@ func (p *creole10Parser) Table_rowseparator() (localctx ITable_rowseparatorConte
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case creole10ParserNEWLINE:
+	case Creole10ParserNEWLINE:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(928)
 			p.Newline()
 		}
 
-	case creole10ParserEOF:
+	case Creole10ParserEOF:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(929)
-			p.Match(creole10ParserEOF)
+			p.Match(Creole10ParserEOF)
 		}
 
 	default:
@@ -15527,7 +15527,7 @@ type Nowiki_open_markupContext struct {
 func NewEmptyNowiki_open_markupContext() *Nowiki_open_markupContext {
 	var p = new(Nowiki_open_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowiki_open_markup
+	p.RuleIndex = Creole10ParserRULE_nowiki_open_markup
 	return p
 }
 
@@ -15539,7 +15539,7 @@ func NewNowiki_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowiki_open_markup
+	p.RuleIndex = Creole10ParserRULE_nowiki_open_markup
 
 	return p
 }
@@ -15547,7 +15547,7 @@ func NewNowiki_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *Nowiki_open_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Nowiki_open_markupContext) NOWIKI_OPEN() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_OPEN, 0)
+	return s.GetToken(Creole10ParserNOWIKI_OPEN, 0)
 }
 
 func (s *Nowiki_open_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15559,20 +15559,20 @@ func (s *Nowiki_open_markupContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Nowiki_open_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowiki_open_markup(s)
 	}
 }
 
 func (s *Nowiki_open_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowiki_open_markup(s)
 	}
 }
 
-func (p *creole10Parser) Nowiki_open_markup() (localctx INowiki_open_markupContext) {
+func (p *Creole10Parser) Nowiki_open_markup() (localctx INowiki_open_markupContext) {
 	localctx = NewNowiki_open_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 196, creole10ParserRULE_nowiki_open_markup)
+	p.EnterRule(localctx, 196, Creole10ParserRULE_nowiki_open_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15593,7 +15593,7 @@ func (p *creole10Parser) Nowiki_open_markup() (localctx INowiki_open_markupConte
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(932)
-		p.Match(creole10ParserNOWIKI_OPEN)
+		p.Match(Creole10ParserNOWIKI_OPEN)
 	}
 
 	return localctx
@@ -15618,7 +15618,7 @@ type Nowiki_close_markupContext struct {
 func NewEmptyNowiki_close_markupContext() *Nowiki_close_markupContext {
 	var p = new(Nowiki_close_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_nowiki_close_markup
+	p.RuleIndex = Creole10ParserRULE_nowiki_close_markup
 	return p
 }
 
@@ -15630,7 +15630,7 @@ func NewNowiki_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_nowiki_close_markup
+	p.RuleIndex = Creole10ParserRULE_nowiki_close_markup
 
 	return p
 }
@@ -15638,7 +15638,7 @@ func NewNowiki_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleC
 func (s *Nowiki_close_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Nowiki_close_markupContext) NOWIKI_CLOSE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserNOWIKI_CLOSE, 0)
+	return s.GetToken(Creole10ParserNOWIKI_CLOSE, 0)
 }
 
 func (s *Nowiki_close_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15650,20 +15650,20 @@ func (s *Nowiki_close_markupContext) ToStringTree(ruleNames []string, recog antl
 }
 
 func (s *Nowiki_close_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterNowiki_close_markup(s)
 	}
 }
 
 func (s *Nowiki_close_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitNowiki_close_markup(s)
 	}
 }
 
-func (p *creole10Parser) Nowiki_close_markup() (localctx INowiki_close_markupContext) {
+func (p *Creole10Parser) Nowiki_close_markup() (localctx INowiki_close_markupContext) {
 	localctx = NewNowiki_close_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 198, creole10ParserRULE_nowiki_close_markup)
+	p.EnterRule(localctx, 198, Creole10ParserRULE_nowiki_close_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15684,7 +15684,7 @@ func (p *creole10Parser) Nowiki_close_markup() (localctx INowiki_close_markupCon
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(934)
-		p.Match(creole10ParserNOWIKI_CLOSE)
+		p.Match(Creole10ParserNOWIKI_CLOSE)
 	}
 
 	return localctx
@@ -15709,7 +15709,7 @@ type Horizontalrule_markupContext struct {
 func NewEmptyHorizontalrule_markupContext() *Horizontalrule_markupContext {
 	var p = new(Horizontalrule_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_horizontalrule_markup
+	p.RuleIndex = Creole10ParserRULE_horizontalrule_markup
 	return p
 }
 
@@ -15721,7 +15721,7 @@ func NewHorizontalrule_markupContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_horizontalrule_markup
+	p.RuleIndex = Creole10ParserRULE_horizontalrule_markup
 
 	return p
 }
@@ -15729,11 +15729,11 @@ func NewHorizontalrule_markupContext(parser antlr.Parser, parent antlr.ParserRul
 func (s *Horizontalrule_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Horizontalrule_markupContext) AllDASH() []antlr.TerminalNode {
-	return s.GetTokens(creole10ParserDASH)
+	return s.GetTokens(Creole10ParserDASH)
 }
 
 func (s *Horizontalrule_markupContext) DASH(i int) antlr.TerminalNode {
-	return s.GetToken(creole10ParserDASH, i)
+	return s.GetToken(Creole10ParserDASH, i)
 }
 
 func (s *Horizontalrule_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15745,20 +15745,20 @@ func (s *Horizontalrule_markupContext) ToStringTree(ruleNames []string, recog an
 }
 
 func (s *Horizontalrule_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterHorizontalrule_markup(s)
 	}
 }
 
 func (s *Horizontalrule_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitHorizontalrule_markup(s)
 	}
 }
 
-func (p *creole10Parser) Horizontalrule_markup() (localctx IHorizontalrule_markupContext) {
+func (p *Creole10Parser) Horizontalrule_markup() (localctx IHorizontalrule_markupContext) {
 	localctx = NewHorizontalrule_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 200, creole10ParserRULE_horizontalrule_markup)
+	p.EnterRule(localctx, 200, Creole10ParserRULE_horizontalrule_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15779,19 +15779,19 @@ func (p *creole10Parser) Horizontalrule_markup() (localctx IHorizontalrule_marku
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(936)
-		p.Match(creole10ParserDASH)
+		p.Match(Creole10ParserDASH)
 	}
 	{
 		p.SetState(937)
-		p.Match(creole10ParserDASH)
+		p.Match(Creole10ParserDASH)
 	}
 	{
 		p.SetState(938)
-		p.Match(creole10ParserDASH)
+		p.Match(Creole10ParserDASH)
 	}
 	{
 		p.SetState(939)
-		p.Match(creole10ParserDASH)
+		p.Match(Creole10ParserDASH)
 	}
 
 	return localctx
@@ -15816,7 +15816,7 @@ type Link_open_markupContext struct {
 func NewEmptyLink_open_markupContext() *Link_open_markupContext {
 	var p = new(Link_open_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_open_markup
+	p.RuleIndex = Creole10ParserRULE_link_open_markup
 	return p
 }
 
@@ -15828,7 +15828,7 @@ func NewLink_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_open_markup
+	p.RuleIndex = Creole10ParserRULE_link_open_markup
 
 	return p
 }
@@ -15836,7 +15836,7 @@ func NewLink_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *Link_open_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Link_open_markupContext) LINK_OPEN() antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_OPEN, 0)
+	return s.GetToken(Creole10ParserLINK_OPEN, 0)
 }
 
 func (s *Link_open_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15848,20 +15848,20 @@ func (s *Link_open_markupContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Link_open_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_open_markup(s)
 	}
 }
 
 func (s *Link_open_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_open_markup(s)
 	}
 }
 
-func (p *creole10Parser) Link_open_markup() (localctx ILink_open_markupContext) {
+func (p *Creole10Parser) Link_open_markup() (localctx ILink_open_markupContext) {
 	localctx = NewLink_open_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 202, creole10ParserRULE_link_open_markup)
+	p.EnterRule(localctx, 202, Creole10ParserRULE_link_open_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15882,7 +15882,7 @@ func (p *creole10Parser) Link_open_markup() (localctx ILink_open_markupContext) 
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(941)
-		p.Match(creole10ParserLINK_OPEN)
+		p.Match(Creole10ParserLINK_OPEN)
 	}
 
 	return localctx
@@ -15907,7 +15907,7 @@ type Link_close_markupContext struct {
 func NewEmptyLink_close_markupContext() *Link_close_markupContext {
 	var p = new(Link_close_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_close_markup
+	p.RuleIndex = Creole10ParserRULE_link_close_markup
 	return p
 }
 
@@ -15919,7 +15919,7 @@ func NewLink_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_close_markup
+	p.RuleIndex = Creole10ParserRULE_link_close_markup
 
 	return p
 }
@@ -15927,7 +15927,7 @@ func NewLink_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *Link_close_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Link_close_markupContext) LINK_CLOSE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserLINK_CLOSE, 0)
+	return s.GetToken(Creole10ParserLINK_CLOSE, 0)
 }
 
 func (s *Link_close_markupContext) GetRuleContext() antlr.RuleContext {
@@ -15939,20 +15939,20 @@ func (s *Link_close_markupContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Link_close_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_close_markup(s)
 	}
 }
 
 func (s *Link_close_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_close_markup(s)
 	}
 }
 
-func (p *creole10Parser) Link_close_markup() (localctx ILink_close_markupContext) {
+func (p *Creole10Parser) Link_close_markup() (localctx ILink_close_markupContext) {
 	localctx = NewLink_close_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 204, creole10ParserRULE_link_close_markup)
+	p.EnterRule(localctx, 204, Creole10ParserRULE_link_close_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -15973,7 +15973,7 @@ func (p *creole10Parser) Link_close_markup() (localctx ILink_close_markupContext
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(943)
-		p.Match(creole10ParserLINK_CLOSE)
+		p.Match(Creole10ParserLINK_CLOSE)
 	}
 
 	return localctx
@@ -15998,7 +15998,7 @@ type Link_description_markupContext struct {
 func NewEmptyLink_description_markupContext() *Link_description_markupContext {
 	var p = new(Link_description_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_link_description_markup
+	p.RuleIndex = Creole10ParserRULE_link_description_markup
 	return p
 }
 
@@ -16010,7 +16010,7 @@ func NewLink_description_markupContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_link_description_markup
+	p.RuleIndex = Creole10ParserRULE_link_description_markup
 
 	return p
 }
@@ -16018,7 +16018,7 @@ func NewLink_description_markupContext(parser antlr.Parser, parent antlr.ParserR
 func (s *Link_description_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Link_description_markupContext) PIPE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, 0)
+	return s.GetToken(Creole10ParserPIPE, 0)
 }
 
 func (s *Link_description_markupContext) GetRuleContext() antlr.RuleContext {
@@ -16030,20 +16030,20 @@ func (s *Link_description_markupContext) ToStringTree(ruleNames []string, recog 
 }
 
 func (s *Link_description_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterLink_description_markup(s)
 	}
 }
 
 func (s *Link_description_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitLink_description_markup(s)
 	}
 }
 
-func (p *creole10Parser) Link_description_markup() (localctx ILink_description_markupContext) {
+func (p *Creole10Parser) Link_description_markup() (localctx ILink_description_markupContext) {
 	localctx = NewLink_description_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 206, creole10ParserRULE_link_description_markup)
+	p.EnterRule(localctx, 206, Creole10ParserRULE_link_description_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -16064,7 +16064,7 @@ func (p *creole10Parser) Link_description_markup() (localctx ILink_description_m
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(945)
-		p.Match(creole10ParserPIPE)
+		p.Match(Creole10ParserPIPE)
 	}
 
 	return localctx
@@ -16089,7 +16089,7 @@ type Image_open_markupContext struct {
 func NewEmptyImage_open_markupContext() *Image_open_markupContext {
 	var p = new(Image_open_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_open_markup
+	p.RuleIndex = Creole10ParserRULE_image_open_markup
 	return p
 }
 
@@ -16101,7 +16101,7 @@ func NewImage_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_open_markup
+	p.RuleIndex = Creole10ParserRULE_image_open_markup
 
 	return p
 }
@@ -16109,7 +16109,7 @@ func NewImage_open_markupContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *Image_open_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Image_open_markupContext) IMAGE_OPEN() antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_OPEN, 0)
+	return s.GetToken(Creole10ParserIMAGE_OPEN, 0)
 }
 
 func (s *Image_open_markupContext) GetRuleContext() antlr.RuleContext {
@@ -16121,20 +16121,20 @@ func (s *Image_open_markupContext) ToStringTree(ruleNames []string, recog antlr.
 }
 
 func (s *Image_open_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_open_markup(s)
 	}
 }
 
 func (s *Image_open_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_open_markup(s)
 	}
 }
 
-func (p *creole10Parser) Image_open_markup() (localctx IImage_open_markupContext) {
+func (p *Creole10Parser) Image_open_markup() (localctx IImage_open_markupContext) {
 	localctx = NewImage_open_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 208, creole10ParserRULE_image_open_markup)
+	p.EnterRule(localctx, 208, Creole10ParserRULE_image_open_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -16155,7 +16155,7 @@ func (p *creole10Parser) Image_open_markup() (localctx IImage_open_markupContext
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(947)
-		p.Match(creole10ParserIMAGE_OPEN)
+		p.Match(Creole10ParserIMAGE_OPEN)
 	}
 
 	return localctx
@@ -16180,7 +16180,7 @@ type Image_close_markupContext struct {
 func NewEmptyImage_close_markupContext() *Image_close_markupContext {
 	var p = new(Image_close_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_close_markup
+	p.RuleIndex = Creole10ParserRULE_image_close_markup
 	return p
 }
 
@@ -16192,7 +16192,7 @@ func NewImage_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_close_markup
+	p.RuleIndex = Creole10ParserRULE_image_close_markup
 
 	return p
 }
@@ -16200,7 +16200,7 @@ func NewImage_close_markupContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *Image_close_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Image_close_markupContext) IMAGE_CLOSE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserIMAGE_CLOSE, 0)
+	return s.GetToken(Creole10ParserIMAGE_CLOSE, 0)
 }
 
 func (s *Image_close_markupContext) GetRuleContext() antlr.RuleContext {
@@ -16212,20 +16212,20 @@ func (s *Image_close_markupContext) ToStringTree(ruleNames []string, recog antlr
 }
 
 func (s *Image_close_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_close_markup(s)
 	}
 }
 
 func (s *Image_close_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_close_markup(s)
 	}
 }
 
-func (p *creole10Parser) Image_close_markup() (localctx IImage_close_markupContext) {
+func (p *Creole10Parser) Image_close_markup() (localctx IImage_close_markupContext) {
 	localctx = NewImage_close_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 210, creole10ParserRULE_image_close_markup)
+	p.EnterRule(localctx, 210, Creole10ParserRULE_image_close_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -16246,7 +16246,7 @@ func (p *creole10Parser) Image_close_markup() (localctx IImage_close_markupConte
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(949)
-		p.Match(creole10ParserIMAGE_CLOSE)
+		p.Match(Creole10ParserIMAGE_CLOSE)
 	}
 
 	return localctx
@@ -16271,7 +16271,7 @@ type Image_alternative_markupContext struct {
 func NewEmptyImage_alternative_markupContext() *Image_alternative_markupContext {
 	var p = new(Image_alternative_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_image_alternative_markup
+	p.RuleIndex = Creole10ParserRULE_image_alternative_markup
 	return p
 }
 
@@ -16283,7 +16283,7 @@ func NewImage_alternative_markupContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_image_alternative_markup
+	p.RuleIndex = Creole10ParserRULE_image_alternative_markup
 
 	return p
 }
@@ -16291,7 +16291,7 @@ func NewImage_alternative_markupContext(parser antlr.Parser, parent antlr.Parser
 func (s *Image_alternative_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Image_alternative_markupContext) PIPE() antlr.TerminalNode {
-	return s.GetToken(creole10ParserPIPE, 0)
+	return s.GetToken(Creole10ParserPIPE, 0)
 }
 
 func (s *Image_alternative_markupContext) GetRuleContext() antlr.RuleContext {
@@ -16303,20 +16303,20 @@ func (s *Image_alternative_markupContext) ToStringTree(ruleNames []string, recog
 }
 
 func (s *Image_alternative_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterImage_alternative_markup(s)
 	}
 }
 
 func (s *Image_alternative_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitImage_alternative_markup(s)
 	}
 }
 
-func (p *creole10Parser) Image_alternative_markup() (localctx IImage_alternative_markupContext) {
+func (p *Creole10Parser) Image_alternative_markup() (localctx IImage_alternative_markupContext) {
 	localctx = NewImage_alternative_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 212, creole10ParserRULE_image_alternative_markup)
+	p.EnterRule(localctx, 212, Creole10ParserRULE_image_alternative_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -16337,7 +16337,7 @@ func (p *creole10Parser) Image_alternative_markup() (localctx IImage_alternative
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(951)
-		p.Match(creole10ParserPIPE)
+		p.Match(Creole10ParserPIPE)
 	}
 
 	return localctx
@@ -16362,7 +16362,7 @@ type Extension_markupContext struct {
 func NewEmptyExtension_markupContext() *Extension_markupContext {
 	var p = new(Extension_markupContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_extension_markup
+	p.RuleIndex = Creole10ParserRULE_extension_markup
 	return p
 }
 
@@ -16374,7 +16374,7 @@ func NewExtension_markupContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_extension_markup
+	p.RuleIndex = Creole10ParserRULE_extension_markup
 
 	return p
 }
@@ -16382,7 +16382,7 @@ func NewExtension_markupContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *Extension_markupContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Extension_markupContext) EXTENSION() antlr.TerminalNode {
-	return s.GetToken(creole10ParserEXTENSION, 0)
+	return s.GetToken(Creole10ParserEXTENSION, 0)
 }
 
 func (s *Extension_markupContext) GetRuleContext() antlr.RuleContext {
@@ -16394,20 +16394,20 @@ func (s *Extension_markupContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Extension_markupContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterExtension_markup(s)
 	}
 }
 
 func (s *Extension_markupContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitExtension_markup(s)
 	}
 }
 
-func (p *creole10Parser) Extension_markup() (localctx IExtension_markupContext) {
+func (p *Creole10Parser) Extension_markup() (localctx IExtension_markupContext) {
 	localctx = NewExtension_markupContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 214, creole10ParserRULE_extension_markup)
+	p.EnterRule(localctx, 214, Creole10ParserRULE_extension_markup)
 
 	defer func() {
 		p.ExitRule()
@@ -16428,7 +16428,7 @@ func (p *creole10Parser) Extension_markup() (localctx IExtension_markupContext) 
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(953)
-		p.Match(creole10ParserEXTENSION)
+		p.Match(Creole10ParserEXTENSION)
 	}
 
 	return localctx
@@ -16453,7 +16453,7 @@ type Forced_linebreakContext struct {
 func NewEmptyForced_linebreakContext() *Forced_linebreakContext {
 	var p = new(Forced_linebreakContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = creole10ParserRULE_forced_linebreak
+	p.RuleIndex = Creole10ParserRULE_forced_linebreak
 	return p
 }
 
@@ -16465,7 +16465,7 @@ func NewForced_linebreakContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = creole10ParserRULE_forced_linebreak
+	p.RuleIndex = Creole10ParserRULE_forced_linebreak
 
 	return p
 }
@@ -16473,7 +16473,7 @@ func NewForced_linebreakContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *Forced_linebreakContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Forced_linebreakContext) FORCED_LINEBREAK() antlr.TerminalNode {
-	return s.GetToken(creole10ParserFORCED_LINEBREAK, 0)
+	return s.GetToken(Creole10ParserFORCED_LINEBREAK, 0)
 }
 
 func (s *Forced_linebreakContext) GetRuleContext() antlr.RuleContext {
@@ -16485,20 +16485,20 @@ func (s *Forced_linebreakContext) ToStringTree(ruleNames []string, recog antlr.R
 }
 
 func (s *Forced_linebreakContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.EnterForced_linebreak(s)
 	}
 }
 
 func (s *Forced_linebreakContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(creole10Listener); ok {
+	if listenerT, ok := listener.(Creole10Listener); ok {
 		listenerT.ExitForced_linebreak(s)
 	}
 }
 
-func (p *creole10Parser) Forced_linebreak() (localctx IForced_linebreakContext) {
+func (p *Creole10Parser) Forced_linebreak() (localctx IForced_linebreakContext) {
 	localctx = NewForced_linebreakContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 216, creole10ParserRULE_forced_linebreak)
+	p.EnterRule(localctx, 216, Creole10ParserRULE_forced_linebreak)
 
 	defer func() {
 		p.ExitRule()
@@ -16519,13 +16519,13 @@ func (p *creole10Parser) Forced_linebreak() (localctx IForced_linebreakContext) 
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(955)
-		p.Match(creole10ParserFORCED_LINEBREAK)
+		p.Match(Creole10ParserFORCED_LINEBREAK)
 	}
 
 	return localctx
 }
 
-func (p *creole10Parser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
+func (p *Creole10Parser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
 	switch ruleIndex {
 	case 3:
 		var t *ParagraphContext = nil
@@ -16567,50 +16567,50 @@ func (p *creole10Parser) Sempred(localctx antlr.RuleContext, ruleIndex, predInde
 	}
 }
 
-func (p *creole10Parser) Paragraph_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *Creole10Parser) Paragraph_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
-		return p.GetInputStream().LA(1) == creole10ParserDASH && p.GetInputStream().LA(2) == creole10ParserDASH && p.GetInputStream().LA(3) == creole10ParserDASH && p.GetInputStream().LA(4) == creole10ParserDASH
+		return p.GetInputStream().LA(1) == Creole10ParserDASH && p.GetInputStream().LA(2) == Creole10ParserDASH && p.GetInputStream().LA(3) == Creole10ParserDASH && p.GetInputStream().LA(4) == Creole10ParserDASH
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))
 	}
 }
 
-func (p *creole10Parser) Text_firstelement_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *Creole10Parser) Text_firstelement_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 1:
-		return p.GetInputStream().LA(1) != creole10ParserSTAR || (p.GetInputStream().LA(1) == creole10ParserSTAR && p.GetInputStream().LA(2) == creole10ParserSTAR)
+		return p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))
 	}
 }
 
-func (p *creole10Parser) Text_lineseparator1_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *Creole10Parser) Text_lineseparator1_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 2:
-		return p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE
+		return p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))
 	}
 }
 
-func (p *creole10Parser) Onestar_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *Creole10Parser) Onestar_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 3:
-		return p.GetInputStream().LA(2) != creole10ParserSTAR
+		return p.GetInputStream().LA(2) != Creole10ParserSTAR
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))
 	}
 }
 
-func (p *creole10Parser) Table_cell_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *Creole10Parser) Table_cell_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 4:
-		return p.GetInputStream().LA(2) == creole10ParserEQUAL
+		return p.GetInputStream().LA(2) == Creole10ParserEQUAL
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))

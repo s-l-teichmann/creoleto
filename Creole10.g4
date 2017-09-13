@@ -29,7 +29,7 @@
 
 
 
-grammar creole10;
+grammar Creole10;
 
 start
 	:	wikipage
@@ -52,7 +52,7 @@ paragraph
 	|	blanks  paragraph_separator
 	|	( blanks )?
 			(	heading
-			|	{p.GetInputStream().LA(1)==creole10ParserDASH && p.GetInputStream().LA(2)==creole10ParserDASH && p.GetInputStream().LA(3)==creole10ParserDASH && p.GetInputStream().LA(4)==creole10ParserDASH}? horizontalrule
+			|	{p.GetInputStream().LA(1)==Creole10ParserDASH && p.GetInputStream().LA(2)==Creole10ParserDASH && p.GetInputStream().LA(3)==Creole10ParserDASH && p.GetInputStream().LA(4)==Creole10ParserDASH}? horizontalrule
 			|	list_unord
 			|	list_ord
 			|	table
@@ -73,7 +73,7 @@ text_line
 	;
 text_firstelement
 	:	// predicate prevents using this rule if only ONE star
-		{p.GetInputStream().LA(1) != creole10ParserSTAR || (p.GetInputStream().LA(1) == creole10ParserSTAR && p.GetInputStream().LA(2) == creole10ParserSTAR)}? text_formattedelement
+		{p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)}? text_formattedelement
 	|	text_first_unformattedelement
 	;	
 
@@ -83,16 +83,16 @@ text_formattedelement
 	;
 
 text_boldcontent
-	:	nachmarkup?  ( /*{p.GetInputStream().LA(2) != creole10ParserSTAR}? creole10ParserSTAR?*/ /*onestar*/ text_boldcontentpart )*
+	:	nachmarkup?  ( /*{p.GetInputStream().LA(2) != Creole10ParserSTAR}? Creole10ParserSTAR?*/ /*onestar*/ text_boldcontentpart )*
 	|	EOF
 	;
 text_element
-	:	onestar /*{p.GetInputStream().LA(2) != creole10ParserSTAR}? creole10ParserSTAR?*/  text_unformattedelement
+	:	onestar /*{p.GetInputStream().LA(2) != Creole10ParserSTAR}? Creole10ParserSTAR?*/  text_unformattedelement
 	|	text_unformattedelement  onestar /*STAR?*/
 	|	text_formattedelement
 	;
 nachmarkup
-	:	/*{p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE}? =>*/ ( NEWLINE )
+	:	/*{p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? =>*/ ( NEWLINE )
 	;
 text_italcontent
 	:	nachmarkup?  ( /*onestar*/ text_italcontentpart )*
@@ -114,7 +114,7 @@ text_formattedcontent
 	:	( onestar text_unformattedelement   ( text_lineseparator1 )? )+
 	;
 text_lineseparator1
-	:	{p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE}? text_lineseparator
+	:	{p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? text_lineseparator
 	;
 text_inlineelement
 	:	text_first_inlineelement
@@ -214,7 +214,7 @@ list_formatted_elem
 	:	bold_markup  ( onestar list_boldcontentpart )*/*list_boldcontent?*/  ( bold_markup )?
 	|	ital_markup  ( onestar list_italcontentpart )*  ( ital_markup )?
 	;
-onestar	:	({p.GetInputStream().LA(2)!=creole10ParserSTAR}? STAR?) | 
+onestar	:	({p.GetInputStream().LA(2)!=Creole10ParserSTAR}? STAR?) | 
 	;
 //list_boldcontent
 //	:	( {p.GetInputStream().LA(2)!=STAR}? STAR? list_boldcontentpart )+
@@ -245,7 +245,7 @@ table_row
 	:	/*table_cell_markup*/  ( table_cell )+  (table_cell_markup)? table_rowseparator
 	;
 table_cell
-	:	{p.GetInputStream().LA(2)==creole10ParserEQUAL}? table_headercell
+	:	{p.GetInputStream().LA(2)==Creole10ParserEQUAL}? table_headercell
 //	|	table_emptyheadercell
 	|	table_normalcell
 //	|	table_emptynormalcell

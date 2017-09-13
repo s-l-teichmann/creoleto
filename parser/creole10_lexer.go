@@ -1,4 +1,4 @@
-// Generated from creole10.g4 by ANTLR 4.7.
+// Generated from Creole10.g4 by ANTLR 4.7.
 
 package parser
 
@@ -105,7 +105,7 @@ var lexerRuleNames = []string{
 	"EXTENSION", "INSIGNIFICANT_CHAR",
 }
 
-type creole10Lexer struct {
+type Creole10Lexer struct {
 	*antlr.BaseLexer
 	channelNames []string
 	modeNames    []string
@@ -120,9 +120,9 @@ func init() {
 	}
 }
 
-func Newcreole10Lexer(input antlr.CharStream) *creole10Lexer {
+func NewCreole10Lexer(input antlr.CharStream) *Creole10Lexer {
 
-	l := new(creole10Lexer)
+	l := new(Creole10Lexer)
 
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
@@ -132,36 +132,36 @@ func Newcreole10Lexer(input antlr.CharStream) *creole10Lexer {
 	l.RuleNames = lexerRuleNames
 	l.LiteralNames = lexerLiteralNames
 	l.SymbolicNames = lexerSymbolicNames
-	l.GrammarFileName = "creole10.g4"
+	l.GrammarFileName = "Creole10.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
 	return l
 }
 
-// creole10Lexer tokens.
+// Creole10Lexer tokens.
 const (
-	creole10LexerT__0               = 1
-	creole10LexerT__1               = 2
-	creole10LexerT__2               = 3
-	creole10LexerESCAPE             = 4
-	creole10LexerNOWIKI_BLOCK_CLOSE = 5
-	creole10LexerNEWLINE            = 6
-	creole10LexerBLANKS             = 7
-	creole10LexerCOLON_SLASH        = 8
-	creole10LexerITAL               = 9
-	creole10LexerNOWIKI_OPEN        = 10
-	creole10LexerNOWIKI_CLOSE       = 11
-	creole10LexerLINK_OPEN          = 12
-	creole10LexerLINK_CLOSE         = 13
-	creole10LexerIMAGE_OPEN         = 14
-	creole10LexerIMAGE_CLOSE        = 15
-	creole10LexerFORCED_LINEBREAK   = 16
-	creole10LexerEQUAL              = 17
-	creole10LexerPIPE               = 18
-	creole10LexerPOUND              = 19
-	creole10LexerDASH               = 20
-	creole10LexerSTAR               = 21
-	creole10LexerSLASH              = 22
-	creole10LexerEXTENSION          = 23
-	creole10LexerINSIGNIFICANT_CHAR = 24
+	Creole10LexerT__0               = 1
+	Creole10LexerT__1               = 2
+	Creole10LexerT__2               = 3
+	Creole10LexerESCAPE             = 4
+	Creole10LexerNOWIKI_BLOCK_CLOSE = 5
+	Creole10LexerNEWLINE            = 6
+	Creole10LexerBLANKS             = 7
+	Creole10LexerCOLON_SLASH        = 8
+	Creole10LexerITAL               = 9
+	Creole10LexerNOWIKI_OPEN        = 10
+	Creole10LexerNOWIKI_CLOSE       = 11
+	Creole10LexerLINK_OPEN          = 12
+	Creole10LexerLINK_CLOSE         = 13
+	Creole10LexerIMAGE_OPEN         = 14
+	Creole10LexerIMAGE_CLOSE        = 15
+	Creole10LexerFORCED_LINEBREAK   = 16
+	Creole10LexerEQUAL              = 17
+	Creole10LexerPIPE               = 18
+	Creole10LexerPOUND              = 19
+	Creole10LexerDASH               = 20
+	Creole10LexerSTAR               = 21
+	Creole10LexerSLASH              = 22
+	Creole10LexerEXTENSION          = 23
+	Creole10LexerINSIGNIFICANT_CHAR = 24
 )

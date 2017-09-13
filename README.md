@@ -35,7 +35,7 @@ You need a pretty recent [ANTLR4](http://www.antlr.org/download.html)
 (tested successfully with 4.7) to create the Go parser code:
 
 ```bash
-antlr4 -Dlanguage=Go -o parser creole10.g4
+antlr4 -Dlanguage=Go -o parser Creole10.g4
 ```
 
 To build the resulting code you need Go ANTLR4 runtime:

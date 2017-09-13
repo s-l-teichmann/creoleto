@@ -1,11 +1,11 @@
-// Generated from creole10.g4 by ANTLR 4.7.
+// Generated from Creole10.g4 by ANTLR 4.7.
 
-package parser // creole10
+package parser // Creole10
 
 import "github.com/antlr/antlr4/runtime/Go/antlr"
 
-// creole10Listener is a complete listener for a parse tree produced by creole10Parser.
-type creole10Listener interface {
+// Creole10Listener is a complete listener for a parse tree produced by Creole10Parser.
+type Creole10Listener interface {
 	antlr.ParseTreeListener
 
 	// EnterStart is called when entering the start production.

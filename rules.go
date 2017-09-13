@@ -34,7 +34,7 @@ const (
         (?P<macro_inline>
         << \s* (?P<macro_inline_start>\w+) \s* (?P<macro_inline_args>.*?) \s* >>
         (?P<macro_inline_text>(.|\n)*?)
-        <</ \s* (?P<macro_inline_start>) \s* >>
+        <</ \s* (?P<macro_inline_end>) \s* >>
         )`
 	// A simple macro tag, like <<macro-a foo="bar">> or <<macro />>
 	macroTagRe = `
@@ -71,7 +71,7 @@ const (
         (?P<macro_block>
         << \s* (?P<macro_block_start>\w+) \s* (?P<macro_block_args>.*?) \s* >>
         (?P<macro_block_text>(.|\n)*?)
-        <</ \s* (?P<macro_block_start>) \s* >>
+        <</ \s* (?P<macro_block_end>) \s* >>
         )`
 
 	// Empty line that separates paragraphs.

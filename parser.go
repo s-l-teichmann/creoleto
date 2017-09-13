@@ -3,7 +3,10 @@
 // Copyright 2017 by Intevation GmbH
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 type parser struct {
 }
@@ -25,4 +28,12 @@ func (p *parser) parse(input string) (*document, error) {
 }
 
 func (p *parser) parseBlock(input string) {
+	res := match(blockRE, input)
+	for _, r := range res {
+		r.found(func(k, v string) {
+			fmt.Printf("\t%s: '%s'\n", k, v)
+		})
+		fmt.Println("-------------")
+	}
+
 }

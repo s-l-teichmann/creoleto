@@ -44,3 +44,12 @@ func (m *matchResult) group(name string) string {
 	}
 	return ""
 }
+
+func (m *matchResult) found(fn func(key, value string)) {
+	names := m.re.SubexpNames()
+	for i, p := range m.parts {
+		if p != "" && names[i] != "" {
+			fn(names[i], p)
+		}
+	}
+}

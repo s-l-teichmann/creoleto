@@ -30,15 +30,15 @@ creoleto < data/wikicreole1.creole > converted.tex
 
 The GPLed Creole 1.0 ANTLR3 grammar was taken from
 [here](http://wikicreole.cvs.sourceforge.net/viewvc/wikicreole/XmlCreator/creole10.g)
-and was modified to be usable with ANTLR4.
-You need a pretty recent [ANTLR4](http://www.antlr.org/download.html]
+and was modified to be usable with ANTLR4.  
+You need a pretty recent [ANTLR4](http://www.antlr.org/download.html)
 (tested successfully with 4.7) to create the Go parser code:
 
 ```bash
 antlr4 -Dlanguage=Go -o parser creole10.g4
 ```
 
-To build the resulting code you need Go ANTLR4 runtime.
+To build the resulting code you need Go ANTLR4 runtime:
 
 ```bash
 go get github.com/antlr/antlr4/runtime/Go/antlr

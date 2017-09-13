@@ -52,7 +52,7 @@ paragraph
 	|	blanks  paragraph_separator
 	|	( blanks )?
 			(	heading
-			|	{input.LA(1)==DASH && input.LA(2)==DASH && input.LA(3)==DASH && input.LA(4)==DASH}? horizontalrule
+			|	{p.GetInputStream().LA(1)==creole10ParserDASH && p.GetInputStream().LA(2)==creole10ParserDASH && p.GetInputStream().LA(3)==creole10ParserDASH && p.GetInputStream().LA(4)==creole10ParserDASH}? horizontalrule
 			|	list_unord
 			|	list_ord
 			|	table
@@ -73,7 +73,7 @@ text_line
 	;
 text_firstelement
 	:	// predicate prevents using this rule if only ONE star
-		{input.LA(1) != STAR || (input.LA(1) == STAR && input.LA(2) == STAR)}? text_formattedelement
+		{p.GetInputStream().LA(1) != creole10ParserSTAR || (p.GetInputStream().LA(1) == creole10ParserSTAR && p.GetInputStream().LA(2) == creole10ParserSTAR)}? text_formattedelement
 	|	text_first_unformattedelement
 	;	
 
@@ -83,16 +83,16 @@ text_formattedelement
 	;
 
 text_boldcontent
-	:	nachmarkup?  ( /*{input.LA(2) != STAR}? STAR?*/ /*onestar*/ text_boldcontentpart )*
+	:	nachmarkup?  ( /*{p.GetInputStream().LA(2) != creole10ParserSTAR}? creole10ParserSTAR?*/ /*onestar*/ text_boldcontentpart )*
 	|	EOF
 	;
 text_element
-	:	onestar /*{input.LA(2) != STAR}? STAR?*/  text_unformattedelement
+	:	onestar /*{p.GetInputStream().LA(2) != creole10ParserSTAR}? creole10ParserSTAR?*/  text_unformattedelement
 	|	text_unformattedelement  onestar /*STAR?*/
 	|	text_formattedelement
 	;
 nachmarkup
-	:	/*{input.LA(2) != DASH && input.LA(2) != POUND && input.LA(2) != EQUAL && input.LA(2) != NEWLINE}? =>*/ ( NEWLINE )
+	:	/*{p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE}? =>*/ ( NEWLINE )
 	;
 text_italcontent
 	:	nachmarkup?  ( /*onestar*/ text_italcontentpart )*
@@ -114,7 +114,7 @@ text_formattedcontent
 	:	( onestar text_unformattedelement   ( text_lineseparator1 )? )+
 	;
 text_lineseparator1
-	:	{input.LA(2) != DASH && input.LA(2) != POUND && input.LA(2) != EQUAL && input.LA(2) != NEWLINE}? text_lineseparator
+	:	{p.GetInputStream().LA(2) != creole10ParserDASH && p.GetInputStream().LA(2) != creole10ParserPOUND && p.GetInputStream().LA(2) != creole10ParserEQUAL && p.GetInputStream().LA(2) != creole10ParserNEWLINE}? text_lineseparator
 	;
 text_inlineelement
 	:	text_first_inlineelement
@@ -214,10 +214,10 @@ list_formatted_elem
 	:	bold_markup  ( onestar list_boldcontentpart )*/*list_boldcontent?*/  ( bold_markup )?
 	|	ital_markup  ( onestar list_italcontentpart )*  ( ital_markup )?
 	;
-onestar	:	({input.LA(2)!=STAR}? STAR?) | 
+onestar	:	({p.GetInputStream().LA(2)!=creole10ParserSTAR}? STAR?) | 
 	;
 //list_boldcontent
-//	:	( {input.LA(2)!=STAR}? STAR? list_boldcontentpart )+
+//	:	( {p.GetInputStream().LA(2)!=STAR}? STAR? list_boldcontentpart )+
 //	;
 list_boldcontentpart
 	:	ital_markup  list_bolditalcontent  ( ital_markup )?
@@ -245,7 +245,7 @@ table_row
 	:	/*table_cell_markup*/  ( table_cell )+  (table_cell_markup)? table_rowseparator
 	;
 table_cell
-	:	{input.LA(2)==EQUAL}? table_headercell
+	:	{p.GetInputStream().LA(2)==creole10ParserEQUAL}? table_headercell
 //	|	table_emptyheadercell
 	|	table_normalcell
 //	|	table_emptynormalcell
@@ -270,14 +270,14 @@ table_cellcontent
 	;
 table_cellcontentpart
 	:	table_formattedelement
-	|	onestar/*{input.LA(2)!= STAR}? STAR?*/ table_unformattedelement
+	|	onestar/*{p.GetInputStream().LA(2)!= STAR}? STAR?*/ table_unformattedelement
 	;
 table_formattedelement
 	:	ital_markup  table_italcontent?  ( ital_markup )?
 	|	bold_markup  table_boldcontent?  ( bold_markup )?
 	;
 table_boldcontent
-	:	( onestar/*{input.LA(2)!= STAR}? STAR?*/ table_boldcontentpart )+
+	:	( onestar/*{p.GetInputStream().LA(2)!= STAR}? STAR?*/ table_boldcontentpart )+
 	|	EOF
 	;
 table_italcontent
@@ -338,7 +338,7 @@ table_formatted_cellelement
 	|	ital_markup  ( table_italcellcontent )?  ( ital_markup )?
 	;
 table_boldcellcontent
-	:	( {input.LA(2) != STAR}? STAR? table_boldcellcontentpart )+
+	:	( {p.GetInputStream().LA(2) != STAR}? STAR? table_boldcellcontentpart )+
 	;
 table_boldcellcontentpart
 	:	ital_markup  ( table_bolditalcellcontent )?  ( ital_markup )?

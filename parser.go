@@ -3,13 +3,29 @@
 // Copyright 2017 by Intevation GmbH
 package main
 
+import (
+	"github.com/antlr/antlr4/runtime/Go/antlr"
+	prs "github.com/s-l-teichmann/creoleto/parser"
+)
+
 type parser struct {
+	*prs.Basecreole10Listener
 }
 
 func newParser() *parser {
 	return &parser{}
 }
 
-func (p *parser) parse(input string) (*document, error) {
+func (p *parser) parse(data string) (*document, error) {
+
+	input := antlr.NewInputStream(data)
+	lexer := prs.Newcreole10Lexer(input)
+	stream := antlr.NewCommonTokenStream(lexer, 0)
+	pa := prs.Newcreole10Parser(stream)
+	pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+	pa.BuildParseTrees = true
+
+	//antlr.ParseTreeWalkerDefault.Walk(p, nil)
+
 	return nil, nil
 }

@@ -20,5 +20,9 @@ func preprocess(s string) string {
 
 func (p *parser) parse(input string) (*document, error) {
 	input = preprocess(input)
+	p.parseBlock(input)
 	return nil, nil
+}
+
+func (p *parser) parseBlock(input string) {
 }

@@ -24,8 +24,8 @@ func (p *parser) parse(data string) (*document, error) {
 	pa := prs.NewCreole10Parser(stream)
 	pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	pa.BuildParseTrees = true
-
-	//antlr.ParseTreeWalkerDefault.Walk(p, nil)
+	tree := pa.Start()
+	antlr.ParseTreeWalkerDefault.Walk(p, tree)
 
 	return nil, nil
 }

@@ -6,18 +6,7 @@ package main
 import (
 	"regexp"
 	"strings"
-	"unicode"
 )
-
-func mustCompileVerbose(str string) *regexp.Regexp {
-	str = strings.Map(func(r rune) rune {
-		if unicode.IsSpace(r) {
-			return -1
-		}
-		return r
-	}, str)
-	return regexp.MustCompile(str)
-}
 
 const proto = `http|https|ftp|nntp|news|mailto|telnet|file|irc`
 

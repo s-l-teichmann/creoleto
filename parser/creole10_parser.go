@@ -1,4 +1,4 @@
-// Generated from Creole10.g4 by ANTLR 4.7.
+// Generated from Creole10.g4 by ANTLR 4.6.
 
 package parser // Creole10
 
@@ -16,26 +16,26 @@ var _ = reflect.Copy
 var _ = strconv.Itoa
 
 var parserATN = []uint16{
-	3, 24715, 42794, 33075, 47597, 16764, 15335, 30598, 22884, 3, 26, 960,
-	4, 2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7,
-	4, 8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13,
-	9, 13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9,
-	18, 4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23,
-	4, 24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 4, 27, 9, 27, 4, 28, 9, 28, 4,
-	29, 9, 29, 4, 30, 9, 30, 4, 31, 9, 31, 4, 32, 9, 32, 4, 33, 9, 33, 4, 34,
-	9, 34, 4, 35, 9, 35, 4, 36, 9, 36, 4, 37, 9, 37, 4, 38, 9, 38, 4, 39, 9,
-	39, 4, 40, 9, 40, 4, 41, 9, 41, 4, 42, 9, 42, 4, 43, 9, 43, 4, 44, 9, 44,
-	4, 45, 9, 45, 4, 46, 9, 46, 4, 47, 9, 47, 4, 48, 9, 48, 4, 49, 9, 49, 4,
-	50, 9, 50, 4, 51, 9, 51, 4, 52, 9, 52, 4, 53, 9, 53, 4, 54, 9, 54, 4, 55,
-	9, 55, 4, 56, 9, 56, 4, 57, 9, 57, 4, 58, 9, 58, 4, 59, 9, 59, 4, 60, 9,
-	60, 4, 61, 9, 61, 4, 62, 9, 62, 4, 63, 9, 63, 4, 64, 9, 64, 4, 65, 9, 65,
-	4, 66, 9, 66, 4, 67, 9, 67, 4, 68, 9, 68, 4, 69, 9, 69, 4, 70, 9, 70, 4,
-	71, 9, 71, 4, 72, 9, 72, 4, 73, 9, 73, 4, 74, 9, 74, 4, 75, 9, 75, 4, 76,
-	9, 76, 4, 77, 9, 77, 4, 78, 9, 78, 4, 79, 9, 79, 4, 80, 9, 80, 4, 81, 9,
-	81, 4, 82, 9, 82, 4, 83, 9, 83, 4, 84, 9, 84, 4, 85, 9, 85, 4, 86, 9, 86,
-	4, 87, 9, 87, 4, 88, 9, 88, 4, 89, 9, 89, 4, 90, 9, 90, 4, 91, 9, 91, 4,
-	92, 9, 92, 4, 93, 9, 93, 4, 94, 9, 94, 4, 95, 9, 95, 4, 96, 9, 96, 4, 97,
-	9, 97, 4, 98, 9, 98, 4, 99, 9, 99, 4, 100, 9, 100, 4, 101, 9, 101, 4, 102,
+	3, 1072, 54993, 33286, 44333, 17431, 44785, 36224, 43741, 3, 26, 960, 4,
+	2, 9, 2, 4, 3, 9, 3, 4, 4, 9, 4, 4, 5, 9, 5, 4, 6, 9, 6, 4, 7, 9, 7, 4,
+	8, 9, 8, 4, 9, 9, 9, 4, 10, 9, 10, 4, 11, 9, 11, 4, 12, 9, 12, 4, 13, 9,
+	13, 4, 14, 9, 14, 4, 15, 9, 15, 4, 16, 9, 16, 4, 17, 9, 17, 4, 18, 9, 18,
+	4, 19, 9, 19, 4, 20, 9, 20, 4, 21, 9, 21, 4, 22, 9, 22, 4, 23, 9, 23, 4,
+	24, 9, 24, 4, 25, 9, 25, 4, 26, 9, 26, 4, 27, 9, 27, 4, 28, 9, 28, 4, 29,
+	9, 29, 4, 30, 9, 30, 4, 31, 9, 31, 4, 32, 9, 32, 4, 33, 9, 33, 4, 34, 9,
+	34, 4, 35, 9, 35, 4, 36, 9, 36, 4, 37, 9, 37, 4, 38, 9, 38, 4, 39, 9, 39,
+	4, 40, 9, 40, 4, 41, 9, 41, 4, 42, 9, 42, 4, 43, 9, 43, 4, 44, 9, 44, 4,
+	45, 9, 45, 4, 46, 9, 46, 4, 47, 9, 47, 4, 48, 9, 48, 4, 49, 9, 49, 4, 50,
+	9, 50, 4, 51, 9, 51, 4, 52, 9, 52, 4, 53, 9, 53, 4, 54, 9, 54, 4, 55, 9,
+	55, 4, 56, 9, 56, 4, 57, 9, 57, 4, 58, 9, 58, 4, 59, 9, 59, 4, 60, 9, 60,
+	4, 61, 9, 61, 4, 62, 9, 62, 4, 63, 9, 63, 4, 64, 9, 64, 4, 65, 9, 65, 4,
+	66, 9, 66, 4, 67, 9, 67, 4, 68, 9, 68, 4, 69, 9, 69, 4, 70, 9, 70, 4, 71,
+	9, 71, 4, 72, 9, 72, 4, 73, 9, 73, 4, 74, 9, 74, 4, 75, 9, 75, 4, 76, 9,
+	76, 4, 77, 9, 77, 4, 78, 9, 78, 4, 79, 9, 79, 4, 80, 9, 80, 4, 81, 9, 81,
+	4, 82, 9, 82, 4, 83, 9, 83, 4, 84, 9, 84, 4, 85, 9, 85, 4, 86, 9, 86, 4,
+	87, 9, 87, 4, 88, 9, 88, 4, 89, 9, 89, 4, 90, 9, 90, 4, 91, 9, 91, 4, 92,
+	9, 92, 4, 93, 9, 93, 4, 94, 9, 94, 4, 95, 9, 95, 4, 96, 9, 96, 4, 97, 9,
+	97, 4, 98, 9, 98, 4, 99, 9, 99, 4, 100, 9, 100, 4, 101, 9, 101, 4, 102,
 	9, 102, 4, 103, 9, 103, 4, 104, 9, 104, 4, 105, 9, 105, 4, 106, 9, 106,
 	4, 107, 9, 107, 4, 108, 9, 108, 4, 109, 9, 109, 4, 110, 9, 110, 3, 2, 3,
 	2, 3, 3, 5, 3, 224, 10, 3, 3, 3, 3, 3, 3, 3, 3, 4, 7, 4, 230, 10, 4, 12,
@@ -137,12 +137,12 @@ var parserATN = []uint16{
 	7, 7, 4, 3, 8, 8, 13, 13, 5, 3, 8, 8, 15, 15, 20, 20, 9, 3, 6, 6, 8, 8,
 	11, 12, 14, 16, 18, 18, 23, 23, 25, 25, 5, 3, 8, 8, 17, 17, 20, 20, 8,
 	3, 8, 8, 11, 12, 14, 14, 16, 18, 23, 23, 25, 25, 5, 3, 6, 6, 8, 9, 25,
-	25, 4, 3, 6, 6, 25, 25, 2, 1004, 2, 220, 3, 2, 2, 2, 4, 223, 3, 2, 2, 2,
-	6, 231, 3, 2, 2, 2, 8, 253, 3, 2, 2, 2, 10, 265, 3, 2, 2, 2, 12, 269, 3,
-	2, 2, 2, 14, 281, 3, 2, 2, 2, 16, 299, 3, 2, 2, 2, 18, 311, 3, 2, 2, 2,
-	20, 320, 3, 2, 2, 2, 22, 322, 3, 2, 2, 2, 24, 334, 3, 2, 2, 2, 26, 342,
-	3, 2, 2, 2, 28, 350, 3, 2, 2, 2, 30, 359, 3, 2, 2, 2, 32, 366, 3, 2, 2,
-	2, 34, 370, 3, 2, 2, 2, 36, 375, 3, 2, 2, 2, 38, 380, 3, 2, 2, 2, 40, 384,
+	25, 4, 3, 6, 6, 25, 25, 1004, 2, 220, 3, 2, 2, 2, 4, 223, 3, 2, 2, 2, 6,
+	231, 3, 2, 2, 2, 8, 253, 3, 2, 2, 2, 10, 265, 3, 2, 2, 2, 12, 269, 3, 2,
+	2, 2, 14, 281, 3, 2, 2, 2, 16, 299, 3, 2, 2, 2, 18, 311, 3, 2, 2, 2, 20,
+	320, 3, 2, 2, 2, 22, 322, 3, 2, 2, 2, 24, 334, 3, 2, 2, 2, 26, 342, 3,
+	2, 2, 2, 28, 350, 3, 2, 2, 2, 30, 359, 3, 2, 2, 2, 32, 366, 3, 2, 2, 2,
+	34, 370, 3, 2, 2, 2, 36, 375, 3, 2, 2, 2, 38, 380, 3, 2, 2, 2, 40, 384,
 	3, 2, 2, 2, 42, 389, 3, 2, 2, 2, 44, 395, 3, 2, 2, 2, 46, 400, 3, 2, 2,
 	2, 48, 404, 3, 2, 2, 2, 50, 425, 3, 2, 2, 2, 52, 428, 3, 2, 2, 2, 54, 435,
 	3, 2, 2, 2, 56, 439, 3, 2, 2, 2, 58, 446, 3, 2, 2, 2, 60, 452, 3, 2, 2,
@@ -461,7 +461,9 @@ var parserATN = []uint16{
 	798, 806, 816, 821, 828, 835, 842, 848, 850, 860, 862, 866, 868, 876, 881,
 	884, 888, 890, 896, 899, 916, 919, 923, 932,
 }
+
 var deserializer = antlr.NewATNDeserializer(nil)
+
 var deserializedATN = deserializer.DeserializeFromUInt16(parserATN)
 
 var literalNames = []string{
@@ -469,6 +471,7 @@ var literalNames = []string{
 	"'[['", "']]'", "'{{'", "'}}'", "'\\\\'", "'='", "'|'", "'#'", "'-'", "'*'",
 	"'/'", "'@@'",
 }
+
 var symbolicNames = []string{
 	"", "", "", "", "ESCAPE", "NOWIKI_BLOCK_CLOSE", "NEWLINE", "BLANKS", "COLON_SLASH",
 	"ITAL", "NOWIKI_OPEN", "NOWIKI_CLOSE", "LINK_OPEN", "LINK_CLOSE", "IMAGE_OPEN",
@@ -506,24 +509,24 @@ var ruleNames = []string{
 	"link_close_markup", "link_description_markup", "image_open_markup", "image_close_markup",
 	"image_alternative_markup", "extension_markup", "forced_linebreak",
 }
-var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
-
-func init() {
-	for index, ds := range deserializedATN.DecisionToState {
-		decisionToDFA[index] = antlr.NewDFA(ds, index)
-	}
-}
 
 type Creole10Parser struct {
 	*antlr.BaseParser
 }
 
 func NewCreole10Parser(input antlr.TokenStream) *Creole10Parser {
+	var decisionToDFA = make([]*antlr.DFA, len(deserializedATN.DecisionToState))
+	var sharedContextCache = antlr.NewPredictionContextCache()
+
+	for index, ds := range deserializedATN.DecisionToState {
+		decisionToDFA[index] = antlr.NewDFA(ds, index)
+	}
+
 	this := new(Creole10Parser)
 
 	this.BaseParser = antlr.NewBaseParser(input)
 
-	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, antlr.NewPredictionContextCache())
+	this.Interpreter = antlr.NewParserATNSimulator(this, deserializedATN, decisionToDFA, sharedContextCache)
 	this.RuleNames = ruleNames
 	this.LiteralNames = literalNames
 	this.SymbolicNames = symbolicNames
@@ -1233,8 +1236,11 @@ func (p *Creole10Parser) Paragraph() (localctx IParagraphContext) {
 		case 2:
 			p.SetState(240)
 
-			if !(p.GetInputStream().LA(1) == Creole10ParserDASH && p.GetInputStream().LA(2) == Creole10ParserDASH && p.GetInputStream().LA(3) == Creole10ParserDASH && p.GetInputStream().LA(4) == Creole10ParserDASH) {
-				panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1)==Creole10ParserDASH && p.GetInputStream().LA(2)==Creole10ParserDASH && p.GetInputStream().LA(3)==Creole10ParserDASH && p.GetInputStream().LA(4)==Creole10ParserDASH", ""))
+			if !(p.GetInputStream().LA(1) == Creole10ParserDASH &&
+				p.GetInputStream().LA(2) == Creole10ParserDASH &&
+				p.GetInputStream().LA(3) == Creole10ParserDASH &&
+				p.GetInputStream().LA(4) == Creole10ParserDASH) {
+				panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1)==Creole10ParserDASH &&\r\n                  p.GetInputStream().LA(2)==Creole10ParserDASH && \r\n                  p.GetInputStream().LA(3)==Creole10ParserDASH && \r\n                  p.GetInputStream().LA(4)==Creole10ParserDASH", ""))
 			}
 			{
 				p.SetState(241)
@@ -16570,7 +16576,10 @@ func (p *Creole10Parser) Sempred(localctx antlr.RuleContext, ruleIndex, predInde
 func (p *Creole10Parser) Paragraph_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
-		return p.GetInputStream().LA(1) == Creole10ParserDASH && p.GetInputStream().LA(2) == Creole10ParserDASH && p.GetInputStream().LA(3) == Creole10ParserDASH && p.GetInputStream().LA(4) == Creole10ParserDASH
+		return p.GetInputStream().LA(1) == Creole10ParserDASH &&
+			p.GetInputStream().LA(2) == Creole10ParserDASH &&
+			p.GetInputStream().LA(3) == Creole10ParserDASH &&
+			p.GetInputStream().LA(4) == Creole10ParserDASH
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))

@@ -4,16 +4,86 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	prs "github.com/s-l-teichmann/creoleto/parser"
 )
 
 type parser struct {
 	*prs.BaseCreole10Listener
+	current *node
+
+	stack []interface{}
+}
+
+type headingBuilder struct {
+	depth      int
+	hasContent bool
 }
 
 func newParser() *parser {
-	return &parser{}
+	return &parser{
+		current: &node{},
+	}
+}
+
+func (p *parser) push(x interface{}) {
+	p.stack = append(p.stack, x)
+}
+
+func (p *parser) pop() interface{} {
+	l := len(p.stack)
+	x := p.stack[l-1]
+	p.stack[l-1] = nil
+	p.stack = p.stack[:l-1]
+	return x
+}
+
+func (p *parser) top() interface{} {
+	return p.stack[len(p.stack)-1]
+}
+
+func (p *parser) EnterHeading(c *prs.HeadingContext) {
+	p.push(&headingBuilder{})
+}
+
+func (p *parser) EnterHeading_markup(c *prs.Heading_markupContext) {
+	if hb := p.top().(*headingBuilder); !hb.hasContent {
+		hb.depth++
+	}
+}
+
+func (p *parser) ExitHeading_content(c *prs.Heading_contentContext) {
+	p.top().(*headingBuilder).hasContent = true
+}
+
+func (p *parser) ExitHeading(c *prs.HeadingContext) {
+
+	hb := p.pop().(*headingBuilder)
+
+	trim := strings.Repeat("=", hb.depth)
+	content := strings.TrimSpace(c.GetText())
+	content = strings.TrimSuffix(strings.TrimPrefix(content, trim), trim)
+	content = strings.TrimSpace(content)
+
+	var typ nodeType
+	switch hb.depth {
+	case 1:
+		typ = heading1Node
+	case 2:
+		typ = heading2Node
+	case 3:
+		typ = heading3Node
+	case 4:
+		typ = heading4Node
+	case 5:
+		typ = heading5Node
+	default:
+		typ = heading6Node
+	}
+
+	ndp(typ, p.current, text(content))
 }
 
 func (p *parser) parse(data string) (*document, error) {
@@ -22,10 +92,15 @@ func (p *parser) parse(data string) (*document, error) {
 	lexer := prs.NewCreole10Lexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)
 	pa := prs.NewCreole10Parser(stream)
+	pa.AddParseListener(p)
 	pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
-	pa.BuildParseTrees = true
-	tree := pa.Start()
-	antlr.ParseTreeWalkerDefault.Walk(p, tree)
+	//pa.BuildParseTrees = true
+	pa.Start()
+	//antlr.ParseTreeWalkerDefault.Walk(p, tree)
 
-	return nil, nil
+	// TODO: Write own ErrorListener.
+
+	doc := &document{root: p.current}
+
+	return doc, nil
 }

@@ -19,20 +19,6 @@ func linkChildren(n, p *node) {
 	}
 }
 
-func text(txt string) *node {
-	return &node{
-		nodeType: textNode,
-		value:    txt,
-	}
-}
-
-func nd(typ nodeType, children ...*node) *node {
-	return &node{
-		nodeType: typ,
-		children: children,
-	}
-}
-
 type testCase struct {
 	have *node
 	want string

@@ -6,7 +6,8 @@ package main
 type nodeType int
 
 const (
-	orderedListNode nodeType = iota
+	rootNode nodeType = iota
+	orderedListNode
 	unorderedListNode
 	listItemNode
 	textNode
@@ -139,4 +140,24 @@ func (d *document) traverse(visitors map[nodeType]*visitor) error {
 	}
 
 	return descend(d.root)
+}
+
+func text(txt string) *node {
+	return &node{
+		nodeType: textNode,
+		value:    txt,
+	}
+}
+
+func nd(typ nodeType, children ...*node) *node {
+	return &node{
+		nodeType: typ,
+		children: children,
+	}
+}
+
+func ndp(typ nodeType, parent *node, children ...*node) *node {
+	n := nd(typ, children...)
+	parent.children = append(parent.children, n)
+	return n
 }

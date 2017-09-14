@@ -52,7 +52,10 @@ paragraph
 	|	blanks  paragraph_separator
 	|	( blanks )?
 			(	heading
-			|	{p.GetInputStream().LA(1)==Creole10ParserDASH && p.GetInputStream().LA(2)==Creole10ParserDASH && p.GetInputStream().LA(3)==Creole10ParserDASH && p.GetInputStream().LA(4)==Creole10ParserDASH}? horizontalrule
+			|	{ p.GetInputStream().LA(1)==Creole10ParserDASH &&
+                  p.GetInputStream().LA(2)==Creole10ParserDASH && 
+                  p.GetInputStream().LA(3)==Creole10ParserDASH && 
+                  p.GetInputStream().LA(4)==Creole10ParserDASH}? horizontalrule
 			|	list_unord
 			|	list_ord
 			|	table

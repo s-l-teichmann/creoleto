@@ -83,7 +83,12 @@ func (p *parser) ExitHeading(c *prs.HeadingContext) {
 		typ = heading6Node
 	}
 
-	ndp(typ, p.current, text(content))
+	n := &node{
+		nodeType: typ,
+		parent:   p.current,
+		value:    content,
+	}
+	p.current.children = append(p.current.children, n)
 }
 
 func (p *parser) EnterParagraph(c *prs.ParagraphContext) {

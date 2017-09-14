@@ -40,12 +40,22 @@ func (x *xhtml) element(name string) *visitor {
 }
 
 func (x *xhtml) heading(level int) *visitor {
-	return x.element(fmt.Sprintf("h%d", level))
+	op, cl := fmt.Sprintf("<h%d>", level), fmt.Sprintf("</h%d>", level)
+	return &visitor{
+		enter: func(n *node) error {
+			x.writeString(op)
+			x.text(n)
+			return x.writeString(cl)
+		},
+	}
 }
 
 func (x *xhtml) text(n *node) error {
 	enc := xml.NewEncoder(x.out)
-	txt := n.value.(string)
+	txt, ok := n.value.(string)
+	if !ok {
+		return nil
+	}
 	if err := enc.EncodeToken(xml.CharData(txt)); err != nil {
 		return err
 	}

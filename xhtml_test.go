@@ -10,7 +10,10 @@ import (
 
 func TestStandalone(t *testing.T) {
 	doc := document{
-		root: nd(heading1Node, text("Hello")),
+		root: &node{
+			nodeType: heading1Node,
+			value:    "Hello",
+		},
 	}
 
 	var buf bytes.Buffer

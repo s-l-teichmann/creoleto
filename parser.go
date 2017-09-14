@@ -86,6 +86,16 @@ func (p *parser) ExitHeading(c *prs.HeadingContext) {
 	ndp(typ, p.current, text(content))
 }
 
+func (p *parser) EnterParagraph(c *prs.ParagraphContext) {
+	p.current = ndp(paragraphNode, p.current)
+}
+
+func (p *parser) ExitParagraph(c *prs.ParagraphContext) {
+	if p.current != nil && p.current.nodeType == paragraphNode && p.current.parent != nil {
+		p.current = p.current.parent
+	}
+}
+
 func (p *parser) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)

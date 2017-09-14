@@ -76,7 +76,9 @@ text_line
 	;
 text_firstelement
 	:	// predicate prevents using this rule if only ONE star
-		{p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)}? text_formattedelement
+		{ p.GetInputStream().LA(1) != Creole10ParserSTAR || 
+         (p.GetInputStream().LA(1) == Creole10ParserSTAR && 
+         p.GetInputStream().LA(2) == Creole10ParserSTAR)}? text_formattedelement
 	|	text_first_unformattedelement
 	;	
 
@@ -95,7 +97,10 @@ text_element
 	|	text_formattedelement
 	;
 nachmarkup
-	:	/*{p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? =>*/ ( NEWLINE )
+	:	/*{p.GetInputStream().LA(2) != Creole10ParserDASH && 
+           p.GetInputStream().LA(2) != Creole10ParserPOUND &&
+           p.GetInputStream().LA(2) != Creole10ParserEQUAL && 
+           p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? =>*/ ( NEWLINE )
 	;
 text_italcontent
 	:	nachmarkup?  ( /*onestar*/ text_italcontentpart )*
@@ -117,7 +122,10 @@ text_formattedcontent
 	:	( onestar text_unformattedelement   ( text_lineseparator1 )? )+
 	;
 text_lineseparator1
-	:	{p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? text_lineseparator
+	:	{p.GetInputStream().LA(2) != Creole10ParserDASH && 
+         p.GetInputStream().LA(2) != Creole10ParserPOUND && 
+         p.GetInputStream().LA(2) != Creole10ParserEQUAL && 
+         p.GetInputStream().LA(2) != Creole10ParserNEWLINE}? text_lineseparator
 	;
 text_inlineelement
 	:	text_first_inlineelement

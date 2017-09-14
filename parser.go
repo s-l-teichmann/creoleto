@@ -4,6 +4,8 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"strings"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
@@ -101,6 +103,34 @@ func (p *parser) ExitParagraph(c *prs.ParagraphContext) {
 	}
 }
 
+func (p *parser) EnterText_unformattedelement(c *prs.Text_unformattedelementContext) {
+	fmt.Fprintln(os.Stderr, "EnterText_unformattedelement")
+}
+
+func (p *parser) ExitText_unformattedelement(c *prs.Text_unformattedelementContext) {
+	fmt.Fprintf(os.Stderr, "ExitText_unformattedelement '%s'\n", c.GetText())
+}
+
+func (p *parser) EnterText_line(c *prs.Text_lineContext) {
+	fmt.Fprintln(os.Stderr, "EnterText_line")
+}
+
+func (p *parser) ExitText_line(c *prs.Text_lineContext) {
+	fmt.Fprintln(os.Stderr, "ExitText_line:", c.GetText())
+}
+
+func (p *parser) EnterText_formattedelement(c *prs.Text_formattedelementContext) {
+	fmt.Fprintln(os.Stderr, "***EnterText_formattedelement")
+}
+
+func (p *parser) ExitText_formattedelement(c *prs.Text_formattedelementContext) {
+	fmt.Fprintln(os.Stderr, "***ExitText_formattedelement")
+}
+
+func (p *parser) EnterItal_markup(c *prs.Ital_markupContext) {
+	fmt.Fprintln(os.Stderr, "//EnterItal_markup")
+}
+
 func (p *parser) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)
@@ -108,7 +138,7 @@ func (p *parser) parse(data string) (*document, error) {
 	stream := antlr.NewCommonTokenStream(lexer, 0)
 	pa := prs.NewCreole10Parser(stream)
 	pa.AddParseListener(p)
-	pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+	//pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	//pa.BuildParseTrees = true
 	pa.Start()
 	//antlr.ParseTreeWalkerDefault.Walk(p, tree)

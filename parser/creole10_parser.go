@@ -1775,8 +1775,10 @@ func (p *Creole10Parser) Text_firstelement() (localctx IText_firstelementContext
 		p.EnterOuterAlt(localctx, 1)
 		p.SetState(276)
 
-		if !(p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)) {
-			panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)", ""))
+		if !(p.GetInputStream().LA(1) != Creole10ParserSTAR ||
+			(p.GetInputStream().LA(1) == Creole10ParserSTAR &&
+				p.GetInputStream().LA(2) == Creole10ParserSTAR)) {
+			panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1) != Creole10ParserSTAR || \r\n         (p.GetInputStream().LA(1) == Creole10ParserSTAR && \r\n         p.GetInputStream().LA(2) == Creole10ParserSTAR)", ""))
 		}
 		{
 			p.SetState(277)
@@ -3309,8 +3311,11 @@ func (p *Creole10Parser) Text_lineseparator1() (localctx IText_lineseparator1Con
 	p.EnterOuterAlt(localctx, 1)
 	p.SetState(368)
 
-	if !(p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE) {
-		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE", ""))
+	if !(p.GetInputStream().LA(2) != Creole10ParserDASH &&
+		p.GetInputStream().LA(2) != Creole10ParserPOUND &&
+		p.GetInputStream().LA(2) != Creole10ParserEQUAL &&
+		p.GetInputStream().LA(2) != Creole10ParserNEWLINE) {
+		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != Creole10ParserDASH && \r\n         p.GetInputStream().LA(2) != Creole10ParserPOUND && \r\n         p.GetInputStream().LA(2) != Creole10ParserEQUAL && \r\n         p.GetInputStream().LA(2) != Creole10ParserNEWLINE", ""))
 	}
 	{
 		p.SetState(369)
@@ -16589,7 +16594,9 @@ func (p *Creole10Parser) Paragraph_Sempred(localctx antlr.RuleContext, predIndex
 func (p *Creole10Parser) Text_firstelement_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 1:
-		return p.GetInputStream().LA(1) != Creole10ParserSTAR || (p.GetInputStream().LA(1) == Creole10ParserSTAR && p.GetInputStream().LA(2) == Creole10ParserSTAR)
+		return p.GetInputStream().LA(1) != Creole10ParserSTAR ||
+			(p.GetInputStream().LA(1) == Creole10ParserSTAR &&
+				p.GetInputStream().LA(2) == Creole10ParserSTAR)
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))
@@ -16599,7 +16606,10 @@ func (p *Creole10Parser) Text_firstelement_Sempred(localctx antlr.RuleContext, p
 func (p *Creole10Parser) Text_lineseparator1_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 2:
-		return p.GetInputStream().LA(2) != Creole10ParserDASH && p.GetInputStream().LA(2) != Creole10ParserPOUND && p.GetInputStream().LA(2) != Creole10ParserEQUAL && p.GetInputStream().LA(2) != Creole10ParserNEWLINE
+		return p.GetInputStream().LA(2) != Creole10ParserDASH &&
+			p.GetInputStream().LA(2) != Creole10ParserPOUND &&
+			p.GetInputStream().LA(2) != Creole10ParserEQUAL &&
+			p.GetInputStream().LA(2) != Creole10ParserNEWLINE
 
 	default:
 		panic("No predicate with index: " + fmt.Sprint(predIndex))

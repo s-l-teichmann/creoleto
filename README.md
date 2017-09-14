@@ -32,7 +32,7 @@ The GPLed Creole 1.0 ANTLR3 grammar was taken from
 [here](http://wikicreole.cvs.sourceforge.net/viewvc/wikicreole/XmlCreator/creole10.g)
 and was modified to be usable with ANTLR4.  
 You need a pretty recent [ANTLR4](http://www.antlr.org/download.html)
-(tested successfully with 4.7) to create the Go parser code:
+(tested successfully with 4.6+) to create the Go parser code:
 
 ```bash
 antlr4 -Dlanguage=Go -o parser Creole10.g4

@@ -5,7 +5,6 @@ package main
 
 import (
 	"bytes"
-	"encoding/xml"
 	"testing"
 )
 
@@ -20,10 +19,7 @@ func TestStandalone(t *testing.T) {
 		t.Fatalf("error: %v\n", err)
 	}
 
-	const want = xml.Header +
-		"<html>\n<body>\n" +
-		"<h1>Hello</h1>\n" +
-		"</body>\n</html>\n"
+	const want = xhtmlHeader + "<h1>Hello</h1>" + xhtmlFooter
 
 	if got := buf.String(); got != want {
 		t.Errorf("got '%s' want '%s'", got, want)

@@ -80,13 +80,25 @@ func (x *xhtml) image(n *node) error {
 	return enc.Flush()
 }
 
+const (
+	xhtmlHeader = xml.Header +
+		`<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"` +
+		` "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">` + "\n" +
+		`<html version="-//W3C//DTD XHTML 1.1//EN"` +
+		` xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"` +
+		` xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"` +
+		` xsi:schemaLocation="http://www.w3.org/1999/xhtml` +
+		` http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd">` + "\n" +
+		"<body>\n"
+	xhtmlFooter = "\n</body>\n</html>\n"
+)
+
 func exportXHTML(doc *document, out io.Writer, standalone bool) error {
 
 	x := xhtml{out: bufio.NewWriter(out)}
 
 	if standalone {
-		x.writeString(xml.Header)
-		x.writeString("<html>\n<body>\n")
+		x.writeString(xhtmlHeader)
 	}
 
 	err := doc.traverse(map[nodeType]*visitor{
@@ -125,7 +137,7 @@ func exportXHTML(doc *document, out io.Writer, standalone bool) error {
 		return err
 	}
 	if standalone {
-		x.writeString("\n</body>\n</html>\n")
+		x.writeString(xhtmlFooter)
 	}
 	return x.out.Flush()
 }

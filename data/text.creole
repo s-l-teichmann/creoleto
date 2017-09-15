@@ -1,0 +1,8 @@
+This is unformatted text.
+
+This contains //italic// typefaced text.
+
+This contains **bold** typefaced text.
+
+This contains //**italic and bold**// typefaced text.
+This contains **//italic and bold//** typefaced text.

@@ -38,8 +38,8 @@ func main() {
 	data, err := ioutil.ReadAll(os.Stdin)
 	check(err)
 	input := string(data)
-	p := newParser()
-	doc, err := p.parse(input)
+	b := newBuilder()
+	doc, err := b.parse(input)
 	check(err)
 	check(export(doc, os.Stdout, *standalone))
 }

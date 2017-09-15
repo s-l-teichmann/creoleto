@@ -1,4 +1,6 @@
-//This// is unformatted text.
+This contains //**italic and bold**// typefaced text.
+
+//This// is formatted text.
 This is unformatted text.
 
 This contains //italic// typefaced text.

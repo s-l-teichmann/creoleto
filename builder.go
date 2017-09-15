@@ -150,29 +150,33 @@ func (b *builder) ExitText_line(c *parser.Text_lineContext) {
 func (b *builder) EnterText_formattedelement(c *parser.Text_formattedelementContext) {
 	fmt.Fprintln(os.Stderr, "***EnterText_formattedelement")
 	// type to be overwritten in ital_markup or bold_markup
-	n := &node{nodeType: italicsNode}
-	b.push(n)
-	b.down(n)
+	b.push(b.current)
 }
 
 func (b *builder) ExitText_formattedelement(c *parser.Text_formattedelementContext) {
 	fmt.Fprintln(os.Stderr, "***ExitText_formattedelement")
-	b.pop()
-	b.up()
+	b.current = b.pop().(*node)
+}
+
+func (b *builder) createFormatNode(typ nodeType) {
+	// Do we have already one of these?
+	for n := b.current; n != nil; n = n.parent {
+		if n.nodeType == typ {
+			return
+		}
+	}
+	// create one and descent.
+	b.down(&node{nodeType: typ})
 }
 
 func (b *builder) EnterItal_markup(c *parser.Ital_markupContext) {
 	fmt.Fprintln(os.Stderr, "//EnterItal_markup")
-	if typeface, ok := b.top().(*node); ok {
-		typeface.nodeType = italicsNode
-	}
+	b.createFormatNode(italicsNode)
 }
 
 func (b *builder) EnterBold_markup(c *parser.Bold_markupContext) {
 	fmt.Fprintln(os.Stderr, "**EnterBold_markup")
-	if typeface, ok := b.top().(*node); ok {
-		typeface.nodeType = boldNode
-	}
+	b.createFormatNode(boldNode)
 }
 
 func (b *builder) parse(data string) (*document, error) {

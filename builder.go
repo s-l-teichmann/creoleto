@@ -98,7 +98,7 @@ func (b *builder) EnterParagraph(c *parser.ParagraphContext) {
 }
 
 func (b *builder) ExitParagraph(c *parser.ParagraphContext) {
-	if b.current != nil && b.current.nodeType == paragraphNode && b.current.parent != nil {
+	if b.current != nil && b.current.nodeType == paragraphNode {
 		b.current = b.current.parent
 	}
 }

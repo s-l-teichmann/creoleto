@@ -157,11 +157,13 @@ func nd(typ nodeType, children ...*node) *node {
 }
 
 func ndp(typ nodeType, parent *node, children ...*node) *node {
-	n := &node{
-		nodeType: typ,
-		parent:   parent,
-		children: children,
-	}
-	parent.children = append(parent.children, n)
+	n := nd(typ, children...)
+	link(n, parent)
+	return n
+}
+
+func link(n, p *node) *node {
+	n.parent = p
+	p.children = append(p.children, n)
 	return n
 }

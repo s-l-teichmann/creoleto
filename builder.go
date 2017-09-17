@@ -201,6 +201,36 @@ func (b *builder) EnterBold_markup(c *parser.Bold_markupContext) {
 	b.createFormatNode(boldNode)
 }
 
+// list_ord
+
+func (b *builder) EnterList_ord(c *parser.List_ordContext) {
+	b.down(&node{nodeType: orderedListNode})
+}
+
+func (b *builder) ExitList_ord(c *parser.List_ordContext) {
+	b.up()
+}
+
+// list_unord
+
+func (b *builder) EnterList_unord(c *parser.List_unordContext) {
+	b.down(&node{nodeType: unorderedListNode})
+}
+
+func (b *builder) ExitList_unord(c *parser.List_unordContext) {
+	b.up()
+}
+
+// list_elem
+
+func (b *builder) EnterList_elem(c *parser.List_elemContext) {
+	b.down(&node{nodeType: listItemNode})
+}
+
+func (b *builder) ExitList_elem(c *parser.List_elemContext) {
+	b.up()
+}
+
 func (b *builder) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)

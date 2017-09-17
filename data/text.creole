@@ -19,3 +19,18 @@ This contains **//italic and bold//** typefaced text.
 {{{
     This is a no wiki block.
 }}}
+
+----
+
+# First
+# Second
+# Third
+
+* Foo
+* Bar
+* Baz
+
+* Foo
+** Foo/Bar
+** Foo/Baz
+

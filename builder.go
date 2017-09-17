@@ -280,9 +280,13 @@ func (b *builder) ExitTable_headercell(c *parser.Table_headercellContext) {
 }
 
 func (b *builder) ExitTable_unformatted(c *parser.Table_unformattedContext) {
-	// TODO: Handle forced_linebreak and escaped
 	txt := c.GetText()
-	link(text(txt), b.current)
+	for i, t := range strings.Split(txt, `\\`) {
+		if i > 0 {
+			link(&node{nodeType: lineBreakNode}, b.current)
+		}
+		link(text(strings.Replace(t, "~", "", -1)), b.current)
+	}
 }
 
 func (b *builder) EnterTable_formattedelement(c *parser.Table_formattedelementContext) {

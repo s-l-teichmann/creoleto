@@ -37,6 +37,6 @@ This contains **//italic and bold//** typefaced text.
 ----
 
 |=FOO  |=Bar   |=Baz      |
-|foo   |//bar//|baz       |
+|foo   |//bar//|break\\me |
 |first |second |**third** |
 

@@ -170,6 +170,12 @@ func (b *builder) ExitNowiki_inline_content(c *parser.Nowiki_inline_contentConte
 	link(nw, b.current)
 }
 
+func (b *builder) ExitNowiki_block_content(c *parser.Nowiki_block_contentContext) {
+	nw := &node{nodeType: noWikiNode}
+	link(text(c.GetText()), nw)
+	link(nw, b.current)
+}
+
 func (b *builder) createFormatNode(typ nodeType) {
 	// Do we have already one of these?
 	for n := b.current; n != nil; n = n.parent {

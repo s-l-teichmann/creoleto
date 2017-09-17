@@ -176,6 +176,9 @@ type Creole10Listener interface {
 	// EnterNowiki_block is called when entering the nowiki_block production.
 	EnterNowiki_block(c *Nowiki_blockContext)
 
+	// EnterNowiki_block_content is called when entering the nowiki_block_content production.
+	EnterNowiki_block_content(c *Nowiki_block_contentContext)
+
 	// EnterNowikiblock_open_markup is called when entering the nowikiblock_open_markup production.
 	EnterNowikiblock_open_markup(c *Nowikiblock_open_markupContext)
 
@@ -505,6 +508,9 @@ type Creole10Listener interface {
 
 	// ExitNowiki_block is called when exiting the nowiki_block production.
 	ExitNowiki_block(c *Nowiki_blockContext)
+
+	// ExitNowiki_block_content is called when exiting the nowiki_block_content production.
+	ExitNowiki_block_content(c *Nowiki_block_contentContext)
 
 	// ExitNowikiblock_open_markup is called when exiting the nowikiblock_open_markup production.
 	ExitNowikiblock_open_markup(c *Nowikiblock_open_markupContext)

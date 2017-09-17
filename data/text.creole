@@ -12,3 +12,7 @@ This contains **bold** typefaced text.
 
 This contains //**italic and bold**// typefaced text.
 This contains **//italic and bold//** typefaced text.
+
+{{{
+    This is a no wiki block.
+}}}

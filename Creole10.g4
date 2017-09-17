@@ -391,8 +391,14 @@ table_celltext
 ///////////////////////////////   N O W I K I   ///////////////////////////////
 
 nowiki_block
-	:	nowikiblock_open_markup  ( ~( NOWIKI_BLOCK_CLOSE | EOF ) )*  nowikiblock_close_markup  paragraph_separator
+	:	nowikiblock_open_markup  nowiki_block_content nowikiblock_close_markup  paragraph_separator
 	;
+
+// Rule to ease capturing of no wiki block content.
+nowiki_block_content
+    :  ( ~( NOWIKI_BLOCK_CLOSE | EOF ) )* 
+    ;
+
 nowikiblock_open_markup
 	:	nowiki_open_markup  newline
 	;
@@ -406,7 +412,7 @@ nowiki_inline
 	:	nowiki_open_markup  nowiki_inline_content  nowiki_close_markup
 	;
 
-// Rule to ease the capture of the no wiki content.
+// Rule to ease capturing of no wiki inline content.
 nowiki_inline_content
     :   ( ~( NOWIKI_CLOSE | NEWLINE | EOF ) )*
     ;

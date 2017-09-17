@@ -359,6 +359,12 @@ func (s *BaseCreole10Listener) EnterNowiki_block(ctx *Nowiki_blockContext) {}
 // ExitNowiki_block is called when production nowiki_block is exited.
 func (s *BaseCreole10Listener) ExitNowiki_block(ctx *Nowiki_blockContext) {}
 
+// EnterNowiki_block_content is called when production nowiki_block_content is entered.
+func (s *BaseCreole10Listener) EnterNowiki_block_content(ctx *Nowiki_block_contentContext) {}
+
+// ExitNowiki_block_content is called when production nowiki_block_content is exited.
+func (s *BaseCreole10Listener) ExitNowiki_block_content(ctx *Nowiki_block_contentContext) {}
+
 // EnterNowikiblock_open_markup is called when production nowikiblock_open_markup is entered.
 func (s *BaseCreole10Listener) EnterNowikiblock_open_markup(ctx *Nowikiblock_open_markupContext) {}
 

@@ -1,9 +1,12 @@
 This contains //**italic and bold**// typefaced text.
 
 //This// is formatted text.
-This is unformatted text.
+This is unformatted text foo bar.
 
 This contains //italic// typefaced text.
+{{{ no wiki }}} at start.
+
+There is {{{ inline no wiki ~}~}~} }}} inside this sentence.
 
 This contains **bold** typefaced text.
 

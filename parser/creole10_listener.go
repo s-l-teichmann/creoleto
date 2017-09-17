@@ -185,6 +185,9 @@ type Creole10Listener interface {
 	// EnterNowiki_inline is called when entering the nowiki_inline production.
 	EnterNowiki_inline(c *Nowiki_inlineContext)
 
+	// EnterNowiki_inline_content is called when entering the nowiki_inline_content production.
+	EnterNowiki_inline_content(c *Nowiki_inline_contentContext)
+
 	// EnterHorizontalrule is called when entering the horizontalrule production.
 	EnterHorizontalrule(c *HorizontalruleContext)
 
@@ -511,6 +514,9 @@ type Creole10Listener interface {
 
 	// ExitNowiki_inline is called when exiting the nowiki_inline production.
 	ExitNowiki_inline(c *Nowiki_inlineContext)
+
+	// ExitNowiki_inline_content is called when exiting the nowiki_inline_content production.
+	ExitNowiki_inline_content(c *Nowiki_inline_contentContext)
 
 	// ExitHorizontalrule is called when exiting the horizontalrule production.
 	ExitHorizontalrule(c *HorizontalruleContext)

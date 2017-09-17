@@ -403,9 +403,13 @@ nowikiblock_close_markup
 //	:	nowiki_open_markup  NEWLINE  ( ~( NOWIKI_CLOSE | EOF ) )*  NEWLINE  nowiki_close_markup  paragraph_separator
 //	;
 nowiki_inline
-	:	nowiki_open_markup  ( ~( NOWIKI_CLOSE | NEWLINE | EOF ) )*  nowiki_close_markup
+	:	nowiki_open_markup  nowiki_inline_content  nowiki_close_markup
 	;
 
+// Rule to ease the capture of the no wiki content.
+nowiki_inline_content
+    :   ( ~( NOWIKI_CLOSE | NEWLINE | EOF ) )*
+    ;
 
 
 //////////////////////   H O R I Z O N T A L   R U L E   //////////////////////

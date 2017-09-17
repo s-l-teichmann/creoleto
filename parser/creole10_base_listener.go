@@ -377,6 +377,12 @@ func (s *BaseCreole10Listener) EnterNowiki_inline(ctx *Nowiki_inlineContext) {}
 // ExitNowiki_inline is called when production nowiki_inline is exited.
 func (s *BaseCreole10Listener) ExitNowiki_inline(ctx *Nowiki_inlineContext) {}
 
+// EnterNowiki_inline_content is called when production nowiki_inline_content is entered.
+func (s *BaseCreole10Listener) EnterNowiki_inline_content(ctx *Nowiki_inline_contentContext) {}
+
+// ExitNowiki_inline_content is called when production nowiki_inline_content is exited.
+func (s *BaseCreole10Listener) ExitNowiki_inline_content(ctx *Nowiki_inline_contentContext) {}
+
 // EnterHorizontalrule is called when production horizontalrule is entered.
 func (s *BaseCreole10Listener) EnterHorizontalrule(ctx *HorizontalruleContext) {}
 

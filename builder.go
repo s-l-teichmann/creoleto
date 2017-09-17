@@ -164,6 +164,12 @@ func (b *builder) ExitText_formattedelement(c *parser.Text_formattedelementConte
 	b.current = b.pop().(*node)
 }
 
+func (b *builder) ExitNowiki_inline_content(c *parser.Nowiki_inline_contentContext) {
+	nw := &node{nodeType: noWikiInlineNode}
+	link(text(c.GetText()), nw)
+	link(nw, b.current)
+}
+
 func (b *builder) createFormatNode(typ nodeType) {
 	// Do we have already one of these?
 	for n := b.current; n != nil; n = n.parent {

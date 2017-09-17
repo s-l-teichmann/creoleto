@@ -11,6 +11,9 @@ There is {{{ inline no wiki ~}~}~} }}} inside this sentence.
 This contains **bold** typefaced text.
 
 This contains //**italic and bold**// typefaced text.
+
+----
+
 This contains **//italic and bold//** typefaced text.
 
 {{{

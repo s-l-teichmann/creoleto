@@ -187,6 +187,10 @@ func (b *builder) createFormatNode(typ nodeType) {
 	b.down(&node{nodeType: typ})
 }
 
+func (b *builder) ExitHorizontalrule(c *parser.HorizontalruleContext) {
+	link(&node{nodeType: horizontalLineNode}, b.current)
+}
+
 func (b *builder) EnterItal_markup(c *parser.Ital_markupContext) {
 	//fmt.Fprintln(os.Stderr, "//EnterItal_markup")
 	b.createFormatNode(italicsNode)

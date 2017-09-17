@@ -44,3 +44,5 @@ This contains **//italic and bold//** typefaced text.
 
 {{https://upload.wikimedia.org/wikipedia/commons/5/54/Hello_world.png|this is the alt text for my image}}
 
+----
+

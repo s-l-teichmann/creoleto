@@ -54,6 +54,12 @@ func (b *builder) down(n *node) {
 	b.current = link(n, b.current)
 }
 
+func (b *builder) find(typ nodeType) *node {
+	for n := b.current; n != nil && n.nodeType != typ; n = n.parent {
+	}
+	return nil
+}
+
 func (b *builder) EnterHeading(c *parser.HeadingContext) {
 	b.push(&headingBuilder{})
 }
@@ -178,13 +184,10 @@ func (b *builder) ExitNowiki_block_content(c *parser.Nowiki_block_contentContext
 
 func (b *builder) createFormatNode(typ nodeType) {
 	// Do we have already one of these?
-	for n := b.current; n != nil; n = n.parent {
-		if n.nodeType == typ {
-			return
-		}
+	if b.find(typ) == nil {
+		// create one and descent.
+		b.down(&node{nodeType: typ})
 	}
-	// create one and descent.
-	b.down(&node{nodeType: typ})
 }
 
 func (b *builder) ExitHorizontalrule(c *parser.HorizontalruleContext) {
@@ -266,11 +269,8 @@ func (b *builder) ExitTable_normalcell(c *parser.Table_normalcellContext) {
 
 func (b *builder) EnterTable_headercell(c *parser.Table_headercellContext) {
 	// fix row type
-	for c := b.current; c != nil && c.nodeType != tableNode; c = c.parent {
-		if c.nodeType == tableRowNode {
-			c.nodeType = tableHeaderRowNode
-			break
-		}
+	if f := b.find(tableRowNode); f != nil {
+		f.nodeType = tableHeaderRowNode
 	}
 	b.down(&node{nodeType: tableHeaderCellNode})
 }
@@ -300,16 +300,11 @@ func (b *builder) ExitTable_formattedelement(c *parser.Table_formattedelementCon
 // image
 
 func (b *builder) EnterImage(c *parser.ImageContext) {
-	b.push(b.current)
 	b.push(&image{})
-	// dummy node to swallow children.
-	b.current = &node{}
 }
 
 func (b *builder) ExitImage(c *parser.ImageContext) {
 	img := b.pop().(*image)
-	// Re-establish the old parent
-	b.current = b.pop().(*node)
 	link(&node{nodeType: imageNode, value: img}, b.current)
 }
 
@@ -319,6 +314,26 @@ func (b *builder) ExitImage_uri(c *parser.Image_uriContext) {
 
 func (b *builder) ExitImage_alternativetext(c *parser.Image_alternativetextContext) {
 	b.top().(*image).alt = c.GetText()
+}
+
+// link
+
+func (b *builder) EnterLink(c *parser.LinkContext) {
+	b.down(&node{nodeType: linkNode})
+}
+
+func (b *builder) ExitLink(c *parser.LinkContext) {
+	b.up()
+}
+
+func (b *builder) ExitLink_uri(c *parser.Link_uriContext) {
+	if f := b.find(imageNode); f != nil {
+		f.value = c.GetText()
+	}
+}
+
+func (b *builder) ExitLink_descriptiontext(c *parser.Link_descriptiontextContext) {
+	link(text(c.GetText()), b.current)
 }
 
 func (b *builder) parse(data string) (*document, error) {

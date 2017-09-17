@@ -63,7 +63,7 @@ func (x *xhtml) text(n *node) error {
 }
 
 func (x *xhtml) link(n *node) error {
-	href := n.value.(string)
+	href, _ := n.value.(string)
 	enc := xml.NewEncoder(x.out)
 	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "a"},

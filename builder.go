@@ -279,6 +279,20 @@ func (b *builder) ExitTable_headercell(c *parser.Table_headercellContext) {
 	b.up()
 }
 
+func (b *builder) ExitTable_unformatted(c *parser.Table_unformattedContext) {
+	// TODO: Handle forced_linebreak and escaped
+	txt := c.GetText()
+	link(text(txt), b.current)
+}
+
+func (b *builder) EnterTable_formattedelement(c *parser.Table_formattedelementContext) {
+	b.push(b.current)
+}
+
+func (b *builder) ExitTable_formattedelement(c *parser.Table_formattedelementContext) {
+	b.current = b.pop().(*node)
+}
+
 func (b *builder) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)

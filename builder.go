@@ -231,6 +231,54 @@ func (b *builder) ExitList_elem(c *parser.List_elemContext) {
 	b.up()
 }
 
+// table
+
+func (b *builder) EnterTable(c *parser.TableContext) {
+	b.down(&node{nodeType: tableNode})
+}
+
+func (b *builder) ExitTable(c *parser.TableContext) {
+	b.up()
+}
+
+// table_row
+
+func (b *builder) EnterTable_row(c *parser.Table_rowContext) {
+	// Type may be corrected later.
+	b.down(&node{nodeType: tableRowNode})
+}
+
+func (b *builder) ExitTable_row(c *parser.Table_rowContext) {
+	b.up()
+}
+
+// table_normalcell
+
+func (b *builder) EnterTable_normalcell(c *parser.Table_normalcellContext) {
+	b.down(&node{nodeType: tableCellNode})
+}
+
+func (b *builder) ExitTable_normalcell(c *parser.Table_normalcellContext) {
+	b.up()
+}
+
+// table_headercell
+
+func (b *builder) EnterTable_headercell(c *parser.Table_headercellContext) {
+	// fix row type
+	for c := b.current; c != nil && c.nodeType != tableNode; c = c.parent {
+		if c.nodeType == tableRowNode {
+			c.nodeType = tableHeaderRowNode
+			break
+		}
+	}
+	b.down(&node{nodeType: tableHeaderCellNode})
+}
+
+func (b *builder) ExitTable_headercell(c *parser.Table_headercellContext) {
+	b.up()
+}
+
 func (b *builder) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)

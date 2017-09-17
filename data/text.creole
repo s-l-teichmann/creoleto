@@ -34,3 +34,9 @@ This contains **//italic and bold//** typefaced text.
 ** Foo/Bar
 ** Foo/Baz
 
+----
+
+|=FOO  |=Bar   |=Baz  |
+|foo   |bar    |baz   |
+|first |second |third |
+

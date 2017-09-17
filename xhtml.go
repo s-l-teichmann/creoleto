@@ -79,7 +79,7 @@ func (x *xhtml) image(n *node) error {
 	enc := xml.NewEncoder(x.out)
 	attr := []xml.Attr{{Name: xml.Name{Local: "src"}, Value: img.src}}
 	if img.alt != "" {
-		attr = append(attr, xml.Attr{Name: xml.Name{Local: "src"}, Value: img.alt})
+		attr = append(attr, xml.Attr{Name: xml.Name{Local: "alt"}, Value: img.alt})
 	}
 	if err := enc.EncodeToken(xml.StartElement{
 		Name: xml.Name{Local: "img"},

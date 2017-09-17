@@ -40,3 +40,7 @@ This contains **//italic and bold//** typefaced text.
 |foo   |//bar//|break\\me |
 |first |second |**third** |
 
+----
+
+{{https://upload.wikimedia.org/wikipedia/commons/5/54/Hello_world.png|this is the alt text for my image}}
+

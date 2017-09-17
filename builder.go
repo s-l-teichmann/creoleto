@@ -297,6 +297,30 @@ func (b *builder) ExitTable_formattedelement(c *parser.Table_formattedelementCon
 	b.current = b.pop().(*node)
 }
 
+// image
+
+func (b *builder) EnterImage(c *parser.ImageContext) {
+	b.push(b.current)
+	b.push(&image{})
+	// dummy node to swallow children.
+	b.current = &node{}
+}
+
+func (b *builder) ExitImage(c *parser.ImageContext) {
+	img := b.pop().(*image)
+	// Re-establish the old parent
+	b.current = b.pop().(*node)
+	link(&node{nodeType: imageNode, value: img}, b.current)
+}
+
+func (b *builder) ExitImage_uri(c *parser.Image_uriContext) {
+	b.top().(*image).src = c.GetText()
+}
+
+func (b *builder) ExitImage_alternativetext(c *parser.Image_alternativetextContext) {
+	b.top().(*image).alt = c.GetText()
+}
+
 func (b *builder) parse(data string) (*document, error) {
 
 	input := antlr.NewInputStream(data)

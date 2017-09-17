@@ -108,7 +108,7 @@ func TestElements(t *testing.T) {
 				alt: "An image",
 			},
 		},
-		want: `<img src="http://example.com/image.png" src="An image"></img>`,
+		want: `<img src="http://example.com/image.png" alt="An image"></img>`,
 	}, {
 		have: nd(unorderedListNode,
 			nd(listItemNode, text("Hello")),

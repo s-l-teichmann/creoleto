@@ -1241,7 +1241,7 @@ func (p *Creole10Parser) Paragraph() (localctx IParagraphContext) {
 				p.GetInputStream().LA(2) == Creole10ParserDASH &&
 				p.GetInputStream().LA(3) == Creole10ParserDASH &&
 				p.GetInputStream().LA(4) == Creole10ParserDASH) {
-				panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1)==Creole10ParserDASH &&\r\n                  p.GetInputStream().LA(2)==Creole10ParserDASH && \r\n                  p.GetInputStream().LA(3)==Creole10ParserDASH && \r\n                  p.GetInputStream().LA(4)==Creole10ParserDASH", ""))
+				panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1)==Creole10ParserDASH &&\n                  p.GetInputStream().LA(2)==Creole10ParserDASH && \n                  p.GetInputStream().LA(3)==Creole10ParserDASH && \n                  p.GetInputStream().LA(4)==Creole10ParserDASH", ""))
 			}
 			{
 				p.SetState(245)
@@ -1779,7 +1779,7 @@ func (p *Creole10Parser) Text_firstelement() (localctx IText_firstelementContext
 		if !(p.GetInputStream().LA(1) != Creole10ParserSTAR ||
 			(p.GetInputStream().LA(1) == Creole10ParserSTAR &&
 				p.GetInputStream().LA(2) == Creole10ParserSTAR)) {
-			panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1) != Creole10ParserSTAR || \r\n         (p.GetInputStream().LA(1) == Creole10ParserSTAR && \r\n         p.GetInputStream().LA(2) == Creole10ParserSTAR)", ""))
+			panic(antlr.NewFailedPredicateException(p, " p.GetInputStream().LA(1) != Creole10ParserSTAR || \n         (p.GetInputStream().LA(1) == Creole10ParserSTAR && \n         p.GetInputStream().LA(2) == Creole10ParserSTAR)", ""))
 		}
 		{
 			p.SetState(281)
@@ -3316,7 +3316,7 @@ func (p *Creole10Parser) Text_lineseparator1() (localctx IText_lineseparator1Con
 		p.GetInputStream().LA(2) != Creole10ParserPOUND &&
 		p.GetInputStream().LA(2) != Creole10ParserEQUAL &&
 		p.GetInputStream().LA(2) != Creole10ParserNEWLINE) {
-		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != Creole10ParserDASH && \r\n         p.GetInputStream().LA(2) != Creole10ParserPOUND && \r\n         p.GetInputStream().LA(2) != Creole10ParserEQUAL && \r\n         p.GetInputStream().LA(2) != Creole10ParserNEWLINE", ""))
+		panic(antlr.NewFailedPredicateException(p, "p.GetInputStream().LA(2) != Creole10ParserDASH && \n         p.GetInputStream().LA(2) != Creole10ParserPOUND && \n         p.GetInputStream().LA(2) != Creole10ParserEQUAL && \n         p.GetInputStream().LA(2) != Creole10ParserNEWLINE", ""))
 	}
 	{
 		p.SetState(373)

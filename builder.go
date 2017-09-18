@@ -135,6 +135,10 @@ func (b *builder) ExitText_first_unformattedelement(c *parser.Text_first_unforma
 	link(text(c.GetText()), b.current)
 }
 
+func (b *builder) ExitText_lineseparator(c *parser.Text_lineseparatorContext) {
+	link(text("\n"), b.current)
+}
+
 // text_unformattedelement
 
 /*
@@ -154,10 +158,11 @@ func (b *builder) EnterText_line(c *parser.Text_lineContext) {
 }
 */
 
+/*
 func (b *builder) ExitText_line(c *parser.Text_lineContext) {
-	//fmt.Fprintln(os.Stderr, "ExitText_line:", c.GetText())
-	link(text("\n"), b.current)
+	fmt.Fprintln(os.Stderr, "ExitText_line:", c.GetText())
 }
+*/
 
 func (b *builder) EnterText_formattedelement(c *parser.Text_formattedelementContext) {
 	//fmt.Fprintln(os.Stderr, "***EnterText_formattedelement")

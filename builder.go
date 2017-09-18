@@ -156,8 +156,8 @@ func (b *builder) EnterText_unformattedelement(c *parser.Text_unformattedelement
 }
 */
 
-func (b *builder) ExitText_unformattedelement(c *parser.Text_unformattedelementContext) {
-	//fmt.Fprintf(os.Stderr, "ExitText_unformattedelement '%s'\n", c.GetText())
+func (b *builder) ExitText_unformatted(c *parser.Text_unformattedContext) {
+	//fmt.Fprintf(os.Stderr, "ExitText_unformatted '%s'\n", c.GetText())
 	b.resolveLineBreaks(c.GetText())
 }
 

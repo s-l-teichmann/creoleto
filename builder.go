@@ -139,8 +139,7 @@ func (b *builder) EnterText_first_unformattedelement(c *parser.Text_first_unform
 }
 */
 
-func (b *builder) ExitText_first_unformattedelement(c *parser.Text_first_unformattedelementContext) {
-	// fmt.Fprintf(os.Stderr, "1. ExitText_firstunformattedelement: '%s'\n", c.GetText())
+func (b *builder) ExitText_first_unformatted(c *parser.Text_first_unformattedContext) {
 	b.resolveLineBreaks(c.GetText())
 }
 

@@ -336,7 +336,7 @@ func (b *builder) ExitLink(c *parser.LinkContext) {
 }
 
 func (b *builder) ExitLink_uri(c *parser.Link_uriContext) {
-	if f := b.find(imageNode); f != nil {
+	if f := b.find(linkNode); f != nil {
 		f.value = c.GetText()
 	}
 }

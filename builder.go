@@ -122,24 +122,6 @@ func (b *builder) ExitParagraph(c *parser.ParagraphContext) {
 
 // text_first_element
 
-/*
-func (b *builder) EnterText_firstelement(c *parser.Text_firstelementContext) {
-	fmt.Fprintln(os.Stderr, "1. EnterText_firstelement")
-}
-
-func (b *builder) ExitText_firstelement(c *parser.Text_firstelementContext) {
-	fmt.Fprintln(os.Stderr, "1. ExitText_firstelement")
-}
-*/
-
-// text_first_unformattedelement
-
-/*
-func (b *builder) EnterText_first_unformattedelement(c *parser.Text_first_unformattedelementContext) {
-	fmt.Fprintln(os.Stderr, "1. ExitText_first_unformattedelement")
-}
-*/
-
 func (b *builder) ExitText_first_unformatted(c *parser.Text_first_unformattedContext) {
 	b.resolveLineBreaks(c.GetText())
 }
@@ -150,37 +132,15 @@ func (b *builder) ExitText_lineseparator(c *parser.Text_lineseparatorContext) {
 
 // text_unformattedelement
 
-/*
-func (b *builder) EnterText_unformattedelement(c *parser.Text_unformattedelementContext) {
-	fmt.Fprintln(os.Stderr, "EnterText_unformattedelement")
-}
-*/
-
 func (b *builder) ExitText_unformatted(c *parser.Text_unformattedContext) {
-	//fmt.Fprintf(os.Stderr, "ExitText_unformatted '%s'\n", c.GetText())
 	b.resolveLineBreaks(c.GetText())
 }
 
-/*
-func (b *builder) EnterText_line(c *parser.Text_lineContext) {
-	fmt.Fprintln(os.Stderr, "EnterText_line")
-}
-*/
-
-/*
-func (b *builder) ExitText_line(c *parser.Text_lineContext) {
-	fmt.Fprintln(os.Stderr, "ExitText_line:", c.GetText())
-}
-*/
-
 func (b *builder) EnterText_formattedelement(c *parser.Text_formattedelementContext) {
-	//fmt.Fprintln(os.Stderr, "***EnterText_formattedelement")
-	// type to be overwritten in ital_markup or bold_markup
 	b.push(b.current)
 }
 
 func (b *builder) ExitText_formattedelement(c *parser.Text_formattedelementContext) {
-	//fmt.Fprintln(os.Stderr, "***ExitText_formattedelement")
 	b.current = b.pop().(*node)
 }
 
@@ -210,12 +170,10 @@ func (b *builder) ExitHorizontalrule(c *parser.HorizontalruleContext) {
 }
 
 func (b *builder) EnterItal_markup(c *parser.Ital_markupContext) {
-	//fmt.Fprintln(os.Stderr, "//EnterItal_markup")
 	b.createFormatNode(italicsNode)
 }
 
 func (b *builder) EnterBold_markup(c *parser.Bold_markupContext) {
-	//fmt.Fprintln(os.Stderr, "**EnterBold_markup")
 	b.createFormatNode(boldNode)
 }
 

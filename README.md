@@ -26,7 +26,7 @@ Put the resulting `creoleto` binary into your `PATH`.
 ## Usage
 
 ```bash
-creoleto -standalone -format latex < data/wikicreole1.creole > converted.tex
+creoleto -standalone -format latex < data/text.creole > converted.tex
 ```
 
 ## Creole grammar

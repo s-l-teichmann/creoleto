@@ -60,6 +60,15 @@ func (b *builder) find(typ nodeType) *node {
 	return nil
 }
 
+func (b *builder) resolveLineBreaks(txt string) {
+	for i, t := range strings.Split(txt, `\\`) {
+		if i > 0 {
+			link(&node{nodeType: lineBreakNode}, b.current)
+		}
+		link(text(strings.Replace(t, "~", "", -1)), b.current)
+	}
+}
+
 func (b *builder) EnterHeading(c *parser.HeadingContext) {
 	b.push(&headingBuilder{})
 }
@@ -132,7 +141,7 @@ func (b *builder) EnterText_first_unformattedelement(c *parser.Text_first_unform
 
 func (b *builder) ExitText_first_unformattedelement(c *parser.Text_first_unformattedelementContext) {
 	// fmt.Fprintf(os.Stderr, "1. ExitText_firstunformattedelement: '%s'\n", c.GetText())
-	link(text(c.GetText()), b.current)
+	b.resolveLineBreaks(c.GetText())
 }
 
 func (b *builder) ExitText_lineseparator(c *parser.Text_lineseparatorContext) {
@@ -149,7 +158,7 @@ func (b *builder) EnterText_unformattedelement(c *parser.Text_unformattedelement
 
 func (b *builder) ExitText_unformattedelement(c *parser.Text_unformattedelementContext) {
 	//fmt.Fprintf(os.Stderr, "ExitText_unformattedelement '%s'\n", c.GetText())
-	link(text(c.GetText()), b.current)
+	b.resolveLineBreaks(c.GetText())
 }
 
 /*
@@ -177,7 +186,8 @@ func (b *builder) ExitText_formattedelement(c *parser.Text_formattedelementConte
 
 func (b *builder) ExitNowiki_inline_content(c *parser.Nowiki_inline_contentContext) {
 	nw := &node{nodeType: noWikiInlineNode}
-	link(text(c.GetText()), nw)
+	txt := strings.Replace(c.GetText(), "~", "", -1)
+	link(text(txt), nw)
 	link(nw, b.current)
 }
 
@@ -285,13 +295,7 @@ func (b *builder) ExitTable_headercell(c *parser.Table_headercellContext) {
 }
 
 func (b *builder) ExitTable_unformatted(c *parser.Table_unformattedContext) {
-	txt := c.GetText()
-	for i, t := range strings.Split(txt, `\\`) {
-		if i > 0 {
-			link(&node{nodeType: lineBreakNode}, b.current)
-		}
-		link(text(strings.Replace(t, "~", "", -1)), b.current)
-	}
+	b.resolveLineBreaks(c.GetText())
 }
 
 func (b *builder) EnterTable_formattedelement(c *parser.Table_formattedelementContext) {

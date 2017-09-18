@@ -1,6 +1,6 @@
 This contains //**italic and bold**// typefaced text.
 
-//This// is formatted text.
+//This// is formatted text.\\
 This is unformatted text foo bar.
 
 This contains //italic// typefaced text.

@@ -352,6 +352,7 @@ func (b *builder) parse(data string) (*document, error) {
 	stream := antlr.NewCommonTokenStream(lexer, 0)
 	pa := parser.NewCreole10Parser(stream)
 	pa.AddParseListener(b)
+	pa.GetInterpreter().SetPredictionMode(antlr.PredictionModeSLL)
 	//pa.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	//pa.BuildParseTrees = true
 	pa.Start()

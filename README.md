@@ -7,6 +7,11 @@ Currently planned supported outputs are XHTML and LaTex.
 
 **Attention: This is work in progress and not ready to use!**
 
+Limitations (due to limits in the grammar):
+* Nested lists are not parsed.
+* Links are not parsed.
+* Only **bold** and *italics* emphases are supported.
+
 ## Build
 
 You need a working [Go](https://golang.org) environment.
@@ -20,10 +25,8 @@ Put the resulting `creoleto` binary into your `PATH`.
 
 ## Usage
 
-**Not working at the moment!**
-
 ```bash
-creoleto < data/wikicreole1.creole > converted.tex
+creoleto -standalone -format latex < data/wikicreole1.creole > converted.tex
 ```
 
 ## Creole grammar

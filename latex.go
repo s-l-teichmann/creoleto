@@ -213,6 +213,8 @@ func (l *latex) tableCell() *visitor {
 
 func exportLaTex(doc *document, out io.Writer, standalone bool) error {
 
+	// doc.dump(os.Stderr)
+
 	l := latex{
 		out:    bufio.NewWriter(out),
 		labels: make(map[string]struct{}),

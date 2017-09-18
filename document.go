@@ -3,6 +3,12 @@
 // Copyright 2017 by Intevation GmbH
 package main
 
+import (
+	"fmt"
+	"io"
+	"strings"
+)
+
 type nodeType int
 
 const (
@@ -38,6 +44,46 @@ const (
 	linkNode
 	horizontalLineNode
 )
+
+func (n nodeType) String() string {
+	var names = [...]string{
+		"rootNode",
+		"orderedListNode",
+		"unorderedListNode",
+		"listItemNode",
+		"textNode",
+		"boldNode",
+		"italicsNode",
+		"underlinedNode",
+		"strikeNode",
+		"superscriptNode",
+		"subscriptNode",
+		"tableNode",
+		"tableHeaderRowNode",
+		"tableHeaderCellNode",
+		"tableRowNode",
+		"tableCellNode",
+		"heading1Node",
+		"heading2Node",
+		"heading3Node",
+		"heading4Node",
+		"heading5Node",
+		"heading6Node",
+		"paragraphNode",
+		"lineBreakNode",
+		"escapeNode",
+		"noWikiNode",
+		"noWikiInlineNode",
+		"placeholderNode",
+		"imageNode",
+		"linkNode",
+		"horizontalLineNode",
+	}
+	if n < 0 || int(n) >= len(names) {
+		return "unknown"
+	}
+	return names[n]
+}
 
 type node struct {
 	nodeType
@@ -140,6 +186,20 @@ func (d *document) traverse(visitors map[nodeType]*visitor) error {
 	}
 
 	return descend(d.root)
+}
+
+func (d *document) dump(out io.Writer) {
+	var descend func(*node, int)
+	descend = func(n *node, depth int) {
+		if n == nil {
+			return
+		}
+		fmt.Fprintf(out, "%s%s\n", strings.Repeat("  ", depth), n)
+		for _, c := range n.children {
+			descend(c, depth+1)
+		}
+	}
+	descend(d.root, 0)
 }
 
 func text(txt string) *node {

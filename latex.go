@@ -18,6 +18,9 @@ const (
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{cancel}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -132,7 +135,9 @@ func (l *latex) str(txt string) func(*node) error {
 }
 
 func (l *latex) command(cmd string) *visitor {
-	return &visitor{l.str(`\` + cmd + `{`), l.str(`}`)}
+	return &visitor{
+		enter: l.str(`\` + cmd + `{`),
+		leave: l.str(`}`)}
 }
 
 func (l *latex) text(n *node) error {
@@ -155,7 +160,7 @@ func (l *latex) image(n *node) error {
 	l.writeString(`\begin{figure}` + "\n")
 	l.writeString(`\centering` + "\n")
 	l.writeString(`\includegraphics{`)
-	l.writeString(latexReplacer.Replace(img.src))
+	l.writeString(img.src)
 	l.writeString(`}` + "\n" + `\caption{`)
 	l.writeString(latexReplacer.Replace(img.alt))
 	return l.writeString(`}` + "\n" + `\end{figure}` + "\n")

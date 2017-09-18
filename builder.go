@@ -55,9 +55,10 @@ func (b *builder) down(n *node) {
 }
 
 func (b *builder) find(typ nodeType) *node {
-	for n := b.current; n != nil && n.nodeType != typ; n = n.parent {
+	n := b.current
+	for ; n != nil && n.nodeType != typ; n = n.parent {
 	}
-	return nil
+	return n
 }
 
 func (b *builder) resolveLineBreaks(txt string) {
